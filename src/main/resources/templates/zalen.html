@@ -2,9 +2,73 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/style.css"/>
     <title>Title</title>
 </head>
+
+<!-- Navigatiebalk -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">Zaalfindr</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/home}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/zalen}">Zalen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/zalen}">zalen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/zalen}">zalen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/zalen}">Login/Sign Up</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <body>
+<div class="container mt-4">
+    <h1>Zalen</h1>
+    <div class="row">
+        <!-- Loop over de 'zaal' kaarten -->
+        <div th:each="zaal : ${zalens}" class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card">
+                <img th:src="@{${zaal.getImage()}}" class="card-img-top" alt="Zaalbeeld">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${zaal.zaalnaam}"></h5>
+                    <p class="card-text" th:text="${zaal.locatie}"></p>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 </body>
+
+<footer class="bg-dark text-light py-4">
+    <div class="container text-center">
+        <p>&copy; 2024 Zaalfindr. Alle rechten voorbehouden.</p>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-AsQa0AIv6PZ8tzL2MU7LyP5hgzBibcj+2O6C0D9X/rrbiqgLwF2kUsSEj/q1b4+h"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shCzJ3uFiqMquFkF4h5ww/jjF04wD+cleLEI+" crossorigin="anonymous"></script>
+
 </html>
