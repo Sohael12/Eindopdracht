@@ -12,10 +12,28 @@ public class Zaal {
     private int capaciteit;
     private String beschrijving;
     private double tarief;
-
+    private String image;
 
 
     public Zaal() {
+    }
+
+    public Zaal(Integer id, String zaalnaam, String locatie, int capaciteit, String beschrijving, double tarief, String image) {
+        this.id = id;
+        Zaalnaam = zaalnaam;
+        this.locatie = locatie;
+        this.capaciteit = capaciteit;
+        this.beschrijving = beschrijving;
+        this.tarief = tarief;
+        this.image = image;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public Integer getId() {
