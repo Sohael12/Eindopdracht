@@ -23,10 +23,10 @@
                     <a class="nav-link" th:href="@{/zalen}">Zalen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/zalen}">zalen</a>
+                    <a class="nav-link" th:href="@{/zalen}">Dont know yet</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/zalen}">zalen</a>
+                    <a class="nav-link" th:href="@{/zalen}">Contact</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/zalen}">Login/Sign Up</a>
@@ -36,21 +36,29 @@
     </div>
 </nav>
 <body>
+<div class="filters">
+    <div class="onefilter">
+        <div class="filtername">Kleedkamers</div>
+        <a href="/zalen" class="btn btn-primary filterButton" th:classappend="${filterkleedkamers == null} ? 'activeFilter' : ''">All</a>
+        <a href="/zalen?kleedkamers=yes" class="btn btn-primary filterButton" th:classappend="${filterkleedkamers == 'yes'} ? 'activeFilter' : ''">Yes</a>
+        <a href="/zalen?kleedkamers=no" class="btn btn-primary filterButton" th:classappend="${filterkleedkamers == 'no'} ? 'activeFilter' : ''">No</a>
+    </div>
+</div>
+
 <div class="container mt-4">
     <h1>Zalen</h1>
+
     <div class="row">
         <!-- Loop over de 'zaal' kaarten -->
         <div th:each="zaal : ${zalens}" class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div class="card">
-                <img th:src="@{${zaal.getImage()}}" class="card-img-top" alt="Zaalbeeld">
+            <div class="card h-100">
+                <img th:src="@{${zaal.image}}" class="card-img-top img-fluid" alt="Zaalbeeld">
                 <div class="card-body">
                     <h5 class="card-title" th:text="${zaal.zaalnaam}"></h5>
                     <p class="card-text" th:text="${zaal.locatie}"></p>
-
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 

@@ -6,39 +6,77 @@ body {
 
 h1 {
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.zaal-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start; /* Start van de container, zodat het niet gecentreerd is */
+.filters {
+    margin-bottom: 20px;
 }
 
-.zaal-card {
-    width: calc(20% - 40px); /* 20% breedte - marges */
-    margin: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+.onefilter {
+    float: right;
+    margin-right: 20px;
+    margin-top: 40px;
 }
 
-.zaal-image {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
+.filtername {
+    font-weight: bold;
+    margin-right: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+
 }
 
-.zaal-info {
-    padding: 10px;
+.filterButton {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #f0f0f0;
+    color: #333;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-right: 5px;
+    transition: background-color 0.3s ease;
+    border-color: #000; /* Set border color to black */
 }
 
-.zaal-info h2 {
-    margin-top: 0;
+.filterButton:hover {
+    background-color: #ccc;
+    color: #000; /* Set text color to black on hover */
 }
 
-.zaal-info p {
-    margin: 5px 0;
+.activeFilter {
+    background-color: #131313;
+    color: #fff;
+    border-color: #000; /* Set border color to black */
+}
+
+.card {
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Opmaak voor kaartafbeeldingen */
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 200px; /* Pas dit aan naar de gewenste hoogte */
+    object-fit: cover;
+}
+
+/* Opmaak voor kaarttitel */
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Opmaak voor kaarttekst */
+.card-text {
+    font-size: 1rem;
+    color: #555;
 }
 
 
@@ -85,42 +123,4 @@ button:hover {
     justify-content: center;
     align-items: center;
     padding: 0rem 2rem;
-}
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.zaal-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
-
-.zaal-card {
-    width: calc(33.33% - 20px); /* Bereken de breedte zodat er drie containers naast elkaar passen */
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.zaal-image {
-    width: 100%;
-    height: auto;
-    border-radius: 5px 5px 0 0;
-}
-
-.zaal-info {
-    padding: 10px;
-}
-
-.zaal-info h2 {
-    margin-top: 0;
-}
-
-.zaal-info p {
-    margin: 5px 0;
 }

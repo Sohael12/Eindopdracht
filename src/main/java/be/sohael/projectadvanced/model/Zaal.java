@@ -7,33 +7,27 @@ import jakarta.persistence.Id;
 public class Zaal {
     @Id
     private Integer id;
-    private String Zaalnaam;
+    private String zaalnaam;
     private String locatie;
     private int capaciteit;
     private String beschrijving;
     private double tarief;
     private String image;
 
+    private boolean kleedkamers;
 
     public Zaal() {
     }
 
-    public Zaal(Integer id, String zaalnaam, String locatie, int capaciteit, String beschrijving, double tarief, String image) {
+    public Zaal(Integer id, String zaalnaam, String locatie, int capaciteit, String beschrijving, double tarief, String image, boolean kleedkamers) {
         this.id = id;
-        Zaalnaam = zaalnaam;
+        this.zaalnaam = zaalnaam;
         this.locatie = locatie;
         this.capaciteit = capaciteit;
         this.beschrijving = beschrijving;
         this.tarief = tarief;
         this.image = image;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
+        this.kleedkamers = kleedkamers;
     }
 
     public Integer getId() {
@@ -45,11 +39,11 @@ public class Zaal {
     }
 
     public String getZaalnaam() {
-        return Zaalnaam;
+        return zaalnaam;
     }
 
     public void setZaalnaam(String zaalnaam) {
-        Zaalnaam = zaalnaam;
+        this.zaalnaam = zaalnaam;
     }
 
     public String getLocatie() {
@@ -82,5 +76,21 @@ public class Zaal {
 
     public void setTarief(double tarief) {
         this.tarief = tarief;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public boolean isKleedkamers() {
+        return kleedkamers;
+    }
+
+    public void setKleedkamers(boolean kleedkamers) {
+        this.kleedkamers = kleedkamers;
     }
 }
