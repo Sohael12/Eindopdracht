@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class UserController {
     private UserRepository userRepository;
-    @Autowired
+
     @GetMapping("/login")
     public String login(Model model) {
         Iterable<User> logins = userRepository.findAll();
