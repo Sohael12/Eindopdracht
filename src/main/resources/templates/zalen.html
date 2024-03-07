@@ -6,53 +6,34 @@
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/style.css"/>
     <title>Title</title>
 </head>
-
-<!-- Navigatiebalk -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <a class="navbar-brand" href="#">Zaalfindr</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/home}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/zalen}">Zalen</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/zalen}">Dont know yet</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/zalen}">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/zalen}">Login/Sign Up</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<div th:replace = "~{fragments/header :: header}">Header</div>
 <body>
-<div class="filters">
-    <div class="onefilter">
-        <div class="filtername">Kleedkamers</div>
-        <a href="/zalen" class="btn btn-primary filterButton" th:classappend="${filterkleedkamers == null} ? 'activeFilter' : ''">All</a>
-        <a href="/zalen?kleedkamers=yes" class="btn btn-primary filterButton" th:classappend="${filterkleedkamers == 'yes'} ? 'activeFilter' : ''">Yes</a>
-        <a href="/zalen?kleedkamers=no" class="btn btn-primary filterButton" th:classappend="${filterkleedkamers == 'no'} ? 'activeFilter' : ''">No</a>
-    </div>
+
+<div class="filter">
+    <a th:unless="${showFilters}" class="filters" th:href="@{/zalen/filter}">
+        <button class="button">Filter</button>
+    </a>
 </div>
+
+    <div class="filter">
+        <a th:if="${showFilters}" class="filters" th:href="@{/zalen}">
+            <button class="button">Go back</button>
+        </a>
+
+
+
+
 
 <div class="container mt-4">
     <h1>Zalen</h1>
-
     <div class="row">
         <!-- Loop over de 'zaal' kaarten -->
         <div th:each="zaal : ${zalens}" class="col-lg-3 col-md-4 col-sm-6 mb-4">
             <div class="card h-100">
-                <img th:src="@{${zaal.image}}" class="card-img-top img-fluid" alt="Zaalbeeld">
+                <a class="buttonlook mediumButton" th:href="@{|/zalendetails/${zaal.id}|}">
+                    <img th:src="@{${zaal.image}}" class="card-img-top img-fluid" alt="Zaalbeeld">
+                </a>
+
                 <div class="card-body">
                     <h5 class="card-title" th:text="${zaal.zaalnaam}"></h5>
                     <p class="card-text" th:text="${zaal.locatie}"></p>

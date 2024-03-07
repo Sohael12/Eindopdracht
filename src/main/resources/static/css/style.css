@@ -9,47 +9,7 @@ h1 {
     font-family: 'Montserrat', sans-serif;
 }
 
-.filters {
-    margin-bottom: 20px;
-}
-
-.onefilter {
-    float: right;
-    margin-right: 20px;
-    margin-top: 40px;
-}
-
-.filtername {
-    font-weight: bold;
-    margin-right: 10px;
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-
-}
-
-.filterButton {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #f0f0f0;
-    color: #333;
-    border-radius: 4px;
-    text-decoration: none;
-    margin-right: 5px;
-    transition: background-color 0.3s ease;
-    border-color: #000; /* Set border color to black */
-}
-
-.filterButton:hover {
-    background-color: #ccc;
-    color: #000; /* Set text color to black on hover */
-}
-
-.activeFilter {
-    background-color: #131313;
-    color: #fff;
-    border-color: #000; /* Set border color to black */
-}
-
+/* Opmaak voor  home page  */
 .card {
     margin-bottom: 20px;
     border: none;
@@ -58,22 +18,22 @@ h1 {
     transition: all 0.3s ease;
 }
 
-/* Opmaak voor kaartafbeeldingen */
+
 .card-img-top {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    height: 200px; /* Pas dit aan naar de gewenste hoogte */
+    height: 200px;
     object-fit: cover;
 }
 
-/* Opmaak voor kaarttitel */
+
 .card-title {
     font-size: 1.5rem;
     font-weight: bold;
     color: #333;
 }
 
-/* Opmaak voor kaarttekst */
+
 .card-text {
     font-size: 1rem;
     color: #555;
@@ -124,3 +84,62 @@ button:hover {
     align-items: center;
     padding: 0rem 2rem;
 }
+
+/*zaal deatails opmaak */
+.containerzalendetials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.detail-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 40px;
+    margin: 20px;
+}
+.detail-item h2 {
+    margin-bottom: 20px;
+}
+.detail-item p {
+    margin-bottom: 10px;
+}
+/* Basisstijlen voor knoppen  voor zalen*/
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+
+    background-color: #333333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #000000;
+}
+
+.filter {
+    margin-top: 20px;
+}
+
+/* Stijlen voor filterknoppen */
+.filterButton {
+    margin-right: 10px;
+}
+
+/* Stijlen voor actieve filterknop */
+.activeFilter {
+    background-color: #555555; /* Groene kleur voor actieve filters */
+}
+
+/* Hover-effect voor knoppen */
+.btn:hover {
+    opacity: 0.8;
+}
+

@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/style.css"/>
     <title>Title</title>
 </head>
+<div th:replace = "~{fragments/header :: header}">Header</div>
 <body>
+<div class="containerzalendetials">
+    <div class="detail-item">
+        <h1 class="text-center"></h1>
+        <div th:if="${zalen}">
+            <h2>Zaal Details</h2>
+            <p><span>Zaalnaam:</span> <span th:text="${zalen.getZaalnaam()}"></span></p>
+            <p><span>Capaciteit:</span> <span th:text="${zalen.getCapaciteit()}"></span></p>
+            <p><span>Beschrijving:</span> <span th:text="${zalen.getBeschrijving()}"></span></p>
+            <p><span>Locatie:</span> <span th:text="${zalen.getLocatie()}"></span></p>
+            <p><span>Tarief:</span> <span th:text="${zalen.getTarief()}"></span></p>
+        </div>
+        <div th:unless="${zalen}">
+            <p class="text-center">Geen zaal gevonden.</p>
+        </div>
+    </div>
 
+</div>
 </body>
+
 </html>

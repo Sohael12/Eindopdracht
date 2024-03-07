@@ -1,6 +1,6 @@
 
 INSERT INTO zaal (id, Zaalnaam, locatie, capaciteit, beschrijving,image, tarief ,kleedkamers)
-VALUES (1, 'Sporthal Luchtbal', 'Santiagostraat 2, 2030 Antwerpen', 60, 'In deze sporthal kan je terecht voor badminton, baseball, basketbal, handbal, volleybal, zaalvoetbal en vechtsport.','https://www.koksijde.be/sites/default/files/styles…a/sportpark_hazebeek_binnen_1_0.jpg?itok=i0UviueQ ',8 , true) ;
+VALUES (1, 'Sporthal Luchtbal', 'Santiagostraat 2, 2030 Antwerpen', 60, 'In deze sporthal kan je terecht voor badminton, baseball, basketbal, handbal, volleybal, zaalvoetbal en vechtsport.','/images/sporthal_luchtbal.jpg ',8 , true) ;
 
 
 INSERT INTO zaal (id, Zaalnaam, locatie, capaciteit, beschrijving,image, tarief ,kleedkamers)
@@ -11,7 +11,7 @@ VALUES (3, 'Sporthal IGLO', ' Louis Paul Boon Straat 41, 2050 Antwerpen ', 50, '
  ',12, true );
 
 INSERT INTO zaal (id, Zaalnaam, locatie, capaciteit, beschrijving,image, tarief, kleedkamers)
-VALUES (4, 'Sporthal Linkeroever', 'Blancefloerlaan 183, 2050 Antwerpen ', 50, 'In deze sporthal kan je terecht voor badminton, basketbal, handbal, korfbal, tafeltennis, volleybal en zaalvoetbal.','https://fastly.4sqi.net/img/general/1778x1334/1504…5_GNNCbs-NSJsUMlSZ_vzGw1GL76CoPMgq3NIt11qAqNE.jpg ',12, true );
+VALUES (4, 'Sporthal Linkeroever', 'Blancefloerlaan 183, 2050 Antwerpen ', 50, 'In deze sporthal kan je terecht voor badminton, basketbal, handbal, korfbal, tafeltennis, volleybal en zaalvoetbal.','/images/sporthal_linkroever.jpg ',12, true );
 
 INSERT INTO zaal (id, Zaalnaam, locatie, capaciteit, beschrijving,image, tarief, kleedkamers)
 VALUES (5, 'Sporthal Parkloods', 'Damplein 36, 2060 Antwerpen ', 50, 'Je kan in deze sporthal terecht voor zaalvoetbal, basketbal, badminton, vechtsporten, gymnastiek en volleybal.','https://www.vlaamsbouwmeester.be/sites/default/fil…realization/VB-VERDI_131113_236.jpg?itok=o0M8jjO4 ',12, true );
