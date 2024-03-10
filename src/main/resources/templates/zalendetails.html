@@ -6,25 +6,87 @@
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/style.css"/>
     <title>Title</title>
 </head>
-<div th:replace = "~{fragments/header :: header}">Header</div>
-<body>
-<div class="containerzalendetials">
-    <div class="detail-item">
-        <h1 class="text-center"></h1>
-        <div th:if="${zalen}">
-            <h2>Zaal Details</h2>
-            <p><span>Zaalnaam:</span> <span th:text="${zalen.getZaalnaam()}"></span></p>
-            <p><span>Capaciteit:</span> <span th:text="${zalen.getCapaciteit()}"></span></p>
-            <p><span>Beschrijving:</span> <span th:text="${zalen.getBeschrijving()}"></span></p>
-            <p><span>Locatie:</span> <span th:text="${zalen.getLocatie()}"></span></p>
-            <p><span>Tarief:</span> <span th:text="${zalen.getTarief()}"></span></p>
+<div th:replace="~{fragments/header :: header}">Header</div>
+
+<div class="container">
+    <div class="row row1 justify-content-center">
+        <div class="col-auto">
+            <div class="row1content" th:if="${zalen}">
+                <div class="prevButtonDiv">
+                    <a class="buttonLook smallButton prevButton" th:href="@{|/zalendetails/${prevId}|}">&lt;
+                        Previous</a>
+                </div>
+            </div>
         </div>
-        <div th:unless="${zalen}">
-            <p class="text-center">Geen zaal gevonden.</p>
+        <div class="col-auto">
+            <div class="row1content" th:if="${zalen}">
+                <div class="nextButtonDiv">
+                    <a class="buttonLook smallButton nextButton" th:href="@{|/zalendetails.html/${nextId}|}">Next
+                        &gt;</a>
+                </div>
+            </div>
         </div>
     </div>
-
 </div>
+
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Zaal Details</h2>
+                    <div th:if="${zalen}" class="zaal-details">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="zaal-image">
+                                    <img th:src="${zalen.getImage()}" alt="Zaal Image" class="img-fluid rounded">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="zaal-info">
+                                    <p><strong>Zaalnaam:</strong> <span th:text="${zalen.getZaalnaam()}"></span></p>
+                                    <p><strong>Capaciteit:</strong> <span th:text="${zalen.getCapaciteit()}"></span></p>
+                                    <p><strong>Beschrijving:</strong> <span th:text="${zalen.getBeschrijving()}"></span></p>
+                                    <p><strong>Locatie:</strong> <span th:text="${zalen.getLocatie()}"></span></p>
+                                    <p><strong>Tarief:</strong> <span th:text="${zalen.getTarief()}"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div th:unless="${zalen}" class="text-center mt-4">
+                        <p class="text-muted">Geen zaal gevonden.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
+
+<footer class="footer">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h5>Zaalfindr</h5>
+            <p>Welkom to Zaalfindr </p>
+        </div>
+        <div class="col-md-6">
+            <h5>Links</h5>
+            <ul class="list-unstyled">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <p>&copy; 2024  Zaalfindr </p>
+        </div>
+    </div>
+</div>
+</footer>
 
 </html>

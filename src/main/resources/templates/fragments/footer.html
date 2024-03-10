@@ -8,12 +8,28 @@
 
 </body>
 
-<div th:fragment="footer">
-    <footer class="bg-dark text-light py-4">
-        <div class="container text-center">
-            <p>&copy; 2024 Zaalfindr. Alle rechten voorbehouden.</p>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Zaalfindr</h5>
+                <p>Welkom to Zaalfindr </p>
+            </div>
+            <div class="col-md-6">
+                <h5>Links</h5>
+                <ul class="list-unstyled">
+                    <li><a th:href="@{/home}">Home</a></li>
+                    <li><a th:href="@{/about}">About</a></li>
+
+                </ul>
+            </div>
         </div>
-    </footer>
-</div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>&copy; 2024  Zaalfindr </p>
+            </div>
+        </div>
+    </div>
+</footer>
 
 </html>

@@ -27,24 +27,33 @@ public class ZalenController {
     }
     @GetMapping({"/zalendetails/{id}","/zalendetails"})
     public String zalendetails(Model model, @PathVariable(required = false) Integer id ) {
-        if (id != null) {
-            Optional<Zaal> zalenfromDb = zalenRepository.findById(id);
-            if (zalenfromDb.isPresent()) {
-                final Zaal zalen = zalenfromDb.get();
-                model.addAttribute("zalen", zalenfromDb.get());
-            }
-            }
+        if (id == null) return "venuedetails";
 
-            return "zalendetails";
+        Optional<Zaal> zalenfromdb = zalenRepository.findById(id);
+        //noinspection OptionalIsPresent
+        if (zalenfromdb.isPresent()) {
+            Optional<Zaal> prevZaalfromdb = zalenRepository.findFirstByIdLessThanOrderByIdDesc(id);
+            if (prevZaalfromdb.isEmpty())
+                prevZaalfromdb = zalenRepository.findFirstByOrderByIdDesc();
+            Optional<Zaal> nextZaalfromdb = zalenRepository.findFirstByIdGreaterThanOrderByIdAsc(id);
+            if (nextZaalfromdb.isEmpty())
+                nextZaalfromdb = zalenRepository.findFirstByOrderByIdAsc();
+
+            model.addAttribute("zalen", zalenfromdb.get());
+            model.addAttribute("prevId", prevZaalfromdb.get().getId());
+            model.addAttribute("nextId", nextZaalfromdb.get().getId());
         }
-
-    @GetMapping(value = "/zalen", params = "kleedkamers")
-    public String venueListOutdoor(Model model, @RequestParam boolean kleedkamers) {
-        Iterable<Zaal> zalens = zalenRepository.findBykleedkamers(kleedkamers);
-        model.addAttribute("zalens", zalens);
-        model.addAttribute("filterkleedkamers", kleedkamers ? "yes" : "no");
-        return "zalen";
+        return "zalendetails";
     }
+
+
+   // @GetMapping(value = "/zalen", params = "kleedkamers")
+    ///public String venueListOutdoor(Model model, @RequestParam boolean kleedkamers) {
+        //Iterable<Zaal> zalens = zalenRepository.findBykleedkamers(kleedkamers);
+        //model.addAttribute("zalens", zalens);
+        //model.addAttribute("filterkleedkamers", kleedkamers ? "yes" : "no");
+        //return "zalen";
+    //}
 
     @GetMapping("/zalen/filter")
     public String zalenfilter(Model model,

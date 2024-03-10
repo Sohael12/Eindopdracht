@@ -84,28 +84,7 @@ button:hover {
     align-items: center;
     padding: 0rem 2rem;
 }
-
-/*zaal deatails opmaak */
-.containerzalendetials {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-.detail-item {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    padding: 40px;
-    margin: 20px;
-}
-.detail-item h2 {
-    margin-bottom: 20px;
-}
-.detail-item p {
-    margin-bottom: 10px;
-}
-/* Basisstijlen voor knoppen  voor zalen*/
+/* zaal pagina opmaak */
 .button {
     display: inline-block;
     padding: 10px 20px;
@@ -143,3 +122,118 @@ button:hover {
     opacity: 0.8;
 }
 
+/*zaal deatails opmaak paginaa  --------------------------*/
+.row1content {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.smallButton {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #333333; /* Change the background color */
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.smallButton:hover {
+    background-color: #555555; /* Change the background color on hover */
+}
+.prevButton,
+.nextButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer; /* Add cursor pointer to indicate interactivity */
+}
+
+.detail-item {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin-top: 30px;
+    max-width: 800px; /* Adjust the maximum width */
+    width: 90%; /* Adjust the width */
+    margin: 0 auto; /* Center the detail item horizontally */
+}
+
+.zaal-details {
+    margin-top: 30px;
+}
+
+.zaal-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Add some space below the image */
+    height: 400px; /* Set a fixed height for the image container */
+}
+
+.zaal-image img {
+    max-width: 100%;
+    max-height: 100%; /* Set the image to take the full height of its container */
+    border-radius: 15px;
+    object-fit: contain; /* Maintain the aspect ratio of the image */
+}
+
+.zaal-info p {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.zaal-info strong {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.text-center {
+    text-align: center;
+    font-size: 28px;
+}
+
+
+
+
+
+/*  foooooteeeeeeeeeeeeeeeer  */
+
+.footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding-top: 30px;
+    padding-bottom: 0; /* Remove default bottom padding */
+}
+
+.footer h5 {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.footer p {
+    font-size: 14px;
+}
+
+.footer ul li {
+    list-style-type: none;
+    padding: 5px 0;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #cccccc;
+}

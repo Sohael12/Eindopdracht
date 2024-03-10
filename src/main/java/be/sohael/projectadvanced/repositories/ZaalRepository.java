@@ -6,10 +6,19 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ZaalRepository extends CrudRepository<Zaal,Integer>{
 
     Iterable<Zaal> findBykleedkamers(boolean kleedkamers);
+    Optional<Zaal> findFirstByIdLessThanOrderByIdDesc(Integer id);
+    Optional<Zaal> findFirstByOrderByIdDesc();
+    Optional<Zaal> findFirstByIdGreaterThanOrderByIdAsc(Integer id);
+    Optional<Zaal> findFirstByOrderByIdAsc();
+
+
+
+
 
     @Query("SELECT z FROM Zaal z WHERE" +
             " (:minTarief IS NULL OR z.tarief >= :minTarief) AND " +
