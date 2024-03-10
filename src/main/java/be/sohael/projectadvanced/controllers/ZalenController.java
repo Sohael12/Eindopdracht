@@ -42,6 +42,7 @@ public class ZalenController {
             model.addAttribute("zalen", zalenfromdb.get());
             model.addAttribute("prevId", prevZaalfromdb.get().getId());
             model.addAttribute("nextId", nextZaalfromdb.get().getId());
+
         }
         return "zalendetails";
     }
