@@ -2,8 +2,9 @@ package be.sohael.projectadvanced.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-@Entity
+@Entity @Table(name ="zaaluser")
 public class User {
     @Id
     private Integer id;

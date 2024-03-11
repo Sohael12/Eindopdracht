@@ -48,13 +48,6 @@ public class ZalenController {
     }
 
 
-   // @GetMapping(value = "/zalen", params = "kleedkamers")
-    ///public String venueListOutdoor(Model model, @RequestParam boolean kleedkamers) {
-        //Iterable<Zaal> zalens = zalenRepository.findBykleedkamers(kleedkamers);
-        //model.addAttribute("zalens", zalens);
-        //model.addAttribute("filterkleedkamers", kleedkamers ? "yes" : "no");
-        //return "zalen";
-    //}
 
     @GetMapping("/zalen/filter")
     public String zalenfilter(Model model,
