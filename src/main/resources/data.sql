@@ -39,3 +39,14 @@ VALUES (11, 'Sporthal Fort VIII Hoboken', 'Hoofdfrontweg 9, 2660 Hoboken ', 35, 
 
 INSERT INTO zaal (id, Zaalnaam, locatie, capaciteit, beschrijving,image, tarief, kleedkamers)
 VALUES (12, 'Sporthal Wilrijkse Plein - Antwerpen', 'Vogelzanglaan 6, 2020 Antwerpen ', 35, 'In deze sporthal kunt u terecht voor basketbal, volleybal, zaalvoetbal, korfbal, handbal en badminton. Voor turnen en bewegingsonderwijs moet u in de kleine zaal zijn.','/images/wilrijkseplein.jpg',18 , false);
+
+
+
+
+
+
+
+
+
+
+
