@@ -50,7 +50,9 @@
                                     <p><strong>Capaciteit:</strong> <span th:text="${zalen.getCapaciteit()}"></span></p>
                                     <p><strong>Beschrijving:</strong> <span th:text="${zalen.getBeschrijving()}"></span></p>
                                     <p><strong>Locatie:</strong> <span th:text="${zalen.getLocatie()}"></span></p>
-                                    <p><strong>Tarief:</strong> <span th:text="'€ ' + ${zalen.getTarief()}"></span></p> <!-- Added the euro symbol here -->
+                                    <p><strong>Tarief:</strong> <span th:text="'€ ' + ${zalen.getTarief()}"></span></p>
+                                    <a th:if="${zalen}" th:href="@{/reservatiedetails}" class="btn btn-primary btn-block mt-4">Reserveer deze zaal</a>
+                                    <!-- Added the euro symbol here -->
                                 </div>
                             </div>
                         </div>

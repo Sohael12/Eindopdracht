@@ -12,7 +12,7 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping("/login")
+    @GetMapping({"/", "/login"})
     public String login(Model model) {
         Iterable<User> logins = userRepository.findAll();
         model.addAttribute("logins", logins);
