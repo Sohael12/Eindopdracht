@@ -61,7 +61,6 @@ public class ZalenController {
         model.addAttribute("maxtarief", maxtarief);
         model.addAttribute("showFilters", true);
         model.addAttribute("zalens", allzalens);
-        model.addAttribute("showFilters", true);
         model.addAttribute("totalZalen", allzalens.size());
         return "zalen";
     }

@@ -139,13 +139,13 @@ button:hover {
     border-radius: 5px;
     font-size: 16px;
     color: #fff;
-    background-color: #333333; /* Change the background color */
+    background-color: #333333;
     text-decoration: none;
     transition: background-color 0.3s ease;
 }
 
 .smallButton:hover {
-    background-color: #555555; /* Change the background color on hover */
+    background-color: #555555;
 }
 .prevButton,
 .nextButton {
@@ -156,7 +156,7 @@ button:hover {
     text-decoration: none;
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    cursor: pointer; /* Add cursor pointer to indicate interactivity */
+    cursor: pointer;
 }
 
 .detail-item {
@@ -165,12 +165,12 @@ button:hover {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     padding: 40px;
     margin-top: 30px;
-    max-width: 800px; /* Adjust the maximum width */
-    width: 90%; /* Adjust the width */
-    margin: 0 auto; /* Center the detail item horizontally */
+    max-width: 800px;
+    width: 90%;
+
 }
 
-/* Algemene opmaak */
+
 .containertarief form {
     max-width: 250px;
     margin: 0 auto;
@@ -244,8 +244,31 @@ button:hover {
     font-size: 28px;
 }
 
+.btn.btn-primary.btn-block.mt-4 {
+    background-color: #333333; /* Rood */
+    border-color: #000000; /* Rood */
+}
 
 
+/*--------------------------userpagina--------------------------*/
+
+
+/*--------------------------loginpagina --------------------------*/
+.divider:after,
+.divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+.h-custom {
+    height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+    .h-custom {
+        height: 100%;
+    }
+}
 
 
 /*  foooooteeeeeeeeeeeeeeeer  */
@@ -278,25 +301,4 @@ button:hover {
 
 .footer a:hover {
     color: #cccccc;
-}
-
-
-/*--------------------------userpagina--------------------------*/
-
-
-/*--------------------------login--------------------------*/
-.divider:after,
-.divider:before {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: #eee;
-}
-.h-custom {
-    height: calc(100% - 73px);
-}
-@media (max-width: 450px) {
-    .h-custom {
-        height: 100%;
-    }
 }

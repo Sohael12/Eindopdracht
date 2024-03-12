@@ -13,56 +13,56 @@
 <div th:replace="~{fragments/header :: header}">Header</div>
 <body>
 
-<div class="filter">
-    <a th:unless="${showFilters}" class="filters" th:href="@{/zalen/filter}">
+<div class="filter" th:unless="${showFilters}">
+    <a class="filters" th:href="@{/zalen/filter}">
         <button class="button">Filter</button>
     </a>
+</div>
 
+<div class="filter" th:if="${showFilters}">
+    <a class="filters" th:href="@{/zalen}">
+        <button class="button">Go back</button>
+    </a>
 
-    <div class="filter">
-        <a th:if="${showFilters}" class="filters" th:href="@{/zalen}">
-            <button class="button">Go back</button>
-        </a>
-        <div class="containertarief">
-            <form>
-                <div class="mb-3">
-                    <input type="submit" value="Zoeken" class="btn btn-primary">
+    <div class="containertarief">
+        <form>
+            <div class="mb-3">
+                <input type="submit" value="Zoeken" class="btn btn-primary">
+            </div>
+            <h3>Tarief</h3>
+            <div class="mb-3">
+                <label for="mintarief" class="form-label">Minimum Tarief:</label>
+                <div class="input-group">
+                    <span class="input-group-text">€</span>
+                    <input type="number" id="mintarief" name="mintarief" class="form-control"
+                           th:value="${mintarief}" step="1">
                 </div>
-                <h3>Tarief</h3>
-                <div class="mb-3">
-                    <label for="mintarief" class="form-label">Minimum Tarief:</label>
-                    <div class="input-group">
-                        <span class="input-group-text">€</span>
-                        <input type="number" id="mintarief" name="mintarief" class="form-control"
-                               th:value="${mintarief}" step="1">
-                    </div>
+            </div>
+            <div class="mb-3">
+                <label for="maxtarief" class="form-label">Maximum Tarief:</label>
+                <div class="input-group">
+                    <span class="input-group-text">€</span>
+                    <input type="number" id="maxtarief" name="maxtarief" class="form-control"
+                           th:value="${maxtarief}" step="1">
                 </div>
-                <div class="mb-3">
-                    <label for="maxtarief" class="form-label">Maximum Tarief:</label>
-                    <div class="input-group">
-                        <span class="input-group-text">€</span>
-                        <input type="number" id="maxtarief" name="maxtarief" class="form-control"
-                               th:value="${maxtarief}" step="1">
-                    </div>
-                </div>
-            </form>
-        </div>
+            </div>
+        </form>
+    </div>
 
-        <div class="container mt-4">
-            <h1>Zalen</h1>
-            <div class="row">
+    </div>
+</div>
 
-                <div th:each="zaal : ${zalens}" class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <a class="buttonlook mediumButton" th:href="@{|/zalendetails/${zaal.id}|}">
-                            <img th:src="@{${zaal.getImage()}}" class="card-img-top img-fluid" alt="Zaalbeeld">
-                        </a>
-
-                        <div class="card-body">
-                            <h5 class="card-title" th:text="${zaal.getZaalnaam()}"></h5>
-                            <p class="card-text" th:text="${zaal.locatie}"></p>
-                        </div>
-                    </div>
+<div class="container mt-4">
+    <h1>Zalen</h1>
+    <div class="row">
+        <div th:each="zaal : ${zalens}" class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card h-100">
+                <a class="buttonlook mediumButton" th:href="@{|/zalendetails/${zaal.id}|}">
+                    <img th:src="@{${zaal.getImage()}}" class="card-img-top img-fluid" alt="Zaalbeeld">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${zaal.getZaalnaam()}"></h5>
+                    <p class="card-text" th:text="${zaal.locatie}"></p>
                 </div>
             </div>
         </div>
