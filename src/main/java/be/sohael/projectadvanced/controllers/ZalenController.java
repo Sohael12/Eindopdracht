@@ -52,13 +52,16 @@ public class ZalenController {
     @GetMapping("/zalen/filter")
     public String zalenfilter(Model model,
                                   @RequestParam(required = false) Integer mintarief,
-                                  @RequestParam(required = false) Integer maxtarief){
+                                  @RequestParam(required = false) Integer maxtarief,
+                                  @RequestParam(required = false) Integer capaciteit){
 
-        logger.info(String.format("zalenfilter -- min=%d, max=%d", mintarief, maxtarief));
-        List<Zaal> allzalens = zalenRepository.findZalenByTariefRange(mintarief,maxtarief );
+        logger.info(String.format("zalenfilter -- min=%d, max=%d", mintarief, maxtarief,capaciteit  ));
+        List<Zaal> allzalens = zalenRepository.findZalenByTariefRange(mintarief,maxtarief,capaciteit);
 
         model.addAttribute("mintarief", maxtarief);
         model.addAttribute("maxtarief", maxtarief);
+        model.addAttribute("capaciteit", capaciteit);
+      ;
         model.addAttribute("showFilters", true);
         model.addAttribute("zalens", allzalens);
         model.addAttribute("totalZalen", allzalens.size());

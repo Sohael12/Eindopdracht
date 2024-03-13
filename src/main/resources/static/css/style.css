@@ -158,6 +158,16 @@ button:hover {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
+.capacity-filter .input-group {
+    display: flex;
+    align-items: center;
+}
+
+.capacity-filter .input-group input {
+    flex: 1;
+    margin: 0 5px;
+}
+
 
 .detail-item {
     background-color: #fff;
