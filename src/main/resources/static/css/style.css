@@ -259,22 +259,35 @@ button:hover {
     border-color: #000000; /* Rood */
 }
 /*admin   zaaleditpage --------------------------*/
-.party-info {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+.buttonlink{
+  margin-top: 20px;
+    margin-left: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333333; /* Button color */
+    color: #eeeeee; /* Text color */
+    text-decoration: none; /* Remove underline */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor on hover */
+    transition: background-color 0.3s ease;
+}
+.submit-button {
+
+    color: #fff; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding */
+    cursor: pointer; /* Cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
 }
 
-.party-info label {
-    font-weight: bold;
-    margin-bottom: 3px;
-    display: block;
-}
 
-.party-info input[type="text"],
-.party-info input[type="number"],
-.party-info textarea {
+
+.zaal-info input[type="text"],
+.zaal-info input[type="number"],
+.zaal-info textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -282,21 +295,19 @@ button:hover {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
-
-.party-info input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.submit-button {
+    background-color: #333333; /* Green background color */
+    color: #fff; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding */
+    cursor: pointer; /* Cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
 }
 
-.party-info input[type="submit"]:hover {
-    background-color: #45a049;
+.submit-button:hover {
+    background-color: #555555;
 }
-
 /*--------------------------userpagina--------------------------*/
 
 

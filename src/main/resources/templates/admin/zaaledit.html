@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/style.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-          integrity="sha512-Jb2ZhHHeaJI/rIQEfo6v/NeOmNo4ZjSiRKeJr+15r7fL+CYLrKorj5JZhAB4grUbZpYlOq+GWy2XDZ5N5VzBMw=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
     <title>Title</title>
 </head>
 <div th:replace="~{fragments/header :: header}">Header</div>
 <body>
-<a th:href="@{|/zalendetails/${id}|}">Back</a>
+<a th:href="@{|/zalendetails/${id}|}" class="buttonlink">Back</a>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-8">
@@ -34,13 +32,12 @@
                                     <p><strong>Locatie:</strong> <span th:text="*{locatie}"></span></p>
                                     <p><strong>Tarief:</strong> <span th:text="'€ ' + *{tarief}"></span></p>
                                     <a th:if="${zalen}" th:href="@{/reservatiedetails}" class="btn btn-primary btn-block mt-4">Reserveer deze zaal</a>
-                                    <!-- Added the euro symbol here -->
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-md-6">
-                            <div class="party-info">
+                            <div class="zaal-info">
                                 <form th:action="@{|/admin/zaaledit/*{id}|}" method="post">
                                     <div>
                                         <label for="zaalname" class="infolinename">Name: </label>
@@ -51,7 +48,7 @@
                                         <input id="zaalcapacity" type="number" th:field="*{capaciteit}">
                                     </div>
                                     <div>
-                                        <label for="zaalbeschrijving" class="infolinedescription">Beschrijving: </label>
+                                        <label for="zaalbeschrijving" class="infobeschrijving">Beschrijving: </label>
                                         <textarea id="zaalbeschrijving" th:field="*{beschrijving}"></textarea>
                                     </div>
                                     <div>
@@ -63,7 +60,7 @@
                                         <input id="zaalprijs" type="text" th:field="*{tarief}">
                                     </div>
                                     <div>
-                                        <input type="submit" name="save" />
+                                        <input type="submit" name="save"  class="submit-button" />
                                     </div>
                                 </form>
                             </div>
