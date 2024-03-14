@@ -24,7 +24,7 @@ VALUES (7, 'Sporthal De Rode Loop', 'Rodeloopstraat 2, 2170 Antwerpen ', 50, 'In
 
 
 INSERT INTO zaal (id, Zaalnaam, locatie, capaciteit, beschrijving,image, tarief, kleedkamers)
-VALUES (8, 'Sporthal Het Rooi in Berchem', 'Rodeloopstraat 2, 2170 Antwerpen ', 30, 'In sporthal Het Rooi kunt u terecht voor badminton, basketbal, handbal, korfbal, tennis, volleybal, zaalvoetbal in de grote zaal. Er is ook een kleinere zaal waar u kan turnen, tafeltennissen en schermen.','https://www.westerstrand.be/pictures/news/nieuws/img-7407-1500.jpg',22 , true);
+VALUES (8, 'Sporthal Het Rooi in Berchem', 'Rodeloopstraat 2, 2170 Antwerpen ', 30, 'In sporthal Het Rooi kunt u terecht voor badminton, basketbal, handbal, korfbal, tennis, volleybal, zaalvoetbal in de grote zaal. Er is ook een kleinere zaal waar u kan turnen, tafeltennissen en schermen.','https://www.westerstrand.be/pictures/news/nieuws/img-7407-1e begint van manytoone500.jpg',22 , true);
 
 INSERT INTO zaal (id, Zaalnaam, locatie, capaciteit, beschrijving,image, tarief, kleedkamers)
 VALUES (9, 'Sporthal De Rode Loop - Merksem', 'Rodeloopstraat 2, 2170 Antwerpen ', 35, 'In sporthal De Rode Loop kan je terecht voor basketbal, handbal, korfbal, tennis, volleybal en zaalvoetbal. In de vechtsportzaal kan je onder meer judo, karate en jiu jitsu beoefenen.','/images/Sporthal De Rode Loop - Merksem.jpg',10 , true);
@@ -40,6 +40,8 @@ VALUES (11, 'Sporthal Fort VIII Hoboken', 'Hoofdfrontweg 9, 2660 Hoboken ', 35, 
 INSERT INTO zaal (id, Zaalnaam, locatie, capaciteit, beschrijving,image, tarief, kleedkamers)
 VALUES (12, 'Sporthal Wilrijkse Plein - Antwerpen', 'Vogelzanglaan 6, 2020 Antwerpen ', 35, 'In deze sporthal kunt u terecht voor basketbal, volleybal, zaalvoetbal, korfbal, handbal en badminton. Voor turnen en bewegingsonderwijs moet u in de kleine zaal zijn.','/images/wilrijkseplein.jpg',18 , false);
 
+INSERT INTO zaaluser (id, username)
+VALUES (1,'test');
 
 
 
