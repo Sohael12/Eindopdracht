@@ -1,33 +1,36 @@
 package be.sohael.projectadvanced.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.util.Collection;
 
-@Entity @Table(name = "registratie")
+@Entity
 public class Reservatie {
     @Id
     private Integer id;
-    @ManyToOne
+
+    private LocalDateTime reservatieDatumTijd;
+    private String status;
+    private String opmerkingen;
+    @ManyToOne(fetch = FetchType.LAZY)// getters setteers erbij //
     private User user;
 
-    @ManyToOne
-    private Zaal zaal;
+    @ManyToMany(fetch = FetchType.LAZY)
+    private Collection<Zaal> zaal;
 
-    private Date datum;
 
-    public Reservatie(){}
-
-    public Reservatie(Integer id, User user, Zaal zaal, Date datum) {
-        this.id = id;
-        this.user = user;
-        this.zaal = zaal;
-        this.datum = datum;
+    public Reservatie() {
     }
 
+    public Reservatie(Integer id, User user, Zaal zaal, LocalDateTime reservatieDatumTijd, String status, String opmerkingen) {
+        this.id = id;
+        this.user = user;
+       // this.zaal = zaal;
+        this.reservatieDatumTijd = reservatieDatumTijd;
+        this.status = status;
+        this.opmerkingen = opmerkingen;
+    }
 
     public Integer getId() {
         return id;
@@ -45,19 +48,35 @@ public class Reservatie {
         this.user = user;
     }
 
-    public Zaal getZaal() {
-        return zaal;
+   // public Zaal getZaal() {
+        //return zaal;
+   // }
+
+   // public void setZaal(Zaal zaal) {
+       // this.zaal = zaal;
+//}
+
+    public LocalDateTime getReservatieDatumTijd() {
+        return reservatieDatumTijd;
     }
 
-    public void setZaal(Zaal zaal) {
-        this.zaal = zaal;
+    public void setReservatieDatumTijd(LocalDateTime reservatieDatumTijd) {
+        this.reservatieDatumTijd = reservatieDatumTijd;
     }
 
-    public Date getDatum() {
-        return datum;
+    public String getStatus() {
+        return status;
     }
 
-    public void setDatum(Date datum) {
-        this.datum = datum;
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getOpmerkingen() {
+        return opmerkingen;
+    }
+
+    public void setOpmerkingen(String opmerkingen) {
+        this.opmerkingen = opmerkingen;
     }
 }
