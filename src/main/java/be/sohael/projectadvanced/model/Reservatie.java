@@ -26,7 +26,6 @@ public class Reservatie {
     public Reservatie(Integer id, User user, Zaal zaal, LocalDateTime reservatieDatumTijd, String status, String opmerkingen) {
         this.id = id;
         this.user = user;
-       // this.zaal = zaal;
         this.reservatieDatumTijd = reservatieDatumTijd;
         this.status = status;
         this.opmerkingen = opmerkingen;
@@ -34,6 +33,14 @@ public class Reservatie {
 
     public Integer getId() {
         return id;
+    }
+
+    public Collection<Zaal> getZaal() {
+        return zaal;
+    }
+
+    public void setZaal(Collection<Zaal> zaal) {
+        this.zaal = zaal;
     }
 
     public void setId(Integer id) {
@@ -48,13 +55,6 @@ public class Reservatie {
         this.user = user;
     }
 
-   // public Zaal getZaal() {
-        //return zaal;
-   // }
-
-   // public void setZaal(Zaal zaal) {
-       // this.zaal = zaal;
-//}
 
     public LocalDateTime getReservatieDatumTijd() {
         return reservatieDatumTijd;
