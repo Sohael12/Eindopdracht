@@ -23,7 +23,7 @@ public class ReservatieController {
     @GetMapping("/reservatiedetails")
     public String venueList(org.springframework.ui.Model model) {
         final Iterable<Reservatie> allreservatie = reservatieRepositroy.findAll();
-        model.addAttribute("reservatie", allreservatie);
+        model.addAttribute("reservaties", allreservatie);
 
 
         return "reservatiedetails";

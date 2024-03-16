@@ -10,23 +10,25 @@
 <div class="container mt-5">
     <h2 class="mb-4">Reservaties</h2>
     <div class="row">
-        <!-- Itereer over elk reservatie-item -->
-        <div th:each="reservatieItem : ${reservatie}" class="col-md-4 mb-4">
+
+        <div th:each="reservaties : ${reservaties}" class="col-md-4 mb-4"> <!-- th:each moet zelfde naam hebben als de ${reservaties} zo werkt het -->
             <div class="card">
-                <!-- Voorkant van de kaart -->
+
                 <div class="card-inner card-front">
                     <div class="card-body">
-                        <h5 class="card-title">Reservatie ID: <span th:text="${reservatieItem.id}"></span></h5>
-                        <p class="card-text">Status: <span th:text="${reservatieItem.status}"></span></p>
+                        <h5 class="card-title">Reservatie ID: <span th:text="${reservaties.id}"></span></h5>
+                        <p class="card-text">Status: <span th:text="${reservaties.status}"></span></p>
                     </div>
                 </div>
-                <!-- Achterkant van de kaart -->
+
                 <div class="card-inner card-back">
                     <div class="card-body">
                         <h5 class="card-title">Opmerkingen:</h5>
-                        <p class="card-text" th:text="${reservatieItem.opmerkingen}"></p>
-                        <p class="card-text">User Naam: <span th:text="${reservatieItem.user.username}"></span></p>
-                        <p class="card-text">ZaalNaam Reservatie: <span th:text="${reservatieItem.zaal.zaalnaam}"></span></p>
+                        <p class="card-text" th:text="${reservaties.opmerkingen}"></p>
+                        <p class="card-text">User Naam: <span th:text="${reservaties.user.username}"></span></p>
+                        <p class="card-text">ZaalNaam Reservatie: <span th:text="${reservaties.zaal.zaalnaam}"></span></p>
+                        <p class="card-text">Prijs reservatie: <span th:text="${reservaties.zaal.getTarief()}"></span></p>
+
                     </div>
                 </div>
             </div>
