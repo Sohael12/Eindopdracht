@@ -32,6 +32,16 @@ VALUES
 
 
 
+INSERT INTO ZAALUSER_ZAALS  (USERS_ID,ZAALS_ID )
+VALUES
+    (1,6),
+    (2,4),
+    (3,5),
+    (4,5),
+    (5,3);
+
+
+
 
 
 
