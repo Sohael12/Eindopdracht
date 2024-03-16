@@ -1,7 +1,8 @@
 package be.sohael.projectadvanced.model;
 
 import jakarta.persistence.*;
-import org.hibernate.mapping.Collection;
+
+import java.util.Collection;
 
 
 @Entity @Table(name ="zaaluser")
@@ -15,7 +16,11 @@ public class User {
     private String lastName;
     private String email;
 
+    @OneToMany(mappedBy = "user")
+    private Collection<Reservatie> reservaties;
 
+    @ManyToMany
+    private Collection<Zaal> zaals;
 
     public User(){}
 
@@ -34,6 +39,14 @@ public class User {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Collection<Zaal> getZaals() {
+        return zaals;
+    }
+
+    public void setZaals(Collection<Zaal> zaals) {
+        this.zaals = zaals;
     }
 
     public String getUsername() {
@@ -79,4 +92,11 @@ public class User {
 
 
 
+    public Collection<Reservatie> getReservaties() {
+        return reservaties;
+    }
+
+    public void setReservaties(Collection<Reservatie> reservaties) {
+        this.reservaties = reservaties;
+    }
 }

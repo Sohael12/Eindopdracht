@@ -1,9 +1,6 @@
 package be.sohael.projectadvanced.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 import java.util.Collection;
 
@@ -20,6 +17,12 @@ public class Zaal {
     private String image;
 
     private boolean kleedkamers;
+
+    @OneToMany(mappedBy = "zaal")
+    private Collection<Reservatie> reservaties;
+
+    @ManyToMany(mappedBy = "zaals")
+    private Collection<User> users;
 
     public Zaal() {
     }
@@ -97,5 +100,25 @@ public class Zaal {
 
     public void setKleedkamers(boolean kleedkamers) {
         this.kleedkamers = kleedkamers;
+    }
+
+
+
+    public Collection<Reservatie> getReservaties() {
+        return reservaties;
+    }
+
+    public void setReservaties(Collection<Reservatie> reservaties) {
+        this.reservaties = reservaties;
+    }
+
+
+
+    public Collection<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Collection<User> users) {
+        this.users = users;
     }
 }

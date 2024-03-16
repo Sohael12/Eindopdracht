@@ -7,8 +7,40 @@
     <title>Title</title>
 </head>
 <div th:replace="~{fragments/header :: header}">Header</div>
-<body>
+<div class="container mt-5">
+    <h1 class="mb-4">Reservaties</h1>
+    <div class="row">
+        <!-- Itereer over elk reservatie-item -->
+        <div th:each="reservatie : ${reservatie}" class="col-md-4 mb-4">
+            <div class="card">
+                <!-- Voorkant van de kaart -->
+                <div class="card-inner card-front">
+                    <div class="card-body">
+                        <h5 class="card-title">Reservatie ID: <span th:text="${reservatie.id}"></span></h5>
+                        <p class="card-text">Status: <span th:text="${reservatie.status}"></span></p>
+                    </div>
+                </div>
+                <!-- Achterkant van de kaart -->
+                <div class="card-inner card-back">
+                    <div class="card-body">
+                        <h5 class="card-title">Opmerkingen:</h5>
+                        <p class="card-text" th:text="${reservatie.opmerkingen}"></p>
+                        <p class="card-text">User Naam: <span th:text="${reservatie.user.getUsername()}"></span></p>
+                        <p class="card-text">Zaal Naam: <span th:text="${reservatie.zaal.getZaalnaam()}"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-</body>
+<!-- Voeg de Bootstrap JS toe (optioneel, alleen nodig als je gebruik maakt van Bootstrap JavaScript-componenten) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+
 <div th:replace = "~{fragments/footer :: footer}">footer</div>
 </html>

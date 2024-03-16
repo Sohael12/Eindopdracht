@@ -22,13 +22,13 @@ VALUES
 
 
 
-INSERT INTO Reservatie (id, status, opmerkingen)
+INSERT INTO Reservatie (id, status, opmerkingen ,user_Id,zaal_ID)
 VALUES
-    (1,  'Bevestigd', 'Geen opmerkingen'),
-    (2,  'In afwachting', 'Gelieve te bevestigen'),
-    (3,  'Geannuleerd', 'Klant heeft geannuleerd'),
-    (4,  'Bevestigd', 'Geen opmerkingen'),
-    (5, 'In afwachting', 'Wacht op bevestiging van manager');
+    (1,  'Bevestigd', 'Geen opmerkingen',2,6),
+    (2,  'In afwachting', 'Gelieve te bevestigen',1,4),
+    (3,  'Geannuleerd', 'Klant heeft geannuleerd',1,5),
+    (4,  'Bevestigd', 'Geen opmerkingen',3,10),
+    (5, 'In afwachting', 'Wacht op bevestiging van manager',2,3);
 
 
 
