@@ -20,34 +20,7 @@ h2 {
     margin-bottom: 30px;
 }
 /* -----------------------------------Opmaak voor  home page ----------------------------- */
-.card {
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
 
-
-.card-img-top {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 200px;
-    object-fit: cover;
-}
-
-
-.card-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-}
-
-
-.card-text {
-    font-size: 1rem;
-    color: #555;
-}
 .hero-container {
     display: flex;
     align-items: center;
@@ -105,11 +78,54 @@ h2 {
     transform: scale(1.05);
 }
 
+.btn-3d {
+    position: relative;
+    transition: transform 0.3s;
+    transform-style: preserve-3d;
+}
+
+.btn-3d:hover {
+    transform: translateZ(10px) rotateX(10deg);
+}
+
+.btn-3d:active {
+    transform: translateZ(-5px) rotateX(-5deg);
+}
 
 
 
 
 /* -----------------------------------zaal pagina opmaak ----------------------*/
+.card {
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+}
+
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
 .card {
     border: none;
     border-radius: 15px;
@@ -313,7 +329,7 @@ button:hover {
 /*-------------------------------------------------reservadiedetialspagina --------------------------*/
 
 
-/*-------------------------------------------------admin   zaaleditpage --------------------------*/
+/*-------------------------------------------------admin  zaaleditpage --------------------------*/
 
 .buttonlink{
   margin-top: 20px;
@@ -367,6 +383,29 @@ button:hover {
 
 
 /*--------------------------loginpagina --------------------------*/
+/* Button hover effect */
+.btn-floating {
+    transition: transform 0.3s ease;
+}
+
+.btn-floating:hover {
+    transform: translateY(-3px);
+}
+
+/* Additional styles for better button appearance */
+.btn-floating {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border: none;
+    border-radius: 50%;
+    padding: 0.75rem;
+    line-height: 0;
+}
+
+.btn-floating:focus {
+    outline: none;
+}
+
+
 .container-fluid {
     padding-top: 50px;
 }

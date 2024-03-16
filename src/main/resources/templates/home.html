@@ -11,24 +11,25 @@
 
 <body>
 
-
 <section class="hero">
     <div class="hero-container">
         <div class="column-left">
             <div class="hero-text">
                 <h1>Welkom bij Zaalfindr!</h1>
                 <p>Zoek naar zalen in Antwerpen</p>
-                <a th:href="@{/zalen}">
-                    <button>Get Started</button>
+                <a href="/zalen">
+                    <button class="btn btn-primary btn-3d">Get Started</button>
                 </a>
             </div>
         </div>
         <div class="column-right">
-            <img th:src="@{/images/zaalfoto.jpg}" alt="Zaal 3">
+            <img src="/images/zaalfoto.jpg" class="hero-image" alt="Zaal 3">
         </div>
     </div>
 </section>
-
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 <div th:replace = "~{fragments/footer :: footer}">footer</div>

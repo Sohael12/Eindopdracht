@@ -51,12 +51,34 @@
                                     </p>
                                     <p><strong>Locatie:</strong> <span th:text="${zalen.getLocatie()}"></span></p>
                                     <p><strong>Tarief:</strong> <span th:text="'€ ' + ${zalen.getTarief()}"></span></p>
-                                    <a th:if="${zalen}" th:href="@{/reservatiedetails}"
-                                       class="btn btn-primary btn-block mt-4">Reserveer deze zaal</a>
-                                    <!-- Added the euro symbol here -->
+
                                 </div>
                             </div>
                         </div>
+                        <form action="/reserveren" method="post">
+                            <div class="form-group">
+                                <label for="zaal">Zaal:</label>
+                                <select class="form-control" id="zaal" name="zaal">
+                                    <option th:each="zaal : ${zalen}" th:value="${zalen.getId()}"
+                                            th:text="${zalen.getZaalnaam()}"></option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="tijd">Tijd:</label>
+                                <select class="form-control" id="tijd" name="tijd">
+                                    <option th:each="tijd : ${zalen.getBeschikbareTijden()}" th:value="${tijd}"
+                                            th:text="${tijd}"></option><!-- werkt niet -->
+                                </select>
+                            </div>
+
+                            <a th:if="${zalen}" th:href="@{/reservatiedetails}" class="btn btn-primary btn-block mt-4">Reserveer
+                                deze zaal</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
                     </div>
                     <div th:unless="${zalen}" class="text-center mt-4">
                         <p class="text-muted">Geen zaal gevonden.</p>

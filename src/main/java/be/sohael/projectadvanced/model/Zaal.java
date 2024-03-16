@@ -3,6 +3,7 @@ package be.sohael.projectadvanced.model;
 import jakarta.persistence.*;
 
 import java.util.Collection;
+import java.util.List;
 
 
 @Entity
@@ -16,6 +17,9 @@ public class Zaal {
     private double tarief;
     private String image;
 
+    @ElementCollection
+    private List<String> beschikbareTijden;
+
     private boolean kleedkamers;
 
     @OneToMany(mappedBy = "zaal")
@@ -27,7 +31,9 @@ public class Zaal {
     public Zaal() {
     }
 
-    public Zaal(Integer id, String zaalnaam, String locatie, int capaciteit, String beschrijving, double tarief, String image, boolean kleedkamers) {
+
+
+    public Zaal(Integer id, String zaalnaam,List<String> beschikbareTijden, String locatie, int capaciteit, String beschrijving, double tarief, String image, boolean kleedkamers) {
         this.id = id;
         this.zaalnaam = zaalnaam;
         this.locatie = locatie;
@@ -36,7 +42,9 @@ public class Zaal {
         this.tarief = tarief;
         this.image = image;
         this.kleedkamers = kleedkamers;
+        this.beschikbareTijden = beschikbareTijden;
     }
+
 
     public Integer getId() {
         return id;
@@ -48,6 +56,14 @@ public class Zaal {
 
     public String getZaalnaam() {
         return zaalnaam;
+    }
+
+    public List<String> getBeschikbareTijden() {
+        return beschikbareTijden;
+    }
+
+    public void setBeschikbareTijden(List<String> beschikbareTijden) {
+        this.beschikbareTijden = beschikbareTijden;
     }
 
     public void setZaalnaam(String zaalnaam) {
