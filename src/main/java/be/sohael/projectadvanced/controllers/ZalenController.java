@@ -53,16 +53,18 @@ public class ZalenController {
     public String zalenfilter(Model model,
                                   @RequestParam(required = false) Integer mintarief,
                                   @RequestParam(required = false) Integer maxtarief,
-                                  @RequestParam(required = false) Integer capaciteit,
-                                  @RequestParam(required = false) Boolean kleedkamers ){
+                                  @RequestParam(required = false) Boolean kleedkamers,
+                                  @RequestParam(required = false) Integer mincapaciteit,
+                                  @RequestParam(required = false) Integer maxcapaciteit){
 
-        logger.info(String.format("zalenfilter -- min=%d, max=%d , cap=%d" , mintarief, maxtarief,capaciteit ,kleedkamers ));
-        List<Zaal> allzalens = zalenRepository.findZalenByTariefRange(mintarief,maxtarief,capaciteit,kleedkamers);
+        logger.info(String.format("zalenfilter -- min=%d, max=%d , cap=%d" , mintarief, maxtarief,kleedkamers,mincapaciteit ,maxcapaciteit));
+        List<Zaal> allzalens = zalenRepository.findbyfilter(mintarief,maxtarief,kleedkamers,mincapaciteit,maxcapaciteit);
 
         model.addAttribute("mintarief", maxtarief);
         model.addAttribute("maxtarief", maxtarief);
-        model.addAttribute("capaciteit", capaciteit);
         model.addAttribute("kleedkamers", kleedkamers);
+        model.addAttribute("mincapaciteit", mincapaciteit);
+        model.addAttribute("maxcapaciteit", maxcapaciteit);
         model.addAttribute("showFilters", true);
         model.addAttribute("zalens", allzalens);
         model.addAttribute("totalZalen", allzalens.size());

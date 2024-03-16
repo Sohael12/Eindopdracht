@@ -22,15 +22,17 @@ public interface ZaalRepository extends CrudRepository<Zaal,Integer>{
 
     @Query("SELECT z FROM Zaal z WHERE" +
             " (:minTarief IS NULL OR z.tarief >= :minTarief) AND " +
-            " (:capaciteit IS NULL OR z.capaciteit = :capaciteit) AND " +
             " (:maxTarief IS NULL OR z.tarief <= :maxTarief)AND "+
+            " (:mincapaciteit IS NULL OR z.tarief >= :mincapaciteit) AND " +
+            " (:maxcapaciteit IS NULL OR z.tarief <= :maxcapaciteit)AND "+
              "(:kleedkamers IS NULL OR z.kleedkamers = :kleedkamers)")
 
 
-    List<Zaal> findZalenByTariefRange(
+    List<Zaal> findbyfilter(
             @Param("minTarief") Integer minTarief,
             @Param("maxTarief") Integer maxTarief,
-            @Param("capaciteit") Integer capaciteit,
-            @Param("kleedkamers") Boolean kleedkamers);
+            @Param("kleedkamers") Boolean kleedkamers,
+            @Param("mincapaciteit") Integer mincapaciteit,
+            @Param("maxcapaciteit") Integer maxcapaciteit);
 
 }

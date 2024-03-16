@@ -34,16 +34,14 @@
                 <label for="mintarief" class="form-label">Minimum Tarief:</label>
                 <div class="input-group">
                     <span class="input-group-text">€</span>
-                    <input type="number" id="mintarief" name="mintarief" class="form-control"
-                           th:value="${mintarief}" step="1">
+                    <input type="number" id="mintarief" name="mintarief" class="form-control" th:value="${mintarief}" step="1">
                 </div>
             </div>
             <div class="mb-3">
                 <label for="maxtarief" class="form-label">Maximum Tarief:</label>
                 <div class="input-group">
                     <span class="input-group-text">€</span>
-                    <input type="number" id="maxtarief" name="maxtarief" class="form-control"
-                           th:value="${maxtarief}" step="1">
+                    <input type="number" id="maxtarief" name="maxtarief" class="form-control" th:value="${maxtarief}" step="1">
                 </div>
             </div>
             <h3>Kleedkamers</h3>
@@ -51,11 +49,20 @@
                 <input type="checkbox" id="kleedkamers" name="kleedkamers" class="form-check-input" th:checked="${kleedkamers}">
                 <label for="kleedkamers" class="form-check-label">Kleedkamers beschikbaar</label>
             </div>
+            <h3>Capaciteit</h3>
+            <div class="mb-3">
+                <label for="mincapaciteit" class="form-label">Minimale Capaciteit:</label>
+                <input type="number" id="mincapaciteit" name="mincapaciteit" class="form-control" th:value="${mincapaciteit}" step="1">
+            </div>
+            <div class="mb-3">
+                <label for="maxcapaciteit" class="form-label">Maximale Capaciteit:</label>
+                <input type="number" id="maxcapaciteit" name="maxcapaciteit" class="form-control" th:value="${maxcapaciteit}" step="1">
+            </div>
         </form>
     </div>
 </div>
 
-<div class="container mt-4">
+    <div class="container mt-4">
     <h2>Zalen</h2>
     <div class="row">
         <div th:each="zaal : ${zalens}" class="col-lg-3 col-md-4 col-sm-6 mb-4">
@@ -70,9 +77,13 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
+<footer>
+    <div th:replace="~{fragments/footer :: footer}">footer</div>
 
-<div th:replace="~{fragments/footer :: footer}">footer</div>
+</footer>
+
+
 </body>
 
 
