@@ -57,7 +57,7 @@ public class ZalenController {
                                   @RequestParam(required = false) Integer mincapaciteit,
                                   @RequestParam(required = false) Integer maxcapaciteit){
 
-        logger.info(String.format("zalenfilter -- min=%d, max=%d , cap=%d" , mintarief, maxtarief,kleedkamers,mincapaciteit ,maxcapaciteit));
+        logger.info(String.format("zalenfilter -- min=%d, max=%d ," , mintarief, maxtarief,kleedkamers,mincapaciteit ,maxcapaciteit));
         List<Zaal> allzalens = zalenRepository.findbyfilter(mintarief,maxtarief,kleedkamers,mincapaciteit,maxcapaciteit);
 
         model.addAttribute("mintarief", maxtarief);
