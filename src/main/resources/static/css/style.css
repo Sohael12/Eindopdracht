@@ -10,8 +10,16 @@ h1 {
     margin-bottom: 10px;
 
 }
-
-/* Opmaak voor  home page  */
+h2 {
+    font-family: Arial, sans-serif;
+    font-size: 3rem;
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+/* -----------------------------------Opmaak voor  home page ----------------------------- */
 .card {
     margin-bottom: 20px;
     border: none;
@@ -40,28 +48,79 @@ h1 {
     font-size: 1rem;
     color: #555;
 }
-
-
 .hero-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 95vh;
-    padding: 3rem calc((100vw - 1300px) / 2);
-
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
 }
 
 .column-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    color: #000;
-
+    max-width: 50%;
 }
 
-.column-left h1 {
+.column-right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Toegevoegde schaduw */
+    transition: transform 0.3s ease-in-out;
+}
 
-    font-size: 3rem;
+.column-right img:hover {
+    transform: scale(1.05);
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.hero-text button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #343a40;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.hero-text button:hover {
+    background-color: #343a40;
+}
+.hero-image {
+    transition: transform 0.3s ease-in-out;
+}
+
+.hero-image:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+
+/* -----------------------------------zaal pagina opmaak ----------------------*/
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 button {
@@ -79,14 +138,6 @@ button:hover {
     background: #000000;
 
 }
-
-.column-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0rem 2rem;
-}
-/* zaal pagina opmaak */
 .button {
     display: inline-block;
     padding: 10px 20px;
@@ -312,15 +363,26 @@ button:hover {
 
 
 /*--------------------------loginpagina --------------------------*/
-.divider:after,
-.divider:before {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: #eee;
+.container-fluid {
+    padding-top: 50px;
 }
-.h-custom {
-    height: calc(100% - 73px);
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-floating {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+.form-control {
+    border-radius: 10px;
+    border: 1px solid #ced4da;
 }
 @media (max-width: 450px) {
     .h-custom {

@@ -1,8 +1,12 @@
 package be.sohael.projectadvanced.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 import java.util.Collection;
+
 
 @Entity
 public class Zaal {
@@ -16,10 +20,6 @@ public class Zaal {
     private String image;
 
     private boolean kleedkamers;
-    @ManyToOne(fetch = FetchType.LAZY)
-    private User user;
-    @ManyToMany(mappedBy = "zaal")
-    private Collection<Reservatie> reservaties;
 
     public Zaal() {
     }
@@ -33,14 +33,6 @@ public class Zaal {
         this.tarief = tarief;
         this.image = image;
         this.kleedkamers = kleedkamers;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public Integer getId() {
@@ -105,14 +97,5 @@ public class Zaal {
 
     public void setKleedkamers(boolean kleedkamers) {
         this.kleedkamers = kleedkamers;
-    }
-
-
-    public Collection<Reservatie> getReservaties() {
-        return reservaties;
-    }
-
-    public void setReservaties(Collection<Reservatie> reservaties) {
-        this.reservaties = reservaties;
     }
 }
