@@ -4,14 +4,91 @@ body {
     padding: 0;
 }
 
-h1 {
+h2{
+    font-family: Arial, sans-serif;
+    font-size: 3rem;
+    color: #333;
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+/*--------------------------------- Opmaak voor  home page  ----------------*/
+
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.column-left {
+    max-width: 50%;
+}
+
+.column-right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Toegevoegde schaduw */
+    transition: transform 0.3s ease-in-out;
+}
+
+.column-right img:hover {
+    transform: scale(1.05);
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.hero-text button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #343a40;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.hero-text button:hover {
+    background-color: #666666;
+}
+
+button {
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    border: none;
+    color: #ffffff;
+    background: rgb(77, 77, 77);
+    cursor: pointer;
+    margin-left: 20px;
 
 }
 
-/* Opmaak voor  home page  */
+button:hover {
+    background: #000000;
+
+}
+
+.column-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 2rem;
+}
+/*------------------------------------ zaal pagina opmaak ----------------------*/
 .card {
     margin-bottom: 20px;
     border: none;
@@ -41,52 +118,6 @@ h1 {
     color: #555;
 }
 
-
-.hero-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 95vh;
-    padding: 3rem calc((100vw - 1300px) / 2);
-
-}
-
-.column-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    color: #000;
-
-}
-
-.column-left h1 {
-
-    font-size: 3rem;
-}
-
-button {
-    padding: 1rem 3rem;
-    font-size: 1rem;
-    border: none;
-    color: #ffffff;
-    background: rgb(77, 77, 77);
-    cursor: pointer;
-    margin-left: 20px;
-
-}
-
-button:hover {
-    background: #000000;
-
-}
-
-.column-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0rem 2rem;
-}
-/* zaal pagina opmaak */
 .button {
     display: inline-block;
     padding: 10px 20px;
