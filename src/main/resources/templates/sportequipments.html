@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+
+    <title>Title</title>
+</head>
+<div th:replace="~{fragments/header :: header}">Header</div>
+<body>
+<div class="filter" th:unless="${showFilters}">
+    <a class="filters" th:href="@{/sportequipments/filter}">
+        <button class="button">Filter</button>
+    </a>
+</div>
+
+<div class="filter" th:if="${showFilters}">
+    <a class="filters" th:href="@{/sportequipments}">
+        <button class="button">Go back</button>
+    </a>
+</div>
+<div class="container mt-4">
+    <h2>Equipment</h2>
+    <div class="row">
+        <div th:each="equipment : ${equipments}" class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card h-100">
+                <a class="buttonlook mediumButton" th:href="@{|/zalendetails/${equipment.id}|}">
+                    <!-- Link naar de detailspagina van het artikel -->
+                    <img th:src="${equipment.image}" alt="Equipment Image" class="card-img-top">
+                    <!-- Afbeelding van het equipment -->
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Merk: <span th:text="${equipment.merk}"></span></h5>
+                    <!-- Merknaam -->
+                    <p class="card-text">Sport: <span th:text="${equipment.sport}"></span></p>
+                    <!-- Sport -->
+                    <p class="card-text">Artikel: <span th:text="${equipment.artikel}"></span></p>
+                    <!-- Artikel -->
+                    <p class="card-text">Huurprijs: <span th:text="'€ ' + ${equipment.getPrijs()}"></span></p>
+                    <!-- Huurprijs -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+<div th:replace="~{fragments/footer :: footer}">footer</div>
+</html>

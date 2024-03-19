@@ -41,39 +41,16 @@ VALUES
     (5,3);
 
 
-INSERT INTO BICYCLE_PARKING(ID, NAME, STREET, NUMBER, PRICE_PER_DAY_IN_EUR, RAIN_PROOF, GUARDED, NUMBER_OF_PLACES,
-                            NUMBER_OF_PLACES_FREE)
-VALUES (1, 'Centraal Park Fietsenstalling', 'Brusselsesteenweg', '123', 5.99, true, false, 100, 50);
-
-INSERT INTO BICYCLE_PARKING (ID, NAME, STREET, NUMBER, PRICE_PER_DAY_IN_EUR, RAIN_PROOF, GUARDED, NUMBER_OF_PLACES,
-                             NUMBER_OF_PLACES_FREE)
-VALUES (2, 'Fietsen Haven', 'Oscar Van Kesbeeckstraat', '45', 8.99, false, true, 80, 10);
-
-INSERT INTO BICYCLE_PARKING (ID, NAME, STREET, NUMBER, PRICE_PER_DAY_IN_EUR, RAIN_PROOF, GUARDED, NUMBER_OF_PLACES,
-                             NUMBER_OF_PLACES_FREE)
-VALUES (3, 'Groenweg Fietsenstalling', 'Leuvensesteenweg', '79', 6.50, true, false, 120, 80);
-
-INSERT INTO BICYCLE_PARKING (ID, NAME, STREET, NUMBER, PRICE_PER_DAY_IN_EUR, RAIN_PROOF, GUARDED, NUMBER_OF_PLACES,
-                             NUMBER_OF_PLACES_FREE)
-VALUES (4, 'Zonsondergang Fietsenwinkel', 'Antwerpsesteenweg', '11', 9.25, false, true, 60, 30);
-
-INSERT INTO BICYCLE_PARKING (ID, NAME, STREET, NUMBER, PRICE_PER_DAY_IN_EUR, RAIN_PROOF, GUARDED, NUMBER_OF_PLACES,
-                             NUMBER_OF_PLACES_FREE)
-VALUES (5, 'Fiets Paleis', 'Battelsesteenweg', '123', 7.75, true, true, 150, 100);
-
-INSERT INTO BICYCLE_PARKING (ID, NAME, STREET, NUMBER, PRICE_PER_DAY_IN_EUR, RAIN_PROOF, GUARDED, NUMBER_OF_PLACES,
-                             NUMBER_OF_PLACES_FREE)
-VALUES (6, 'Wielhuis Fietsenstalling', 'Tervuursesteenweg', '115', 4.99, false, true, 90, 20);
-
-INSERT INTO BICYCLE_PARKING (ID, NAME, STREET, NUMBER, PRICE_PER_DAY_IN_EUR, RAIN_PROOF, GUARDED, NUMBER_OF_PLACES,
-                             NUMBER_OF_PLACES_FREE)
-VALUES (7, 'Rivierpark Fietsen Haven', 'Stationsstraat', '17', 6.75, true, true, 200, 150);
-
-INSERT INTO BICYCLE_PARKING (ID, NAME, STREET, NUMBER, PRICE_PER_DAY_IN_EUR, RAIN_PROOF, GUARDED, NUMBER_OF_PLACES,
-                             NUMBER_OF_PLACES_FREE)
-VALUES (8, 'Gouden Poort Fiets Stop', 'Hanswijkstraat', '9', 8.50, true, false, 70, 0);
-
-
+INSERT INTO equipment (id, artikel, prijs, sport, merk, beschikbaar, image)
+VALUES
+    (1, 'Voetbal', 5.0, 'Voetbal', 'Adidas', true, '/images/Voetbal.jpg'),
+    (2, 'Tennisracket', 10.0, 'Tennis', 'Wilson', true, '/images/Tennisracket.jpg'),
+    (3, 'Yoga Mat', 4.0, 'Yoga', 'Gaiam', true, '/images/Yoga.jpg'),
+    (5, 'Basketbal', 6.0, 'Basketbal', 'Spalding', true, '/images/Basketbal.jpg'),
+    (8, 'Squashracket', 9.0, 'Squash', 'Head', true, '/images/Squashracket.jpg'),
+    (9, 'Badmintonracket', 7.0, 'Badminton', 'Yonex', true, '/images/Badmintonracket.jpg'),
+    (10, 'Bokshandschoenen', 11.0, 'Boksen', 'Everlast', true, '/images/Bokshandschoenen.jpg'),
+    (11, 'Hockey stick', 8.0, 'Hockey', 'Grays', true, '/images/Hockeystick.jpg');
 
 
 
