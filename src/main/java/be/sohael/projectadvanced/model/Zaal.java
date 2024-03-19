@@ -33,17 +33,6 @@ public class Zaal {
 
 
 
-    public Zaal(Integer id, String zaalnaam,List<String> beschikbareTijden, String locatie, int capaciteit, String beschrijving, double tarief, String image, boolean kleedkamers) {
-        this.id = id;
-        this.zaalnaam = zaalnaam;
-        this.locatie = locatie;
-        this.capaciteit = capaciteit;
-        this.beschrijving = beschrijving;
-        this.tarief = tarief;
-        this.image = image;
-        this.kleedkamers = kleedkamers;
-        this.beschikbareTijden = beschikbareTijden;
-    }
 
 
     public Integer getId() {

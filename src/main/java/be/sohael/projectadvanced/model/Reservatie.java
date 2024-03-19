@@ -24,12 +24,7 @@ public class Reservatie {
     public Reservatie() {
     }
 
-    public Reservatie(Integer id, LocalDateTime reservatieDatumTijd, String status, String opmerkingen) {
-        this.id = id;
-        this.reservatieDatumTijd = reservatieDatumTijd;
-        this.status = status;
-        this.opmerkingen = opmerkingen;
-    }
+
 
     public Integer getId() {
         return id;
