@@ -20,6 +20,30 @@
         <button class="button">Go back</button>
     </a>
 </div>
+<div class="containertarief">
+    <form>
+        <div class="mb-3">
+            <input type="submit" value="Zoeken" class="btn btn-primary">
+        </div>
+        <h3>Tarief</h3>
+        <div class="mb-3">
+            <label for="minprijs" class="form-label">Minimum Tarief:</label>
+            <div class="input-group">
+                <span class="input-group-text">€</span>
+                <input type="number" id="minprijs" name="minprijs" class="form-control" th:value="${minprijs}" step="1">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="maxprijs" class="form-label">Maximum Tarief:</label>
+            <div class="input-group">
+                <span class="input-group-text">€</span>
+                <input type="number" id="maxprijs" name="maxtarief" class="form-control" th:value="${maxprijs}" step="1">
+            </div>
+        </div>
+    </form>
+</div>
+
+
 <div class="container mt-4">
     <h2>Equipment</h2>
     <div class="row">
