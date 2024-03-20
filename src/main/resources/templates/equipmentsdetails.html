@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+    <title>Title</title>
+</head>
+<div th:replace="~{fragments/header :: header}">Header</div>
+<body>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <img th:src="${equipment.image}" alt="Equipment Image" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Merk: <span th:text="${equipment.merk}">Equipment Merk</span></h5>
+                    <p class="card-text">Sport: <span th:text="${equipment.sport}">Equipment Sport</span></p>
+                    <p class="card-text">Artikel: <span th:text="${equipment.artikel}">Equipment Artikel</span></p>
+                    <p class="card-text">Huurprijs: <span th:text="'€ ' + ${equipment.getPrijs()}">€ Equipment Prijs</span></p>
+                    <a href="#" class="btn btn-primary">Huur nu</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+
+
+<div th:replace = "~{fragments/footer :: footer}">footer</div>
+</html>
