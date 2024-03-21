@@ -12,13 +12,13 @@ VALUES
     (10, 'Sporthal Kiel - Antwerpen', 'Emiel Vloorsstraat 2, 2020 Antwerpen', 22, 'In sporthal De Rode Loop kan je terecht voor basketbal, handbal, korfbal, tennis, volleybal en zaalvoetbal. In de vechtsportzaal kan je onder meer judo, karate en jiu jitsu beoefenen.', '/images/Sporthal Kiel.jpg', 14, true),
     (11, 'Sporthal Fort VIII Hoboken', 'Hoofdfrontweg 9, 2660 Hoboken', 35, 'In deze sporthal kan je terecht voor atletiek, badminton, baseball, handbal, korfbal, volleybal en zaalvoetbal.', '/images/Sporthal-Fort-VIII-2.jpg', 16, true),
     (12, 'Sporthal Wilrijkse Plein - Antwerpen', 'Vogelzanglaan 6, 2020 Antwerpen', 35, 'In deze sporthal kunt u terecht voor basketbal, volleybal, zaalvoetbal, korfbal, handbal en badminton. Voor turnen en bewegingsonderwijs moet u in de kleine zaal zijn.', '/images/wilrijkseplein.jpg', 18, false);
-INSERT INTO zaaluser (id, username, password, email)
+INSERT INTO zaaluser (id, username, password, email, firstname, lastname)
 VALUES
-    (1, 'gebruiker1', 'wachtwoord1',  'gebruiker1@example.com'),
-    (2, 'gebruiker2', 'wachtwoord2', 'gebruiker2@example.com'),
-    (3, 'gebruiker3', 'wachtwoord3', 'gebruiker3@example.com'),
-    (4, 'gebruiker4', 'wachtwoord4',  'gebruiker4@example.com'),
-    (5, 'gebruiker5', 'wachtwoord5', 'gebruiker5@example.com');
+    (1, 'gebruiker1', 'wachtwoord1', 'gebruiker1@example.com', 'Voornaam1', 'Achternaam1'),
+    (2, 'gebruiker2', 'wachtwoord2', 'gebruiker2@example.com', 'Voornaam2', 'Achternaam2'),
+    (3, 'gebruiker3', 'wachtwoord3', 'gebruiker3@example.com', 'Voornaam3', 'Achternaam3'),
+    (4, 'gebruiker4', 'wachtwoord4', 'gebruiker4@example.com', 'Voornaam4', 'Achternaam4'),
+    (5, 'gebruiker5', 'wachtwoord5', 'gebruiker5@example.com', 'Voornaam5', 'Achternaam5');
 
 
 

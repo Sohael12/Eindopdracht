@@ -51,6 +51,7 @@ public class EquipmentController {
         model.addAttribute("maxprijs", maxprijs);
         model.addAttribute("equipmens", allequiments);
         model.addAttribute("showFilters", true);
+        model.addAttribute("totalequipmen", allequiments.size());
         return "sportequipments";
     }
 }
