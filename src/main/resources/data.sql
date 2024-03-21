@@ -23,7 +23,7 @@ VALUES
 
 
 
-INSERT INTO Reservatie (id, status, opmerkingen ,user_Id,sporthall_ID)
+INSERT INTO Reservation (id, status, opmerkingen ,user_Id,sporthall_ID)
 VALUES
     (1,  'Bevestigd', 'Geen opmerkingen',2,6),
     (2,  'In afwachting', 'Gelieve te bevestigen',4,4),

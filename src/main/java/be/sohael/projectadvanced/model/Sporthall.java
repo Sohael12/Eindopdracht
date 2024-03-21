@@ -23,7 +23,7 @@ public class Sporthall {
     private boolean kleedkamers;
 
     @OneToMany(mappedBy = "sporthall")
-    private Collection<Reservatie> reservaties;
+    private Collection<Reservation> reservations;
 
     @ManyToMany(mappedBy = "sporthalls")
     private Collection<User> users;
@@ -31,9 +31,13 @@ public class Sporthall {
     public Sporthall() {
     }
 
+    public Collection<Reservation> getReservations() {
+        return reservations;
+    }
 
-
-
+    public void setReservations(Collection<Reservation> reservations) {
+        this.reservations = reservations;
+    }
 
     public Integer getId() {
         return id;
@@ -109,13 +113,7 @@ public class Sporthall {
 
 
 
-    public Collection<Reservatie> getReservaties() {
-        return reservaties;
-    }
 
-    public void setReservaties(Collection<Reservatie> reservaties) {
-        this.reservaties = reservaties;
-    }
 
 
 

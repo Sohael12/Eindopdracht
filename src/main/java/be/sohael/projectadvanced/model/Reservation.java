@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 
 @Entity
-public class Reservatie {
+public class Reservation {
     @Id
     private Integer id;
 
@@ -20,7 +20,7 @@ public class Reservatie {
     @ManyToOne(fetch = FetchType.LAZY) // deze doe je erbij voor  je begint eerst hier bij manytomany  dan bij venue manytoone j zo zeg je wat he is ook getters en setters vergeet niet setters getters  er bij te doen   //
     private User user;
 
-    public Reservatie() {
+    public Reservation() {
     }
 
 

@@ -18,7 +18,7 @@ public class User {
     private String image;
 
     @OneToMany(mappedBy = "user")
-    private Collection<Reservatie> reservaties;
+    private Collection<Reservation> reservations;
 
     @ManyToMany
     private Collection<Sporthall> sporthalls;
@@ -90,14 +90,11 @@ public class User {
         this.email = email;
     }
 
-
-
-
-    public Collection<Reservatie> getReservaties() {
-        return reservaties;
+    public Collection<Reservation> getReservations() {
+        return reservations;
     }
 
-    public void setReservaties(Collection<Reservatie> reservaties) {
-        this.reservaties = reservaties;
+    public void setReservations(Collection<Reservation> reservations) {
+        this.reservations = reservations;
     }
 }
