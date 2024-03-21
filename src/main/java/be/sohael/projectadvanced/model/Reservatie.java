@@ -3,7 +3,6 @@ package be.sohael.projectadvanced.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
-import java.util.Collection;
 
 
 @Entity
@@ -16,7 +15,7 @@ public class Reservatie {
     private String opmerkingen;
 
     @ManyToOne(fetch = FetchType.LAZY) // deze doe je erbij voor  je begint eerst hier bij manytomany  dan bij venue manytoone j zo zeg je wat he is ook getters en setters vergeet niet setters getters  er bij te doen   //
-    private Zaal zaal;
+    private Sporthall sporthall;
 
     @ManyToOne(fetch = FetchType.LAZY) // deze doe je erbij voor  je begint eerst hier bij manytomany  dan bij venue manytoone j zo zeg je wat he is ook getters en setters vergeet niet setters getters  er bij te doen   //
     private User user;
@@ -43,12 +42,12 @@ public class Reservatie {
         return reservatieDatumTijd;
     }
 
-    public Zaal getZaal() {
-        return zaal;
+    public Sporthall getSporthall() {
+        return sporthall;
     }
 
-    public void setZaal(Zaal zaal) {
-        this.zaal = zaal;
+    public void setSporthall(Sporthall sporthall) {
+        this.sporthall = sporthall;
     }
 
     public User getUser() {

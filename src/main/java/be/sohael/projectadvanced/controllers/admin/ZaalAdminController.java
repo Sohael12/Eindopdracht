@@ -1,7 +1,7 @@
 package be.sohael.projectadvanced.controllers.admin;
 
-import be.sohael.projectadvanced.model.Zaal;
-import be.sohael.projectadvanced.repositories.ZaalRepository;
+import be.sohael.projectadvanced.model.Sporthall;
+import be.sohael.projectadvanced.repositories.SporthallRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,13 +18,13 @@ public class ZaalAdminController {
         private static final Logger logger = LoggerFactory.getLogger(ZaalAdminController.class);
 
         @Autowired
-        private ZaalRepository zaalRepository;
+        private SporthallRepository zaalRepository;
 
         @GetMapping("/zaaledit/{id}")
         public String partyEdit(@PathVariable Integer id, Model model) {
             logger.info("Executing partyEdit method for id: {}", id);
             // Haal het Party-object op uit de database
-            Zaal zalen = zaalRepository.findById(id).orElse(null);
+            Sporthall zalen = zaalRepository.findById(id).orElse(null);
             // Zet het Party-object klaar in het MVC-model
             model.addAttribute("zalen", zalen);
             return "admin/zaaledit";//
@@ -32,9 +32,9 @@ public class ZaalAdminController {
         }
 
         @ModelAttribute("zaal")
-        public Zaal findParty(@PathVariable(required = false) Integer id) {
+        public Sporthall findParty(@PathVariable(required = false) Integer id) {
             logger.info("findParty" + id);
-            Optional<Zaal> optionalZaal = zaalRepository.findById(id);
+            Optional<Sporthall> optionalZaal = zaalRepository.findById(id);
             if (optionalZaal.isPresent())
                 return optionalZaal.get();
             return null;
@@ -42,7 +42,7 @@ public class ZaalAdminController {
 
 
         @PostMapping("/zaaledit/{id}") // het is een post//
-        public String partyEdit(@PathVariable Integer id, Zaal zalen) {
+        public String partyEdit(@PathVariable Integer id, Sporthall zalen) {
             logger.info("zaaleditpost" + id + "-- new name=" + zalen.getZaalnaam());
             zaalRepository.save(zalen);
             return "admin/zaaledit";

@@ -1,4 +1,4 @@
-INSERT INTO zaal (id, Zaalnaam, locatie, capaciteit, beschrijving, image, tarief, kleedkamers)
+INSERT INTO Sporthall (id, Zaalnaam, locatie, capaciteit, beschrijving, image, tarief, kleedkamers)
 VALUES
     (1, 'Sporthal Luchtbal', 'Santiagostraat 2, 2030 Antwerpen', 60, 'In deze sporthal kan je terecht voor badminton, baseball, basketbal, handbal, volleybal, zaalvoetbal en vechtsport.', '/images/sporthalluchtbal.jpg', 8, true),
     (2, 'Sporthal Plantin Moretus - Borgerhout', 'Plantin en Moretuslei 343, 2140 Antwerpen', 60, 'In deze sporthal kan je terecht voor badminton, baseball, basketbal, gehandicaptensport, handbal, korfbal, tennis, volleybal en zaalvoetbal.', 'https://i0.wp.com/www.regionoordkop.nl/wp-content/uploads/2023/05/20230512_2-scaled-e1684045880864.jpg?fit=1920%2C1156&ssl=1', 12, true),
@@ -23,7 +23,7 @@ VALUES
 
 
 
-INSERT INTO Reservatie (id, status, opmerkingen ,user_Id,zaal_ID)
+INSERT INTO Reservatie (id, status, opmerkingen ,user_Id,sporthall_ID)
 VALUES
     (1,  'Bevestigd', 'Geen opmerkingen',2,6),
     (2,  'In afwachting', 'Gelieve te bevestigen',4,4),
@@ -34,13 +34,6 @@ VALUES
 
 
 
-INSERT INTO ZAALUSER_ZAALS  (USERS_ID,ZAALS_ID )
-VALUES
-    (1,6),
-    (2,4),
-    (3,5),
-    (4,5),
-    (5,3);
 
 
 INSERT INTO equipment (id, artikel, prijs, sport, merk, beschikbaar, image)

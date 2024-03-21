@@ -1,6 +1,6 @@
 package be.sohael.projectadvanced.controllers;
-import be.sohael.projectadvanced.model.Zaal;
-import be.sohael.projectadvanced.repositories.ZaalRepository;
+import be.sohael.projectadvanced.model.Sporthall;
+import be.sohael.projectadvanced.repositories.SporthallRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +14,13 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-public class ZalenController {
-    private Logger logger = LoggerFactory.getLogger(ZaalRepository.class);
+public class SporthallController {
+    private Logger logger = LoggerFactory.getLogger(SporthallRepository.class);
     @Autowired
-    private ZaalRepository zalenRepository;
+    private SporthallRepository zalenRepository;
     @GetMapping("/zalen")
     public String zalen(Model model) {
-        Iterable<Zaal> zalens = zalenRepository.findAll();
+        Iterable<Sporthall> zalens = zalenRepository.findAll();
         model.addAttribute("zalens", zalens);
         model.addAttribute("showFilters", false);
         return "zalen";
@@ -29,13 +29,13 @@ public class ZalenController {
     public String zalendetails(Model model, @PathVariable(required = false) Integer id ) {
         if (id == null) return "venuedetails";
 
-        Optional<Zaal> zalenfromdb = zalenRepository.findById(id);
+        Optional<Sporthall> zalenfromdb = zalenRepository.findById(id);
         //noinspection OptionalIsPresent
         if (zalenfromdb.isPresent()) {
-            Optional<Zaal> prevZaalfromdb = zalenRepository.findFirstByIdLessThanOrderByIdDesc(id);
+            Optional<Sporthall> prevZaalfromdb = zalenRepository.findFirstByIdLessThanOrderByIdDesc(id);
             if (prevZaalfromdb.isEmpty())
                 prevZaalfromdb = zalenRepository.findFirstByOrderByIdDesc();
-            Optional<Zaal> nextZaalfromdb = zalenRepository.findFirstByIdGreaterThanOrderByIdAsc(id);
+            Optional<Sporthall> nextZaalfromdb = zalenRepository.findFirstByIdGreaterThanOrderByIdAsc(id);
             if (nextZaalfromdb.isEmpty())
                 nextZaalfromdb = zalenRepository.findFirstByOrderByIdAsc();
 
@@ -58,7 +58,7 @@ public class ZalenController {
                                   @RequestParam(required = false) Integer maxcapaciteit){
 
         logger.info(String.format("zalenfilter -- min=%d, max=%d ," , mintarief, maxtarief,kleedkamers,mincapaciteit ,maxcapaciteit));
-        List<Zaal> allzalens = zalenRepository.findbyfilter(mintarief,maxtarief,kleedkamers,mincapaciteit,maxcapaciteit);
+        List<Sporthall> allzalens = zalenRepository.findbyfilter(mintarief,maxtarief,kleedkamers,mincapaciteit,maxcapaciteit);
 
         model.addAttribute("mintarief", maxtarief);
         model.addAttribute("maxtarief", maxtarief);

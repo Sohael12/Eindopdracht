@@ -21,7 +21,7 @@ public class User {
     private Collection<Reservatie> reservaties;
 
     @ManyToMany
-    private Collection<Zaal> zaals;
+    private Collection<Sporthall> sporthalls;
 
     public User(){}
 
@@ -42,12 +42,12 @@ public class User {
         this.id = id;
     }
 
-    public Collection<Zaal> getZaals() {
-        return zaals;
+    public Collection<Sporthall> getSporthalls() {
+        return sporthalls;
     }
 
-    public void setZaals(Collection<Zaal> zaals) {
-        this.zaals = zaals;
+    public void setSporthalls(Collection<Sporthall> zaals) {
+        this.sporthalls = zaals;
     }
 
     public String getUsername() {

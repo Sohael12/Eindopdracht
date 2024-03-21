@@ -7,7 +7,7 @@ import java.util.List;
 
 
 @Entity
-public class Zaal {
+public class Sporthall {
     @Id
     private Integer id;
     private String zaalnaam;
@@ -22,13 +22,13 @@ public class Zaal {
 
     private boolean kleedkamers;
 
-    @OneToMany(mappedBy = "zaal")
+    @OneToMany(mappedBy = "sporthall")
     private Collection<Reservatie> reservaties;
 
-    @ManyToMany(mappedBy = "zaals")
+    @ManyToMany(mappedBy = "sporthalls")
     private Collection<User> users;
 
-    public Zaal() {
+    public Sporthall() {
     }
 
 
@@ -126,4 +126,6 @@ public class Zaal {
     public void setUsers(Collection<User> users) {
         this.users = users;
     }
+
+
 }
