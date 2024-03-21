@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.Collection;
 
 
-@Entity @Table(name ="zaaluser")
+@Entity @Table(name ="Sporthalluser")
 public class User {
     @Id
     private Integer id;
@@ -20,8 +20,7 @@ public class User {
     @OneToMany(mappedBy = "user")
     private Collection<Reservation> reservations;
 
-    @ManyToMany
-    private Collection<Sporthall> sporthalls;
+
 
     public User(){}
 
@@ -42,13 +41,7 @@ public class User {
         this.id = id;
     }
 
-    public Collection<Sporthall> getSporthalls() {
-        return sporthalls;
-    }
 
-    public void setSporthalls(Collection<Sporthall> zaals) {
-        this.sporthalls = zaals;
-    }
 
     public String getUsername() {
         return username;

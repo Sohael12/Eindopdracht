@@ -25,8 +25,7 @@ public class Sporthall {
     @OneToMany(mappedBy = "sporthall")
     private Collection<Reservation> reservations;
 
-    @ManyToMany(mappedBy = "sporthalls")
-    private Collection<User> users;
+
 
     public Sporthall() {
     }
@@ -117,13 +116,7 @@ public class Sporthall {
 
 
 
-    public Collection<User> getUsers() {
-        return users;
-    }
 
-    public void setUsers(Collection<User> users) {
-        this.users = users;
-    }
 
 
 }

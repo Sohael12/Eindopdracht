@@ -12,7 +12,7 @@ VALUES
     (10, 'Sporthal Kiel - Antwerpen', 'Emiel Vloorsstraat 2, 2020 Antwerpen', 22, 'In sporthal De Rode Loop kan je terecht voor basketbal, handbal, korfbal, tennis, volleybal en zaalvoetbal. In de vechtsportzaal kan je onder meer judo, karate en jiu jitsu beoefenen.', '/images/Sporthal Kiel.jpg', 14, true),
     (11, 'Sporthal Fort VIII Hoboken', 'Hoofdfrontweg 9, 2660 Hoboken', 35, 'In deze sporthal kan je terecht voor atletiek, badminton, baseball, handbal, korfbal, volleybal en zaalvoetbal.', '/images/Sporthal-Fort-VIII-2.jpg', 16, true),
     (12, 'Sporthal Wilrijkse Plein - Antwerpen', 'Vogelzanglaan 6, 2020 Antwerpen', 35, 'In deze sporthal kunt u terecht voor basketbal, volleybal, zaalvoetbal, korfbal, handbal en badminton. Voor turnen en bewegingsonderwijs moet u in de kleine zaal zijn.', '/images/wilrijkseplein.jpg', 18, false);
-INSERT INTO zaaluser (id, username, password, email, firstname, lastname ,image)
+INSERT INTO Sporthalluser (id, username, password, email, firstname, lastname ,image)
 VALUES
     (1, 'Jan', 'wachtwoord1', 'gebruiker1@example.com', 'Jan', 'Achternaam1','/images/persoon1.jpeg'),
     (2, 'Sarah', 'wachtwoord2', 'gebruiker2@example.com', 'Sarah', 'Achternaam2' ,'/images/persoon2.jpg'),
