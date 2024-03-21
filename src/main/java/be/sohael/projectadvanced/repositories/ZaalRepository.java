@@ -1,14 +1,17 @@
 package be.sohael.projectadvanced.repositories;
 
+
 import be.sohael.projectadvanced.model.Zaal;
 import org.springframework.data.jpa.repository.Query;
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface ZaalRepository extends CrudRepository<Zaal,Integer>{
+
+public interface ZaalRepository extends CrudRepository<Zaal,Integer> {
 
     Iterable<Zaal> findBykleedkamers(boolean kleedkamers);
     Optional<Zaal> findFirstByIdLessThanOrderByIdDesc(Integer id);
@@ -26,8 +29,6 @@ public interface ZaalRepository extends CrudRepository<Zaal,Integer>{
             " (:mincapaciteit IS NULL OR z.tarief >= :mincapaciteit) AND " +
             " (:maxcapaciteit IS NULL OR z.tarief <= :maxcapaciteit)AND "+
              "(:kleedkamers IS NULL OR z.kleedkamers = :kleedkamers)")
-
-
     List<Zaal> findbyfilter(
             @Param("minTarief") Integer minTarief,
             @Param("maxTarief") Integer maxTarief,

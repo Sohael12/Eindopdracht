@@ -14,12 +14,12 @@ VALUES
     (12, 'Sporthal Wilrijkse Plein - Antwerpen', 'Vogelzanglaan 6, 2020 Antwerpen', 35, 'In deze sporthal kunt u terecht voor basketbal, volleybal, zaalvoetbal, korfbal, handbal en badminton. Voor turnen en bewegingsonderwijs moet u in de kleine zaal zijn.', '/images/wilrijkseplein.jpg', 18, false);
 INSERT INTO zaaluser (id, username, password, email, firstname, lastname ,image)
 VALUES
-    (1, 'gebruiker1', 'wachtwoord1', 'gebruiker1@example.com', 'Voornaam1', 'Achternaam1','/images/persoon1.jpeg'),
-    (2, 'gebruiker2', 'wachtwoord2', 'gebruiker2@example.com', 'Voornaam2', 'Achternaam2' ,'/images/persoon2.jpg'),
-    (3, 'gebruiker3', 'wachtwoord3', 'gebruiker3@example.com', 'Voornaam3', 'Achternaam3','/images/persoon3.jpg'),
-    (4, 'gebruiker4', 'wachtwoord4', 'gebruiker4@example.com', 'Voornaam4', 'Achternaam4','/images/persoon4.jpg'),
-    (5, 'gebruiker5', 'wachtwoord5', 'gebruiker5@example.com', 'Voornaam5', 'Achternaam5','/images/persoon5.jpg'),
-    (6, 'gebruiker6', 'wachtwoord6', 'gebruiker6@example.com', 'Voornaam6', 'Achternaam6','/images/persoon6.jpg');
+    (1, 'Jan', 'wachtwoord1', 'gebruiker1@example.com', 'Jan', 'Achternaam1','/images/persoon1.jpeg'),
+    (2, 'Sarah', 'wachtwoord2', 'gebruiker2@example.com', 'Sarah', 'Achternaam2' ,'/images/persoon2.jpg'),
+    (3, 'Michelle', 'wachtwoord3', 'gebruiker3@example.com', 'Michelle', 'Achternaam3','/images/persoon3.jpg'),
+    (4, 'Bart', 'wachtwoord4', 'gebruiker4@example.com', 'Bart', 'Achternaam4','/images/persoon4.jpg'),
+    (5, 'Yannick', 'wachtwoord5', 'gebruiker5@example.com', 'Yannick', 'Achternaam5','/images/persoon5.jpg'),
+    (6, 'Sanna', 'wachtwoord6', 'gebruiker6@example.com', 'Sanna', 'Achternaam6','/images/persoon6.jpg');
 
 
 
@@ -53,6 +53,15 @@ VALUES
     (9, 'Badmintonracket', 7.0, 'Badminton', 'Yonex', true, '/images/Badmintonracket.jpg'),
     (10, 'Bokshandschoenen', 11.0, 'Boksen', 'Everlast', true, '/images/Bokshandschoenen.jpg'),
     (11, 'Hockey stick', 8.0, 'Hockey', 'Grays', true, '/images/Hockeystick.jpg');
+
+INSERT INTO USERS (USERNAME, PASSWORD, ENABLED)
+VALUES ('admin', '$2a$10$9MIX8kYPkuB7uE/H5nHF8.KG6.YdjBA/voOnjSZnZDxLXL/2BIerS', true);
+INSERT INTO AUTHORITIES (USERNAME, AUTHORITY)
+VALUES ('admin', 'ADMIN');
+INSERT INTO USERS (USERNAME, PASSWORD, ENABLED)
+VALUES ('marie', '$2a$10$9TeBFudS7HsgCa4sSvP//O627sMq.KiTFrOr8IzrVlYw5c8aoKzNm', true);
+INSERT INTO AUTHORITIES (USERNAME, AUTHORITY)
+VALUES ('marie', 'USER');
 
 
 

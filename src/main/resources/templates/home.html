@@ -10,7 +10,6 @@
 <div th:replace="~{fragments/header :: header}">Header</div>
 
 <body>
-
 <section class="hero">
     <div class="hero-container">
         <div class="column-left">
@@ -24,20 +23,24 @@
         </div>
         <div class="column-right">
             <img src="/images/zaalfoto.jpg" class="hero-image" alt="Zaal 3">
+            <div class="login-buttons">
+                <p th:if="${loginName != null}" class="welcome-message">Hello <span th:text="${loginName}"></span></p>
+                <a th:unless="${loginName != null}" href="/login" class="btn" th:text="'Login'">Login</a>
+                <a th:if="${loginName != null}" href="/logout" class="btn" th:text="'Logout'">Logout</a>
+            </div>
         </div>
     </div>
 </section>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-</body>
+
+
+
 <footer>
 
     <div th:replace = "~{fragments/footer :: footer}">footer</div>
 </footer>
 
 
-
+</body>
 </html>

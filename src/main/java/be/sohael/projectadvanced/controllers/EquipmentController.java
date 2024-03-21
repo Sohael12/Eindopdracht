@@ -2,7 +2,6 @@ package be.sohael.projectadvanced.controllers;
 
 
 import be.sohael.projectadvanced.model.Equipment;
-import be.sohael.projectadvanced.model.Zaal;
 import be.sohael.projectadvanced.repositories.EquipmentRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

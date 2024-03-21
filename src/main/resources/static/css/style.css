@@ -360,8 +360,28 @@ button:hover {
 .submit-button:hover {
     background-color: #555555;
 }
-/*--------------------------userpagina--------------------------*/
+/*--------------------------Login in page voor admin --------------------------*/
+a.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
 
+a.btn:hover {
+    background-color: #555;
+}
+
+/* Stijl voor het welkomstbericht */
+.welcome-message {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
 
 /*--------------------------loginpagina --------------------------*/
 /* Button hover effect */
