@@ -18,7 +18,8 @@ VALUES
     (2, 'gebruiker2', 'wachtwoord2', 'gebruiker2@example.com', 'Voornaam2', 'Achternaam2'),
     (3, 'gebruiker3', 'wachtwoord3', 'gebruiker3@example.com', 'Voornaam3', 'Achternaam3'),
     (4, 'gebruiker4', 'wachtwoord4', 'gebruiker4@example.com', 'Voornaam4', 'Achternaam4'),
-    (5, 'gebruiker5', 'wachtwoord5', 'gebruiker5@example.com', 'Voornaam5', 'Achternaam5');
+    (5, 'gebruiker5', 'wachtwoord5', 'gebruiker5@example.com', 'Voornaam5', 'Achternaam5'),
+    (6, 'gebruiker6', 'wachtwoord6', 'gebruiker6@example.com', 'Voornaam6', 'Achternaam6');
 
 
 
@@ -28,7 +29,8 @@ VALUES
     (2,  'In afwachting', 'Gelieve te bevestigen',1,4),
     (3,  'Geannuleerd', 'Klant heeft geannuleerd',1,5),
     (4,  'Bevestigd', 'Geen opmerkingen',3,10),
-    (5, 'In afwachting', 'Wacht op bevestiging van manager',2,3);
+    (5, 'In afwachting', 'Wacht op bevestiging van manager',2,3),
+    (6, ' Bevestigd', 'Wacht op bevestiging van manager',6,2);
 
 
 
