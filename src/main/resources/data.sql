@@ -12,25 +12,25 @@ VALUES
     (10, 'Sporthal Kiel - Antwerpen', 'Emiel Vloorsstraat 2, 2020 Antwerpen', 22, 'In sporthal De Rode Loop kan je terecht voor basketbal, handbal, korfbal, tennis, volleybal en zaalvoetbal. In de vechtsportzaal kan je onder meer judo, karate en jiu jitsu beoefenen.', '/images/Sporthal Kiel.jpg', 14, true),
     (11, 'Sporthal Fort VIII Hoboken', 'Hoofdfrontweg 9, 2660 Hoboken', 35, 'In deze sporthal kan je terecht voor atletiek, badminton, baseball, handbal, korfbal, volleybal en zaalvoetbal.', '/images/Sporthal-Fort-VIII-2.jpg', 16, true),
     (12, 'Sporthal Wilrijkse Plein - Antwerpen', 'Vogelzanglaan 6, 2020 Antwerpen', 35, 'In deze sporthal kunt u terecht voor basketbal, volleybal, zaalvoetbal, korfbal, handbal en badminton. Voor turnen en bewegingsonderwijs moet u in de kleine zaal zijn.', '/images/wilrijkseplein.jpg', 18, false);
-INSERT INTO zaaluser (id, username, password, email, firstname, lastname)
+INSERT INTO zaaluser (id, username, password, email, firstname, lastname ,image)
 VALUES
-    (1, 'gebruiker1', 'wachtwoord1', 'gebruiker1@example.com', 'Voornaam1', 'Achternaam1'),
-    (2, 'gebruiker2', 'wachtwoord2', 'gebruiker2@example.com', 'Voornaam2', 'Achternaam2'),
-    (3, 'gebruiker3', 'wachtwoord3', 'gebruiker3@example.com', 'Voornaam3', 'Achternaam3'),
-    (4, 'gebruiker4', 'wachtwoord4', 'gebruiker4@example.com', 'Voornaam4', 'Achternaam4'),
-    (5, 'gebruiker5', 'wachtwoord5', 'gebruiker5@example.com', 'Voornaam5', 'Achternaam5'),
-    (6, 'gebruiker6', 'wachtwoord6', 'gebruiker6@example.com', 'Voornaam6', 'Achternaam6');
+    (1, 'gebruiker1', 'wachtwoord1', 'gebruiker1@example.com', 'Voornaam1', 'Achternaam1','/images/persoon1.jpeg'),
+    (2, 'gebruiker2', 'wachtwoord2', 'gebruiker2@example.com', 'Voornaam2', 'Achternaam2' ,'/images/persoon2.jpg'),
+    (3, 'gebruiker3', 'wachtwoord3', 'gebruiker3@example.com', 'Voornaam3', 'Achternaam3','/images/persoon3.jpg'),
+    (4, 'gebruiker4', 'wachtwoord4', 'gebruiker4@example.com', 'Voornaam4', 'Achternaam4','/images/persoon4.jpg'),
+    (5, 'gebruiker5', 'wachtwoord5', 'gebruiker5@example.com', 'Voornaam5', 'Achternaam5','/images/persoon5.jpg'),
+    (6, 'gebruiker6', 'wachtwoord6', 'gebruiker6@example.com', 'Voornaam6', 'Achternaam6','/images/persoon6.jpg');
 
 
 
 INSERT INTO Reservatie (id, status, opmerkingen ,user_Id,zaal_ID)
 VALUES
     (1,  'Bevestigd', 'Geen opmerkingen',2,6),
-    (2,  'In afwachting', 'Gelieve te bevestigen',1,4),
-    (3,  'Geannuleerd', 'Klant heeft geannuleerd',1,5),
+    (2,  'In afwachting', 'Gelieve te bevestigen',4,4),
+    (3,  'Geannuleerd', 'Klant heeft geannuleerd',5,5),
     (4,  'Bevestigd', 'Geen opmerkingen',3,10),
     (5, 'In afwachting', 'Wacht op bevestiging van manager',2,3),
-    (6, ' Bevestigd', 'Wacht op bevestiging van manager',6,2);
+    (6, ' Bevestigd', 'Wacht op bevestiging van manager',1,2);
 
 
 
