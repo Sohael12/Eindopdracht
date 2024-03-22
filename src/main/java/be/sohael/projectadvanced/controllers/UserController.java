@@ -1,4 +1,5 @@
 package be.sohael.projectadvanced.controllers;
+import be.sohael.projectadvanced.model.Sporthall;
 import be.sohael.projectadvanced.model.User;
 import be.sohael.projectadvanced.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,6 @@ public class UserController {
         if (principal == null) return "redirect:/sporthalldetials";
         return "user/logout";
     }
-
 
 
     @GetMapping({"/userdetails/{id}", "/userdetails"})
