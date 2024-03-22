@@ -36,7 +36,11 @@ public class UserController {
         if (principal == null) return "redirect:/sporthalldetials";
         return "user/logout";
     }
-
+    @GetMapping("/register")
+    public String register(Principal principal) {
+        if (principal != null) return "redirect:/sporthalldetials";
+        return "user/register";
+    }
 
 
 

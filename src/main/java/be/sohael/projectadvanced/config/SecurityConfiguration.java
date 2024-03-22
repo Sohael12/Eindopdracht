@@ -1,6 +1,7 @@
 package be.sohael.projectadvanced.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -22,6 +23,10 @@ import static org.springframework.boot.autoconfigure.security.servlet.PathReques
 @EnableWebSecurity
 @Configuration
 public class SecurityConfiguration {
+
+
+    @Value("${security.h2-console-needed}")
+    private boolean h2ConsoleNeeded;
 
     @Autowired
     private DataSource dataSource;

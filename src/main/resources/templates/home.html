@@ -11,8 +11,6 @@
 <div th:replace="~{fragments/header :: header}">Header</div>
 
 <body>
-<div sec:authorize="hasAuthority('USER')">only visible to user.</div>
-<div sec:authorize="hasAuthority('ADMIN')">only visible to admin.</div>
 <section class="hero">
     <div class="hero-container">
         <div class="column-left">
