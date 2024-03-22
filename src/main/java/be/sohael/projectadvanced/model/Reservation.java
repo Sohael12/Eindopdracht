@@ -10,7 +10,7 @@ public class Reservation {
     @Id
     private Integer id;
 
-    private LocalDateTime reservatieDatumTijd;
+    private LocalDateTime reservatieDatumTijd;//
     private String status;
     private String opmerkingen;
 

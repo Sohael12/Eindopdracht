@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -22,21 +24,27 @@
                         <a class="nav-link" th:href="@{/zalen}">Zalen</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"th:href="@{/sportequipments}"> Equipments</a>
+                        <a class="nav-link" th:href="@{/sportequipments}">Equipments</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" th:href="@{/contact}">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/login}">Login/Sign Up</a>
+                        <a class="nav-link buttonLook menuButton" sec:authorize="!isAuthenticated()" th:href="@{/user/login}">Login</a>
+                        <a class="nav-link buttonLook menuButton" sec:authorize="isAuthenticated()" th:href="@{/user/logout}">Logout</a>
+                    </li>
+                    <!-- Add welcome message here -->
+                    <li class="nav-item welcome-message" th:if="${loginName != null}">
+                        <p class="nav-link">Hello <span th:text="${loginName}"></span></p>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-</div>
 
 
-<body>
+
+
+    <body>
 </body>
 </html>

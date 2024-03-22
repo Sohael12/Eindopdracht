@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>home</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/style.css"/>
-
 </head>
 <div th:replace="~{fragments/header :: header}">Header</div>
 
 <body>
+<div sec:authorize="hasAuthority('USER')">only visible to user.</div>
+<div sec:authorize="hasAuthority('ADMIN')">only visible to admin.</div>
 <section class="hero">
     <div class="hero-container">
         <div class="column-left">
@@ -23,13 +26,10 @@
         </div>
         <div class="column-right">
             <img src="/images/zaalfoto.jpg" class="hero-image" alt="Zaal 3">
-            <div class="login-buttons">
-                <p th:if="${loginName != null}" class="welcome-message">Hello <span th:text="${loginName}"></span></p>
-                <a th:unless="${loginName != null}" href="/login" class="btn" th:text="'Login'">Login</a>
-                <a th:if="${loginName != null}" href="/logout" class="btn" th:text="'Logout'">Logout</a>
+
             </div>
         </div>
-    </div>
+
 </section>
 
 

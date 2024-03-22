@@ -25,9 +25,9 @@ public class SporthallController {
         model.addAttribute("showFilters", false);
         return "zalen";
     }
-    @GetMapping({"/zalendetails/{id}","/zalendetails"})
-    public String zalendetails(Model model, @PathVariable(required = false) Integer id ) {
-        if (id == null) return "venuedetails";
+    @GetMapping({"/sporthalldetials/{id}","/sporthalldetials"})
+    public String sporthalldetials(Model model, @PathVariable(required = false) Integer id ) {
+        if (id == null) return "sporthalldetials";
 
         Optional<Sporthall> zalenfromdb = zalenRepository.findById(id);
         //noinspection OptionalIsPresent
@@ -44,7 +44,7 @@ public class SporthallController {
             model.addAttribute("nextId", nextZaalfromdb.get().getId());
 
         }
-        return "zalendetails";
+        return "sporthalldetials";
     }
 
 

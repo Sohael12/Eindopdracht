@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/user/login}" method="post">
+    <input id="name" name="username" />
+    <input id="password" name="password" type="password"/>
+    <input type="submit" value="login"/>
+    <a href="/parties">cancel</a>
+</form>
+
+</body>
+</html>

@@ -13,18 +13,18 @@ import java.util.Optional;
 @RequestMapping("/admin")// geef de path erbij moet is verplicht//
 @Controller
 
-public class ZaalAdminController {
+public class SporthallAdminController {
 
-        private static final Logger logger = LoggerFactory.getLogger(ZaalAdminController.class);
+        private static final Logger logger = LoggerFactory.getLogger(SporthallAdminController.class);
 
         @Autowired
-        private SporthallRepository zaalRepository;
+        private SporthallRepository sporthallRepository;
 
         @GetMapping("/zaaledit/{id}")
         public String partyEdit(@PathVariable Integer id, Model model) {
             logger.info("Executing partyEdit method for id: {}", id);
             // Haal het Party-object op uit de database
-            Sporthall zalen = zaalRepository.findById(id).orElse(null);
+            Sporthall zalen = sporthallRepository.findById(id).orElse(null);
             // Zet het Party-object klaar in het MVC-model
             model.addAttribute("zalen", zalen);
             return "admin/zaaledit";//
@@ -34,7 +34,7 @@ public class ZaalAdminController {
         @ModelAttribute("zaal")
         public Sporthall findParty(@PathVariable(required = false) Integer id) {
             logger.info("findParty" + id);
-            Optional<Sporthall> optionalZaal = zaalRepository.findById(id);
+            Optional<Sporthall> optionalZaal = sporthallRepository.findById(id);
             if (optionalZaal.isPresent())
                 return optionalZaal.get();
             return null;
@@ -44,10 +44,26 @@ public class ZaalAdminController {
         @PostMapping("/zaaledit/{id}") // het is een post//
         public String partyEdit(@PathVariable Integer id, Sporthall zalen) {
             logger.info("zaaleditpost" + id + "-- new name=" + zalen.getZaalnaam());
-            zaalRepository.save(zalen);
+            sporthallRepository.save(zalen);
             return "admin/zaaledit";
         }
+
+    @GetMapping("/zaalnew")
+    public String partyNew(Model model) {
+        logger.info("zaalnew ");
+        model.addAttribute("zalen", sporthallRepository.findAll());
+        return "admin/partynew";
     }
+
+    @PostMapping("/zaalnew")
+    public String partyNewPost(Model model,
+                               Sporthall sporthall) {
+        logger.info("sporthallNewPost -- new name=" + sporthall.getZaalnaam() + ", beschrijving=" + sporthall.getBeschrijving());
+        Sporthall newSporthall = sporthallRepository.save(sporthall);
+        return "redirect:/sporthalldetials/" + newSporthall.getId();
+    }
+
+}
 
 
 

@@ -17,10 +17,11 @@ public class Sporthall {
     private double tarief;
     private String image;
 
+    private boolean kleedkamers;
     @ElementCollection
     private List<String> beschikbareTijden;
 
-    private boolean kleedkamers;
+
 
     @OneToMany(mappedBy = "sporthall")
     private Collection<Reservation> reservations;
@@ -45,6 +46,8 @@ public class Sporthall {
     public void setId(Integer id) {
         this.id = id;
     }
+
+
 
     public String getZaalnaam() {
         return zaalnaam;
@@ -109,11 +112,6 @@ public class Sporthall {
     public void setKleedkamers(boolean kleedkamers) {
         this.kleedkamers = kleedkamers;
     }
-
-
-
-
-
 
 
 

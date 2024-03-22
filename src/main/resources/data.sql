@@ -40,7 +40,7 @@ INSERT INTO equipment (id, artikel, prijs, sport, merk, beschikbaar, image)
 VALUES
     (1, 'Voetbal', 5.0, 'Voetbal', 'Adidas', true, '/images/Voetbal.jpg'),
     (2, 'Tennisracket', 10.0, 'Tennis', 'Wilson', true, '/images/Tennisracket.jpg'),
-    (3, 'Yoga Mat', 4.0, 'Yoga', 'Gaiam', true, '/images/Yoga.jpg'),
+    (3, 'Yoga Mat', 4.0, 'Yoga', 'Gaiam', true, '/images/yoga.jpg'),
     (5, 'Basketbal', 6.0, 'Basketbal', 'Spalding', true, '/images/Basketbal.jpg'),
     (8, 'Squashracket', 9.0, 'Squash', 'Head', true, '/images/Squashracket.jpg'),
     (9, 'Badmintonracket', 7.0, 'Badminton', 'Yonex', true, '/images/Badmintonracket.jpg'),
@@ -55,6 +55,15 @@ INSERT INTO USERS (USERNAME, PASSWORD, ENABLED)
 VALUES ('marie', '$2a$10$9TeBFudS7HsgCa4sSvP//O627sMq.KiTFrOr8IzrVlYw5c8aoKzNm', true);
 INSERT INTO AUTHORITIES (USERNAME, AUTHORITY)
 VALUES ('marie', 'USER');
+
+
+
+
+-- the party animal users:
+INSERT INTO USERS (USERNAME, PASSWORD, ENABLED)
+VALUES ('giraf', '$2a$10$9TeBFudS7HsgCa4sSvP//O627sMq.KiTFrOr8IzrVlYw5c8aoKzNm', true);
+INSERT INTO AUTHORITIES (USERNAME, AUTHORITY)
+VALUES ('giraf', 'USER');
 
 
 

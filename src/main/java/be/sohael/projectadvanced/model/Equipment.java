@@ -15,7 +15,7 @@ public class Equipment  {
 
     private boolean beschikbaar;
 
-      private String image;
+    private String image;
 
     public Equipment(){}
     public Integer getId() {

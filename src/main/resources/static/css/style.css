@@ -384,57 +384,89 @@ a.btn:hover {
 }
 
 /*--------------------------loginpagina --------------------------*/
-/* Button hover effect */
-.btn-floating {
-    transition: transform 0.3s ease;
+.container-login100 {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
 }
-
-.btn-floating:hover {
-    transform: translateY(-3px);
-}
-
-/* Additional styles for better button appearance */
-.btn-floating {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-    border: none;
-    border-radius: 50%;
-    padding: 0.75rem;
-    line-height: 0;
-}
-
-.btn-floating:focus {
-    outline: none;
-}
-
-
-.container-fluid {
-    padding-top: 50px;
-}
-
-.card {
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-}
-
-.btn-floating {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    border-radius: 50%;
-}
-
-.form-control {
+.wrap-login100 {
+    width: 400px;
+    background: #fff;
     border-radius: 10px;
-    border: 1px solid #ced4da;
+    overflow: hidden;
+    padding: 90px 70px 30px 70px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
 }
-@media (max-width: 450px) {
-    .h-custom {
-        height: 100%;
-    }
+.login100-form-title {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
 }
-
-
+.wrap-input100 {
+    width: 100%;
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin-bottom: 30px;
+}
+.input100 {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.2;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 5px 0;
+    background: transparent;
+}
+.input100:focus {
+    border-bottom: 2px solid #57b846;
+}
+.focus-input100::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #57b846;
+    transition: 0.5s;
+}
+.container-login100-form-btn {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.login100-form-btn {
+    font-family: Poppins-Medium;
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    background: #57b846;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s;
+}
+.login100-form-btn:hover {
+    background: #333;
+}
+.txt1 {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.2;
+    text-align: center;
+    margin-top: 20px;
+}
 /*  foooooteeeeeeeeeeeeeeeer  */
 .footer {
 

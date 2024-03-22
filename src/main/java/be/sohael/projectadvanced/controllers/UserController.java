@@ -7,12 +7,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.security.Principal;
 import java.util.Optional;
 
 
 @Controller
+@RequestMapping("/user")
 public class UserController {
     @Autowired
     private UserRepository userRepository;
@@ -23,6 +25,19 @@ public class UserController {
         model.addAttribute("logins", logins);
         return "login";
     }
+
+    @GetMapping("/login")
+    public String login(Model model, Principal principal) {
+        if (principal != null) return "redirect:/sporthalldetials";
+        return "user/login";
+    }
+
+    @GetMapping("/logout")
+    public String logout(Model model, Principal principal) {
+        if (principal == null) return "redirect:/sporthalldetials";
+        return "user/logout";
+    }
+
 
 
     @GetMapping({"/userdetails/{id}", "/userdetails"})
