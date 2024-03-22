@@ -2,10 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
     <title>Title</title>
+    <div th:replace="~{fragments/header :: header}">Header</div>
 </head>
 <body>
-
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="contact-info">
+                <h1>Contact Information</h1>
+                <p><strong>Name:</strong> <span th:text="${myName}"></span></p>
+                <p><strong>Email:</strong> <span th:text="${myStreet}"></span></p>
+                <p><strong>Phone:</strong> <span th:text="${contactPhone}"></span></p>
+                <p class="social-links">
+                    <strong>Follow us:</strong>
+                    <a th:href="${instagramLink}" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
+                    <br>
+                    <a th:href="${facebookLink}" target="_blank"><i class="fab fa-facebook"></i>Facebook</a>
+                    <br>
+                    <a th:href="${linkinLink}" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+                    <br>
+                    <a th:href="${githubLink}" target="_blank"><i class="fab fa-github"></i>GitHub</a>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="picture-container">
+                <p><strong>Picture:</strong></p>
+                <img th:src="${pictureLink}" alt="Picture" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 
 <footer>

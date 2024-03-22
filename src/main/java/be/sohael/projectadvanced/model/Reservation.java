@@ -13,7 +13,7 @@ public class Reservation {
     private LocalDateTime reservatieDatumTijd;//
     private String status;
     private String opmerkingen;
-
+    private String username;
     @ManyToOne(fetch = FetchType.LAZY) // deze doe je erbij voor  je begint eerst hier bij manytomany  dan bij venue manytoone j zo zeg je wat he is ook getters en setters vergeet niet setters getters  er bij te doen   //
     private Sporthall sporthall;
 
@@ -36,7 +36,13 @@ public class Reservation {
     }
 
 
+    public String getUsername() {
+        return username;
+    }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public LocalDateTime getReservatieDatumTijd() {
         return reservatieDatumTijd;

@@ -506,6 +506,29 @@ a.btn:hover {
     font-size: 24px; /* Pas de gewenste grootte aan */
     text-align: center;
 }
+/* ------------------------------contact page-----------------------*/
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+.contact-info p {
+    margin-bottom: 10px;
+}
+.picture-container {
+    text-align: center;
+    margin-top: 20px;
+}
+.picture-container img {
+    max-width: 200px;
+    height: auto;
+    margin-top: 20px; /* Adjust as needed */
+}
+.social-links i {
+    margin-right: 5px;
+}
+
 
 /*  foooooteeeeeeeeeeeeeeeer  */
 .footer {

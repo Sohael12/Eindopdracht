@@ -58,11 +58,6 @@ VALUES ('marie', 'USER');
 
 
 
--- the party animal users:
-INSERT INTO USERS (USERNAME, PASSWORD, ENABLED)
-VALUES ('giraf', '$2a$10$9TeBFudS7HsgCa4sSvP//O627sMq.KiTFrOr8IzrVlYw5c8aoKzNm', true);
-INSERT INTO AUTHORITIES (USERNAME, AUTHORITY)
-VALUES ('giraf', 'USER');
 
 
 

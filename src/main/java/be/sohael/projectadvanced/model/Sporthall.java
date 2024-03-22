@@ -18,10 +18,7 @@ public class Sporthall {
     private int capaciteit;
     private String beschrijving;
     private double tarief;
-
-
     private String imageUrl;
-
     private boolean kleedkamers;
     @ElementCollection
     private List<String> beschikbareTijden;
@@ -63,6 +60,8 @@ public class Sporthall {
     public String getZaalnaam() {
         return zaalnaam;
     }
+
+
 
     public List<String> getBeschikbareTijden() {
         return beschikbareTijden;

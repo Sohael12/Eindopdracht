@@ -6,12 +6,47 @@
     <title>Title</title>
 </head>
 <body>
-<form th:action="@{/user/login}" method="post">
-    <input id="name" name="username" />
-    <input id="password" name="password" type="password"/>
-    <input type="submit" value="login"/>
-    <a href="/parties">cancel</a>
-</form>
+<div class="row1">
+    <div class="row1content">
+        <h2>register</h2>
+        <form th:action="@{|/user/register|}" method="post">
+
+            <div class="venueinfo">
+                <div class="infoLine">
+                    <label for="username" class="infoLineName">user name: </label>
+                    <input id="username" name="username" value="" class="infoLineValue">
+                </div>
+                <div class="infoLine">
+                    <label for="password" class="infoLineName">password: </label>
+                    <input id="password" type="password" name="password" value="" class="infoLineValue">
+                </div>
+                <div class="infoLine">
+                    <label for="name" class="infoLineName">name: </label>
+                    <input id="name" name="name" value="" class="infoLineValue">
+                </div>
+                <div class="infoLine">
+                    <label for="city" class="infoLineName">city: </label>
+                    <input id="city" name="city" value="" class="infoLineValue">
+                </div>
+                <div class="infoLine">
+                    <label for="bio" class="infoLineName">bio: </label>
+                    <input id="bio" name="bio" value="" class="infoLineValue">
+                </div>
+                <div class="infoLine">
+                    <a th:href="@{|/zalen|}" class="buttonLook editButton">cancel</a>
+                    <input type="submit" value="go !" class="buttonLook editButton">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row1">
+    <div class="row1content">
+        <div class="infoLine">
+            <a th:href="@{|/user/login|}" class="linklook">Login</a>&nbsp;if you are already a registered user.
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
