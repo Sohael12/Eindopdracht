@@ -54,9 +54,14 @@ public class SecurityConfiguration {
         );
         http.logout(form -> form.logoutUrl("/user/logout"));
 
-        http.csrf(csrf -> csrf.ignoringRequestMatchers(toH2Console()));
-        http.headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin));
 
+        //to enable h2-console:
+        if (h2ConsoleNeeded) {
+            //h2ConsoleNeeded has to be false when deploying on google cloud, otherwise the login does not work
+            //h2ConsoleNeeded has to be true when running locally
+            http.csrf(csrf -> csrf.ignoringRequestMatchers(toH2Console()));
+            http.headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin));
+        }
 
         return http.build();
     }
