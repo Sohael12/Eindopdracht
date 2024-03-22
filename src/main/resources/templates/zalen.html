@@ -68,7 +68,7 @@
         <div th:each="zaal : ${zalens}" class="col-lg-3 col-md-4 col-sm-6 mb-4">
             <div class="card h-100">
                 <a class="buttonlook mediumButton" th:href="@{|/sporthalldetials/${zaal.id}|}">
-                    <img th:src="@{${zaal.getImage()}}" class="card-img-top img-fluid" alt="Zaalbeeld">
+                    <img th:src="@{${zaal.getImageUrl()}}" class="card-img-top img-fluid" alt="Zaalbeeld">
                 </a>
                 <div class="card-body">
                     <h5 class="card-title" th:text="${zaal.getZaalnaam()}"></h5>

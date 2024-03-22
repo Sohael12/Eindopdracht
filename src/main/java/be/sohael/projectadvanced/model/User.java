@@ -15,7 +15,7 @@ public class User {
     private String firstname;
     private String lastname;
     private String email;
-    private String image;
+    private String imageUrl;
 
     @OneToMany(mappedBy = "user")
     private Collection<Reservation> reservations;
@@ -25,16 +25,18 @@ public class User {
     public User(){}
 
 
-    public String getImage() {
-        return image;
-    }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
 
     public Integer getId() {
         return id;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public void setId(Integer id) {

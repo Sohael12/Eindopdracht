@@ -15,7 +15,7 @@ public class Equipment  {
 
     private boolean beschikbaar;
 
-    private String image;
+    private String imageUrl;
 
     public Equipment(){}
     public Integer getId() {
@@ -42,12 +42,12 @@ public class Equipment  {
         this.prijs = prijs;
     }
 
-    public String getImage() {
-        return image;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getSport() {

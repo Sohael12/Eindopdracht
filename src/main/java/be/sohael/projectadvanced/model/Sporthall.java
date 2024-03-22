@@ -1,6 +1,7 @@
 package be.sohael.projectadvanced.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 import java.util.Collection;
 import java.util.List;
@@ -10,12 +11,16 @@ import java.util.List;
 public class Sporthall {
     @Id
     private Integer id;
+
+    @NotBlank
     private String zaalnaam;
     private String locatie;
     private int capaciteit;
     private String beschrijving;
     private double tarief;
-    private String image;
+
+
+    private String imageUrl;
 
     private boolean kleedkamers;
     @ElementCollection
@@ -47,7 +52,13 @@ public class Sporthall {
         this.id = id;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
 
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
     public String getZaalnaam() {
         return zaalnaam;
@@ -61,9 +72,12 @@ public class Sporthall {
         this.beschikbareTijden = beschikbareTijden;
     }
 
+
     public void setZaalnaam(String zaalnaam) {
         this.zaalnaam = zaalnaam;
     }
+
+
 
     public String getLocatie() {
         return locatie;
@@ -97,13 +111,7 @@ public class Sporthall {
         this.tarief = tarief;
     }
 
-    public String getImage() {
-        return image;
-    }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
 
     public boolean isKleedkamers() {
         return kleedkamers;
