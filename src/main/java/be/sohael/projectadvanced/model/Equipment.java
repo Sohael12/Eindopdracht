@@ -1,7 +1,8 @@
 package be.sohael.projectadvanced.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.Collection;
 
 @Entity
 public class Equipment  {
@@ -16,7 +17,8 @@ public class Equipment  {
     private boolean beschikbaar;
 
     private String imageUrl;
-
+   @ManyToOne(fetch = FetchType.LAZY)
+   private Reservation reservations;
     public Equipment(){}
     public Integer getId() {
         return id;
@@ -66,6 +68,14 @@ public class Equipment  {
         this.merk = merk;
     }
 
+    public Reservation getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(Reservation reservations) {
+        this.reservations = reservations;
+    }
+
     public boolean isBeschikbaar() {
         return beschikbaar;
     }
@@ -73,4 +83,8 @@ public class Equipment  {
     public void setBeschikbaar(boolean beschikbaar) {
         this.beschikbaar = beschikbaar;
     }
+
+
+
+
 }
