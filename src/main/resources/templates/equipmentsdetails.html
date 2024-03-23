@@ -9,41 +9,50 @@
 </head>
 <div th:replace="~{fragments/header :: header}">Header</div>
 <body>
+<style>
+    .card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-body {
+        flex-grow: 1;
+    }
+</style>
+
 <div class="container">
     <div class="row">
-        <div class="col-lg-6 offset-lg-3">
-            <div class="card mt-5"> <!-- Voeg de klasse 'mt-3' toe voor margin top -->
+        <div class="col-lg-6 mb-4">
+            <div class="card mt-5">
                 <img th:src="${equipment.getImageUrl()}" alt="Equipment Image" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title">Merk: <span th:text="${equipment.merk}">Equipment Merk</span></h5>
                     <p class="card-text">Sport: <span th:text="${equipment.sport}">Equipment Sport</span></p>
                     <p class="card-text">Artikel: <span th:text="${equipment.artikel}">Equipment Artikel</span></p>
                     <p class="card-text">Huurprijs: <span th:text="'€ ' + ${equipment.getPrijs()}">€ Equipment Prijs</span></p>
-
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 mb-4">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h5 class="card-title">Reservatie Details</h5>
+                    <ul>
+                        <li th:each="reservation : ${equipment.reservations}">
+                            <p>First Naam: <span th:text="${equipment.reservations.user.getFirstName()}"></span></p>
+                            <p>Last Naam: <span th:text="${equipment.reservations.user.getLastName()}"></span></p>
+                            <p>Opmerking: <span th:text="${equipment.reservations.getOpmerkingen()}"></span></p>
+                            <p>Reserveringsstatus: <span th:text="${equipment.reservations.getStatus()}"></span></p>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="col-lg-6">
-    <div class="card mt-5">
-        <div class="card-body">
-            <h5 class="card-title">Reservatie Details</h5>
-            <ul>
-                <!-- Loop over de reservaties van het equipment -->
-                <li th:each="reservation : ${equipment.reservations}">
-                    <p>First Naam: <span th:text="${equipment.reservations.user.getFirstName()}"></span></p>
-                    <p>Last Naam: <span th:text="${equipment.reservations.user.getLastName()}"></span></p>
 
-                    <p>Reserveringsstatus: <span th:text="${equipment.reservations.getStatus()}"></span></p>
 
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-</div>
-</div>
+
 </body>
 <div th:replace = "~{fragments/footer :: footer}">footer</div>
 </html>
