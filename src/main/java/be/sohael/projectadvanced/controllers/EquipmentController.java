@@ -22,7 +22,7 @@ public class EquipmentController {
     private EquipmentRepository equipmentRepository;
 
     @GetMapping("/sportequipments")
-    public String zalen(Model model) {
+    public String sportequipments(Model model) {
         Iterable<Equipment> equipments = equipmentRepository.findAll();
         model.addAttribute("equipments", equipments);
         model.addAttribute("showFilters", false);
@@ -48,9 +48,8 @@ public class EquipmentController {
         List<Equipment> allequiments = equipmentRepository.findbyfilter(minprijs, maxprijs);
         model.addAttribute("minprijs", minprijs);
         model.addAttribute("maxprijs", maxprijs);
-        model.addAttribute("equipmens", allequiments);
+        model.addAttribute("equipments", allequiments);
         model.addAttribute("showFilters", true);
-        model.addAttribute("totalequipmen", allequiments.size());
         return "sportequipments";
     }
 }

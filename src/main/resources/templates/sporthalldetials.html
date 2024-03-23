@@ -18,14 +18,14 @@
 <div class="container">
     <div class="row row1 justify-content-center">
         <div class="col-auto">
-            <div class="row1content" th:if="${zalen}">
+            <div class="row1content" th:if="${sporthall}">
                 <div class="prevButtonDiv">
                     <a class="buttonLook smallButton prevButton" th:href="@{|/sporthalldetials/${prevId}|}"> Previous</a>
                 </div>
             </div>
         </div>
         <div class="col-auto">
-            <div class="row1content" th:if="${zalen}">
+            <div class="row1content" th:if="${sporthall}">
                 <div class="nextButtonDiv">
                     <a class="buttonLook smallButton nextButton" th:href="@{|/sporthalldetials/${nextId}|}">Next</a>
                 </div>
@@ -40,50 +40,48 @@
             <div class="card shadow-sm">
                 <div class="card-body">
                     <h2 class="card-title text-center mb-4">Zaal Details</h2>
-                    <div th:if="${zalen}" class="zaal-details">
+                    <div th:if="${sporthall}" class="zaal-details">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="zaal-image">
-                                    <img th:src="${zalen.getImageUrl()}" alt="Zaal Image" class="img-fluid rounded">
+                                    <img th:src="${sporthall.getImageUrl()}" alt="Zaal Image" class="img-fluid rounded">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="zaal-info">
-                                    <p><strong>Zaalnaam:</strong> <span th:text="${zalen.getZaalnaam()}"></span></p>
-                                    <p><strong>Capaciteit:</strong> <span th:text="${zalen.getCapaciteit()}"></span></p>
-                                    <p><strong>Beschrijving:</strong> <span th:text="${zalen.getBeschrijving()}"></span>
+                                    <p><strong>Zaalnaam:</strong> <span th:text="${sporthall.getZaalnaam()}"></span></p>
+                                    <p><strong>Capaciteit:</strong> <span th:text="${sporthall.getCapaciteit()}"></span></p>
+                                    <p><strong>Beschrijving:</strong> <span th:text="${sporthall.getBeschrijving()}"></span>
                                     </p>
-                                    <p><strong>Locatie:</strong> <span th:text="${zalen.getLocatie()}"></span></p>
-                                    <p><strong>Tarief:</strong> <span th:text="'€ ' + ${zalen.getTarief()}"></span></p>
+                                    <p><strong>Locatie:</strong> <span th:text="${sporthall.getLocatie()}"></span></p>
+                                    <p><strong>Tarief:</strong> <span th:text="'€ ' + ${sporthall.getTarief()}"></span></p>
 
                                 </div>
                             </div>
                         </div>
                         <form action="/reserveren" method="post">
                             <div class="form-group">
-                                <label for="zaal">Zaal:</label>
+                                <label for="zaal">Sporthall:</label>
                                 <select class="form-control" id="zaal" name="zaal">
-                                    <option th:each="zaal : ${zalen}" th:value="${zalen.getId()}"
-                                            th:text="${zalen.getZaalnaam()}"></option>
+                                    <option th:each="sporthall : ${sporthall}" th:value="${sporthall.getId()}" th:text="${sporthall.getZaalnaam()}"></option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="tijd">Tijd:</label>
                                 <select class="form-control" id="tijd" name="tijd">
-                                    <option th:each="tijd : ${zalen.getBeschikbareTijden()}" th:value="${tijd}"
-                                            th:text="${tijd}"></option><!-- werkt niet -->
+                                    <option th:each="availableTime : ${availableTimes}" th:value="${availableTime}" th:text="${availableTime}"></option>
                                 </select>
                             </div>
-
-                            <a th:if="${zalen}" th:href="@{/reservatiedetails}" class="btn btn-primary btn-block mt-4">Reserveer
-                                deze zaal</a>
+                            <input type="hidden" name="zaalId" th:value="${sporthall.getId()}">
+                            <a th:if="${sporthall}" th:href="@{/reservatiedetails}" class="btn btn-primary btn-block mt-4">Reserveer deze zaal</a>
                         </form>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div th:unless="${zalen}" class="text-center mt-4">
+    <div th:unless="${sporthall}" class="text-center mt-4">
         <p class="text-muted">Geen zaal gevonden.</p>
     </div>
 </div>

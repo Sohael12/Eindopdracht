@@ -12,72 +12,73 @@
 </head>
 <div th:replace="~{fragments/header :: header}">Header</div>
 <body>
-
 <div class="filter" th:unless="${showFilters}">
-    <a class="filters" th:href="@{/zalen/filter}">
+    <a class="filters" th:href="@{/sporthall/filter}">
         <button class="button">Filter</button>
     </a>
 </div>
 
 <div class="filter" th:if="${showFilters}">
-    <a class="filters" th:href="@{/zalen}">
+    <a class="filters" th:href="@{/sporthall}">
         <button class="button">Go back</button>
     </a>
 
     <div class="containertarief">
         <form>
             <div class="mb-3">
-                <input type="submit" value="Zoeken" class="btn btn-primary">
+                <input type="submit" value="search" class="btn btn-primary">
             </div>
             <h3>Tarief</h3>
             <div class="mb-3">
                 <label for="mintarief" class="form-label">Minimum Tarief:</label>
                 <div class="input-group">
                     <span class="input-group-text">€</span>
-                    <input type="number" id="mintarief" name="mintarief" class="form-control" th:value="${mintarief}" step="1">
+                    <input type="number" id="mintarief" name="mintarief" class="form-control" th:value="${param.mintarief}" step="1">
                 </div>
             </div>
             <div class="mb-3">
                 <label for="maxtarief" class="form-label">Maximum Tarief:</label>
                 <div class="input-group">
                     <span class="input-group-text">€</span>
-                    <input type="number" id="maxtarief" name="maxtarief" class="form-control" th:value="${maxtarief}" step="1">
+                    <input type="number" id="maxtarief" name="maxtarief" class="form-control" th:value="${param.maxtarief}" step="1">
                 </div>
             </div>
             <h3>Kleedkamers</h3>
             <div class="mb-3 form-check">
-                <input type="checkbox" id="kleedkamers" name="kleedkamers" class="form-check-input" th:checked="${kleedkamers}">
+                <input type="checkbox" id="kleedkamers" name="kleedkamers" class="form-check-input" th:checked="${param.kleedkamers}">
                 <label for="kleedkamers" class="form-check-label">Kleedkamers beschikbaar</label>
             </div>
             <h3>Capaciteit</h3>
             <div class="mb-3">
                 <label for="mincapaciteit" class="form-label">Minimale Capaciteit:</label>
-                <input type="number" id="mincapaciteit" name="mincapaciteit" class="form-control" th:value="${mincapaciteit}" step="1">
+                <input type="number" id="mincapaciteit" name="mincapaciteit" class="form-control" th:value="${param.mincapaciteit}" step="1">
             </div>
             <div class="mb-3">
                 <label for="maxcapaciteit" class="form-label">Maximale Capaciteit:</label>
-                <input type="number" id="maxcapaciteit" name="maxcapaciteit" class="form-control" th:value="${maxcapaciteit}" step="1">
+                <input type="number" id="maxcapaciteit" name="maxcapaciteit" class="form-control" th:value="${param.maxcapaciteit}" step="1">
             </div>
         </form>
     </div>
 </div>
 
-    <div class="container mt-4">
+<div class="container mt-4">
     <h2>Zalen</h2>
     <div class="row">
-        <div th:each="zaal : ${zalens}" class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div th:each="sporthalls : ${sporthalls}" class="col-lg-3 col-md-4 col-sm-6 mb-4">
             <div class="card h-100">
-                <a class="buttonlook mediumButton" th:href="@{|/sporthalldetials/${zaal.id}|}">
-                    <img th:src="@{${zaal.getImageUrl()}}" class="card-img-top img-fluid" alt="Zaalbeeld">
+                <a class="buttonlook mediumButton" th:href="@{|/sporthalldetials/${sporthalls.id}|}">
+                    <img th:src="@{${sporthalls.imageUrl}}" class="card-img-top img-fluid" alt="Zaalbeeld">
                 </a>
                 <div class="card-body">
-                    <h5 class="card-title" th:text="${zaal.getZaalnaam()}"></h5>
-                    <p class="card-text" th:text="${zaal.locatie}"></p>
+                    <h5 class="card-title" th:text="${sporthalls.zaalnaam}"></h5>
+                    <p class="card-text" th:text="${sporthalls.locatie}"></p>
                 </div>
             </div>
         </div>
     </div>
-    </div>
+</div>
+
+
 
     <div th:replace="~{fragments/footer :: footer}">footer</div>
 

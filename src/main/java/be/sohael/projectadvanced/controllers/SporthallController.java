@@ -17,48 +17,50 @@ import java.util.Optional;
 public class SporthallController {
     private Logger logger = LoggerFactory.getLogger(SporthallRepository.class);
     @Autowired
-    private SporthallRepository zalenRepository;
-    @GetMapping("/zalen")
-    public String zalen(Model model) {
-        Iterable<Sporthall> zalens = zalenRepository.findAll();
-        model.addAttribute("zalens", zalens);
+    private SporthallRepository sporthallRepository;
+    @GetMapping("/sporthall")
+    public String sporthall(Model model) {
+        Iterable<Sporthall> sporthalls = sporthallRepository.findAll();
+        model.addAttribute("sporthalls", sporthalls);
         model.addAttribute("showFilters", false);
-        return "zalen";
+        return "sporthall";
     }
     @GetMapping({"/sporthalldetials/{id}","/sporthalldetials"})
     public String sporthalldetials(Model model, @PathVariable(required = false) Integer id ) {
         if (id == null) return "sporthalldetials";
 
-        Optional<Sporthall> zalenfromdb = zalenRepository.findById(id);
+        Optional<Sporthall> sporthallfromdb = sporthallRepository.findById(id);
         //noinspection OptionalIsPresent
-        if (zalenfromdb.isPresent()) {
-            Optional<Sporthall> prevZaalfromdb = zalenRepository.findFirstByIdLessThanOrderByIdDesc(id);
-            if (prevZaalfromdb.isEmpty())
-                prevZaalfromdb = zalenRepository.findFirstByOrderByIdDesc();
-            Optional<Sporthall> nextZaalfromdb = zalenRepository.findFirstByIdGreaterThanOrderByIdAsc(id);
-            if (nextZaalfromdb.isEmpty())
-                nextZaalfromdb = zalenRepository.findFirstByOrderByIdAsc();
+        if (sporthallfromdb.isPresent()) {
+            Optional<Sporthall> prevSporthallfromdb = sporthallRepository.findFirstByIdLessThanOrderByIdDesc(id);
+            if (prevSporthallfromdb.isEmpty())
+                prevSporthallfromdb = sporthallRepository.findFirstByOrderByIdDesc();
+            Optional<Sporthall> nextSporthallfromdb = sporthallRepository.findFirstByIdGreaterThanOrderByIdAsc(id);
+            if (nextSporthallfromdb.isEmpty())
+                nextSporthallfromdb = sporthallRepository.findFirstByOrderByIdAsc();
 
-            model.addAttribute("zalen", zalenfromdb.get());
-            model.addAttribute("prevId", prevZaalfromdb.get().getId());
-            model.addAttribute("nextId", nextZaalfromdb.get().getId());
-
+            model.addAttribute("sporthall", sporthallfromdb.get());
+            model.addAttribute("prevId", prevSporthallfromdb.get().getId());
+            model.addAttribute("nextId", nextSporthallfromdb.get().getId());
+            model.addAttribute("availableTimes", sporthallfromdb.get().getBeschikbareTijden());
         }
+
+
         return "sporthalldetials";
     }
 
 
 
-    @GetMapping("/zalen/filter")
-    public String zalenfilter(Model model,
+    @GetMapping("/sporthall/filter")
+    public String sporthallfilter(Model model,
                                   @RequestParam(required = false) Integer mintarief,
                                   @RequestParam(required = false) Integer maxtarief,
                                   @RequestParam(required = false) Boolean kleedkamers,
                                   @RequestParam(required = false) Integer mincapaciteit,
                                   @RequestParam(required = false) Integer maxcapaciteit){
 
-        logger.info(String.format("zalenfilter -- min=%d, max=%d ," , mintarief, maxtarief,kleedkamers,mincapaciteit ,maxcapaciteit));
-        List<Sporthall> allzalens = zalenRepository.findbyfilter(mintarief,maxtarief,kleedkamers,mincapaciteit,maxcapaciteit);
+        logger.info(String.format("sporthallfilter -- min=%d, max=%d ," , mintarief, maxtarief,kleedkamers,mincapaciteit ,maxcapaciteit));
+        List<Sporthall> allsporthalls = sporthallRepository.findbyfilter(mintarief,maxtarief,kleedkamers,mincapaciteit,maxcapaciteit);
 
         model.addAttribute("mintarief", maxtarief);
         model.addAttribute("maxtarief", maxtarief);
@@ -66,9 +68,9 @@ public class SporthallController {
         model.addAttribute("mincapaciteit", mincapaciteit);
         model.addAttribute("maxcapaciteit", maxcapaciteit);
         model.addAttribute("showFilters", true);
-        model.addAttribute("zalens", allzalens);
-        model.addAttribute("totalZalen", allzalens.size());
-        return "zalen";
+        model.addAttribute("sporthalls", allsporthalls);
+
+        return "sporthall";
     }
 
 

@@ -26,7 +26,7 @@ public class SporthallAdminController {
             // Haal het Party-object op uit de database
             Sporthall zalen = sporthallRepository.findById(id).orElse(null);
             // Zet het Party-object klaar in het MVC-model
-            model.addAttribute("zalen", zalen);
+            model.addAttribute("sporthall", zalen);
             return "admin/zaaledit";//
 
         }

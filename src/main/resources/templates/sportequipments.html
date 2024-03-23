@@ -20,28 +20,28 @@
         <button class="button">Go back</button>
     </a>
 
-<div class="containertarief">
-    <form>
-        <div class="mb-3">
-            <input type="submit" value="Zoeken" class="btn btn-primary">
-        </div>
-        <h3>Prijs</h3>
-        <div class="mb-3">
-            <label for="minprijs" class="form-label">Minimum Tarief:</label>
-            <div class="input-group">
-                <span class="input-group-text">€</span>
-                <input type="number" id="minprijs" name="minprijs" class="form-control" th:value="${minprijs}" step="1">
+    <div class="containertarief">
+        <form >
+            <div class="mb-3">
+                <input type="submit" value="search" class="btn btn-primary">
             </div>
-        </div>
-        <div class="mb-3">
-            <label for="maxprijs" class="form-label">Maximum Tarief:</label>
-            <div class="input-group">
-                <span class="input-group-text">€</span>
-                <input type="number" id="maxprijs" name="maxtarief" class="form-control" th:value="${maxprijs}" step="1">
+            <h3>Prijs</h3>
+            <div class="mb-3">
+                <label for="minprijs" class="form-label">Minimum Prijs:</label>
+                <div class="input-group">
+                    <span class="input-group-text">€</span>
+                    <input type="number" id="minprijs" name="minprijs" class="form-control" th:value="${param.minprijs}" step="1">
+                </div>
             </div>
-        </div>
-    </form>
-</div>
+            <div class="mb-3">
+                <label for="maxprijs" class="form-label">Maximum Prijs:</label>
+                <div class="input-group">
+                    <span class="input-group-text">€</span>
+                    <input type="number" id="maxprijs" name="maxprijs" class="form-control" th:value="${param.maxprijs}" step="1">
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
 
 <div class="container mt-4">
@@ -50,18 +50,12 @@
         <div th:each="equipment : ${equipments}" class="col-lg-3 col-md-4 col-sm-6 mb-4">
             <div class="card h-100">
                 <a class="buttonlook mediumButton" th:href="@{|/equipmentsdetails/${equipment.id}|}">
-                    <!-- Link naar de detailspagina van het artikel -->
                     <img th:src="${equipment.imageUrl}" alt="Equipment Image" class="card-img-top">
-                    <!-- Afbeelding van het equipment -->
                 </a>
                 <div class="card-body">
-                    <!-- Merknaam -->
                     <p class="card-text">Sport: <span th:text="${equipment.sport}"></span></p>
-                    <!-- Sport -->
                     <p class="card-text">Artikel: <span th:text="${equipment.artikel}"></span></p>
-                    <!-- Artikel -->
                     <p class="card-text">Huurprijs: <span th:text="'€ ' + ${equipment.getPrijs()}"></span></p>
-                    <!-- Huurprijs -->
                 </div>
             </div>
         </div>
@@ -70,6 +64,8 @@
 
 
 
-</body>
 <div th:replace="~{fragments/footer :: footer}">footer</div>
+
+
+</body>
 </html>

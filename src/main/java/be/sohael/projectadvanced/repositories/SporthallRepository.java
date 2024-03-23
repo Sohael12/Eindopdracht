@@ -13,7 +13,7 @@ import java.util.Optional;
 
 public interface SporthallRepository extends CrudRepository<Sporthall,Integer> {
 
-    Iterable<Sporthall> findBykleedkamers(boolean kleedkamers);
+   ;
     Optional<Sporthall> findFirstByIdLessThanOrderByIdDesc(Integer id);
     Optional<Sporthall> findFirstByOrderByIdDesc();
     Optional<Sporthall> findFirstByIdGreaterThanOrderByIdAsc(Integer id);
