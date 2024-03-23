@@ -12,8 +12,12 @@
 
 <body>
 <div sec:authorize="hasAuthority('ADMIN')"> <!-- Alleen zichtbaar voor gebruikers met 'ADMIN' bevoegdheid -->
-    <a th:href="@{|/admin/zaaledit/${id}|}" class="buttonlink">Edit</a> <!-- Bewerkingslink -->
+    <a th:href="@{|/admin/sporthalledit/${id}|}" class="buttonlink">Edit</a> <!-- Bewerkingslink -->
 </div>
+<div sec:authorize="hasAuthority('ADMIN')"> <!-- Alleen zichtbaar voor gebruikers met 'ADMIN' bevoegdheid -->
+    <a th:href="@{|/admin/sporthallnew|}" class="buttonlink">New Sporthall</a> <!-- Link voor het toevoegen van een nieuwe sporthal -->
+</div>
+
 
 <div class="container">
     <div class="row row1 justify-content-center">

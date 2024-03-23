@@ -20,39 +20,45 @@ public class SporthallAdminController {
         @Autowired
         private SporthallRepository sporthallRepository;
 
-        @GetMapping("/zaaledit/{id}")
-        public String partyEdit(@PathVariable Integer id, Model model) {
-            logger.info("Executing partyEdit method for id: {}", id);
-            // Haal het Party-object op uit de database
-            Sporthall sporthall = sporthallRepository.findById(id).orElse(null);
-            // Zet het Party-object klaar in het MVC-model
-            model.addAttribute("sporthall", sporthall);
-            return "admin/zaaledit";//
+    @ModelAttribute("sporthall")
+    public Sporthall findSporthall(@PathVariable(required = false) Integer id) {
+        logger.info("findParty " + id);
+        if (id == null) return new Sporthall();
+        Optional<Sporthall> optionalSporthall = sporthallRepository.findById(id);
+        if (optionalSporthall.isPresent())
+            return optionalSporthall.get();
+        return null;
+    }
 
-        }
+    @GetMapping("/sporthalledit/{id}")
+    public String sporthallEdit(Model model,
+                                @PathVariable int id) {
+        logger.info("Sporthalledit " + id);
+        model.addAttribute("sporthall", sporthallRepository.findAll());
+        return "admin/sporthalledit";
+    }
 
-        @ModelAttribute("sporthall")
-        public Sporthall findsporthall(@PathVariable(required = false) Integer id) {
-            logger.info("findSporthall" + id);
-            Optional<Sporthall> optionalSporthall = sporthallRepository.findById(id);
-            if (optionalSporthall.isPresent())
-                return optionalSporthall.get();
-            return null;
-        }
-
-
-        @PostMapping("/zaaledit/{id}") // het is een post//
-        public String partyEdit(@PathVariable Integer id, Sporthall zalen) {
-            logger.info("zaaleditpost" + id + "-- new name=" + zalen.getZaalnaam());
-            sporthallRepository.save(zalen);
-            return "admin/zaaledit";
-        }
+    @PostMapping("/sporthalledit/{id}")
+    public String sporthallEditPost(@PathVariable int id,
+                                    Sporthall sporthall) {
+        logger.info("sporthallEditPost " + id + " -- new name=" + sporthall.getZaalnaam());
+        sporthallRepository.save(sporthall);
+        return "redirect:/sporthalledit/" + id;
+    }
 
     @GetMapping("/sporthallnew")
-    public String partyNew(Model model) {
+    public String sporthallNew(Model model) {
         logger.info("sporthallnew ");
         model.addAttribute("sporthall", sporthallRepository.findAll());
-        return "admin/partynew";
+        return "admin/sporthallnew";
+    }
+
+    @PostMapping("/sporthallnew")
+    public String partyNewSporthall(Model model,
+                               Sporthall sporthall) {
+        logger.info("sporthallNewPost -- new name=" + sporthall.getZaalnaam() + ", beschrijving=" + sporthall.getBeschrijving());
+        Sporthall newSporthall = sporthallRepository.save(sporthall);
+        return "redirect:/sporthalldetials/" + newSporthall.getId();
     }
 
 }

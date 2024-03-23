@@ -10,6 +10,7 @@ import java.util.List;
 @Entity
 public class Sporthall {
     @Id
+
     private Integer id;
 
     @NotBlank
