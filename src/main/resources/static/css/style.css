@@ -20,7 +20,7 @@ h2 {
     letter-spacing: 2px;
     margin-bottom: 30px;
 }
-/* -----------------------------------O  home page ----------------------------- */
+/* ----------------------------------- home page ----------------------------- */
 
 .hero-image {
     max-width: 90%; /* Adjust the max-width as needed */
@@ -507,29 +507,54 @@ a.btn:hover {
     text-align: center;
 }
 /* ------------------------------contact page-----------------------*/
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
+
+.containerhome {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-.contact-info p {
+
+h1 {
+    font-size: 24px;
     margin-bottom: 10px;
 }
-.picture-container {
-    text-align: center;
-    margin-top: 20px;
-}
-.picture-container img {
-    max-width: 200px;
-    height: auto;
-    margin-top: 20px; /* Adjust as needed */
-}
-.social-links i {
-    margin-right: 5px;
+
+.contact-info, .social-links {
+    margin-bottom: 20px;
 }
 
+.profile-picture img {
+    width: 200px;
+    border-radius: 10%;
+    border: 5px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
+
+}
+
+.social-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.social-links ul li {
+    margin-bottom: 10px;
+}
+
+.social-links ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.social-links ul li a:hover {
+    color: #8db7e3;
+}
 /*  foooooteeeeeeeeeeeeeeeer  */
 .footer {
 

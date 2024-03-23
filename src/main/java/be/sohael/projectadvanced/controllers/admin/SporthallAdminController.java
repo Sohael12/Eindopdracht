@@ -24,19 +24,19 @@ public class SporthallAdminController {
         public String partyEdit(@PathVariable Integer id, Model model) {
             logger.info("Executing partyEdit method for id: {}", id);
             // Haal het Party-object op uit de database
-            Sporthall zalen = sporthallRepository.findById(id).orElse(null);
+            Sporthall sporthall = sporthallRepository.findById(id).orElse(null);
             // Zet het Party-object klaar in het MVC-model
-            model.addAttribute("sporthall", zalen);
+            model.addAttribute("sporthall", sporthall);
             return "admin/zaaledit";//
 
         }
 
-        @ModelAttribute("zaal")
-        public Sporthall findParty(@PathVariable(required = false) Integer id) {
-            logger.info("findParty" + id);
-            Optional<Sporthall> optionalZaal = sporthallRepository.findById(id);
-            if (optionalZaal.isPresent())
-                return optionalZaal.get();
+        @ModelAttribute("sporthall")
+        public Sporthall findsporthall(@PathVariable(required = false) Integer id) {
+            logger.info("findSporthall" + id);
+            Optional<Sporthall> optionalSporthall = sporthallRepository.findById(id);
+            if (optionalSporthall.isPresent())
+                return optionalSporthall.get();
             return null;
         }
 
@@ -48,19 +48,11 @@ public class SporthallAdminController {
             return "admin/zaaledit";
         }
 
-    @GetMapping("/zaalnew")
+    @GetMapping("/sporthallnew")
     public String partyNew(Model model) {
-        logger.info("zaalnew ");
-        model.addAttribute("zalen", sporthallRepository.findAll());
+        logger.info("sporthallnew ");
+        model.addAttribute("sporthall", sporthallRepository.findAll());
         return "admin/partynew";
-    }
-
-    @PostMapping("/zaalnew")
-    public String partyNewPost(Model model,
-                               Sporthall sporthall) {
-        logger.info("sporthallNewPost -- new zaalnaam=" + sporthall.getZaalnaam() + ", locatie=" + sporthall.getLocatie());
-        Sporthall newSporthall = sporthallRepository.save(sporthall);
-        return "redirect:/sporthalldetials/" + newSporthall.getId();
     }
 
 }
