@@ -9,17 +9,6 @@
 </head>
 <div th:replace="~{fragments/header :: header}">Header</div>
 <body>
-<style>
-    .card {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .card-body {
-        flex-grow: 1;
-    }
-</style>
-
 <div class="container">
     <div class="row">
         <div class="col-lg-6 mb-4">
@@ -33,16 +22,20 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6 mb-4">
+        <div class="col-lg-6">
             <div class="card mt-5">
                 <div class="card-body">
-                    <h5 class="card-title">Reservatie Details</h5>
+                    <h5 class="card-title"> More information</h5>
                     <ul>
                         <li th:each="reservation : ${equipment.reservations}">
-                            <p>First Naam: <span th:text="${equipment.reservations.user.getFirstName()}"></span></p>
-                            <p>Last Naam: <span th:text="${equipment.reservations.user.getLastName()}"></span></p>
-                            <p>Opmerking: <span th:text="${equipment.reservations.getOpmerkingen()}"></span></p>
-                            <p>Reserveringsstatus: <span th:text="${equipment.reservations.getStatus()}"></span></p>
+                            <a th:href="@{|/userdetails/${equipment.reservations.user.id}|}" class="user-details-link">
+                                <p>First Naam: <span th:text="${equipment.reservations.user.getFirstName()}"></span></p>
+                                <p>Last Naam: <span th:text="${equipment.reservations.user.getLastName()}"></span></p>
+                                <p>Reserveringsstatus: <span th:text="${equipment.reservations.getStatus()}"></span></p>
+                                <p>Reservatie Equuiment: <span th:text="${equipment.reservations.getEquipmentinformation()}"></span></p>
+                                <p>Opmerking: <span th:text="${equipment.reservations.getOpmerkingen()}"></span></p>
+
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -50,6 +43,7 @@
         </div>
     </div>
 </div>
+
 
 
 

@@ -506,6 +506,10 @@ a.btn:hover {
     font-size: 24px; /* Pas de gewenste grootte aan */
     text-align: center;
 }
+
+.user-details-link {
+    color: #333333; /* Bijvoorbeeld blauw */
+}
 /* ------------------------------contact page-----------------------*/
 
 .containerhome {

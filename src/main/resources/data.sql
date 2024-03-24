@@ -14,23 +14,25 @@ VALUES
     (12, 'Sporthal Wilrijkse Plein - Antwerpen', 'Vogelzanglaan 6, 2020 Antwerpen', 35, 'In deze sporthal kunt u terecht voor basketbal, volleybal, zaalvoetbal, korfbal, handbal en badminton. Voor turnen en bewegingsonderwijs moet u in de kleine zaal zijn.', 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/wilrijkseplein.jpg?alt=media&token=61b164a2-c0ac-4927-abbb-8ed343cd2ea7', 18, false);
 INSERT INTO Sporthalluser (id, username, password, email, firstname, lastname ,image_Url)
 VALUES
-    (1, 'Jan', 'wachtwoord1', 'gebruiker1@example.com', 'Jan', 'Achternaam1','https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/persoon1.jpeg?alt=media&token=c7dd22a6-a227-4b96-9be3-e06ef69dbff6'),
-    (2, 'Sarah', 'wachtwoord2', 'gebruiker2@example.com', 'Sarah', 'Achternaam2' ,'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/persoon2.jpg?alt=media&token=0e921607-e267-4bc5-8b1c-e57d869338cd'),
-    (3, 'Michelle', 'wachtwoord3', 'gebruiker3@example.com', 'Michelle', 'Achternaam3','https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/persoon3.jpg?alt=media&token=10572cb3-c8d3-4bf3-bd4e-aaf7103ace8f'),
-    (4, 'Bart', 'wachtwoord4', 'gebruiker4@example.com', 'Bart', 'Achternaam4','https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/persoon4.jpg?alt=media&token=865f005b-da0f-4e2d-9ed8-2e97babf68ef'),
-    (5, 'Yannick', 'wachtwoord5', 'gebruiker5@example.com', 'Yannick', 'Achternaam5','https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/persoon5.jpg?alt=media&token=b449728b-1ae7-4aef-a60b-8f5c8657df88'),
-    (6, 'Sanna', 'wachtwoord6', 'gebruiker6@example.com', 'Sanna', 'Achternaam6','https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/persoon6.jpg?alt=media&token=fcac12fe-54c1-465b-a258-9a9dcf7fc0af');
+    (1, 'Jan123', 'wachtwoord1', 'jan.vandijk@hotmail.com', 'Jan', 'van Dijk','https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/persoon1.jpeg?alt=media&token=c7dd22a6-a227-4b96-9be3-e06ef69dbff6'),
+    (2, 'Sarah456', 'wachtwoord2', 'sarah.jansen@hotmail.com', 'Sarah', 'Jansen' ,'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/persoon2.jpg?alt=media&token=0e921607-e267-4bc5-8b1c-e57d869338cd'),
+    (3, 'Michelle789', 'wachtwoord3', 'michelle.pietersen@gmail.com', 'Michelle', 'Pietersen','https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/persoon3.jpg?alt=media&token=10572cb3-c8d3-4bf3-bd4e-aaf7103ace8f'),
+    (4, 'Bart101', 'wachtwoord4', 'bart.deboer@gmail.com', 'Bart', 'de Boer','https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/persoon4.jpg?alt=media&token=865f005b-da0f-4e2d-9ed8-2e97babf68ef'),
+    (5, 'Yannick202', 'wachtwoord5', 'yannick.vos@gmail.com', 'Yannick', 'Vos','https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/persoon5.jpg?alt=media&token=b449728b-1ae7-4aef-a60b-8f5c8657df88'),
+    (6, 'Sanna303', 'wachtwoord6', 'sanna.huizinga@hotmail.com', 'Sanna', 'Huizinga','https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/persoon6.jpg?alt=media&token=fcac12fe-54c1-465b-a258-9a9dcf7fc0af'),
+    (7, 'MO404', 'wachtwoord7', 'mohammed.ali@hotmail.com', 'Mohammed', 'Ali','https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/mohammed.jpg?alt=media&token=24130322-19fd-433a-a36c-dbe29c685484');
 
 
 
-INSERT INTO Reservation (id, status, opmerkingen ,user_Id,sporthall_ID)
+INSERT INTO Reservation (id, status, opmerkingen, equipmentinformation, user_Id, sporthall_ID)
 VALUES
-    (1,  'Betaald via kaart', 'Geen opmerkingen',2,6),
-    (2,  'Betaald via paypal', 'Gelieve te bevestigen',4,4),
-    (3,  'moet nog betaald worden', 'Klant heeft geannuleerd',5,5),
-    (4,  'Betaald via Visa', 'Geen opmerkingen',3,10),
-    (5, 'Betaald via  kaart', 'Wacht op bevestiging van manager',2,3),
-    (6, ' moet nog betaald worden ', 'Wacht op bevestiging van manager',1,2);
+    (1, 'Betaald via creditcard', 'Geen speciale opmerkingen', 'Voetbal gehuurd voor een uur', 1, 6),
+    (2, 'Betaald via PayPal', 'Gelieve te bevestigen', 'Squashracket gehuurd voor twee uur', 2, 4),
+    (3, 'Moet nog betaald worden', 'Klant heeft de reservering geannuleerd vanwege een wijziging in plannen', 'Yoga Mat gehuurd voor een les', 3, 5),
+    (4, 'Betaald via Visa', 'Geen opmerkingen', 'Basketbal gehuurd voor een wedstrijd', 4, 10),
+    (5, 'Betaald via creditcard', 'Wacht op bevestiging van de manager', 'Badmintonracket gehuurd voor een uur', 5, 3),
+    (6, 'Moet nog betaald worden', 'Wacht op bevestiging van de manager', 'Bokshandschoenen gehuurd voor een trainingsessie', 6, 2),
+    (7, 'Betaald via PayPal', 'Gelieve te bevestigen', 'Hockeystick gehuurd voor een oefensessie', 7, 5);
 
 
 
@@ -43,8 +45,8 @@ VALUES
     (5, 'Basketbal', 6.0, 'Basketbal', 'Spalding', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Basketbal.jpg?alt=media&token=52e5890e-be11-45cc-b838-30b9025cbec3',4),
     (8, 'Squashracket', 9.0, 'Squash', 'Head', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Squashracket.jpg?alt=media&token=bb19d27f-225b-445b-b75e-c99581c26b7c',2),
     (9, 'Badmintonracket', 7.0, 'Badminton', 'Yonex', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Badmintonracket.jpg?alt=media&token=c46ff513-c46d-4cd5-97d4-8f26392e87f5',5),
-    (10, 'Bokshandschoenen', 11.0, 'Boksen', 'Everlast', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Bokshandschoenen.jpg?alt=media&token=5cde63f5-3b7d-446e-b26f-02c017c15328',2),
-    (11, 'Hockey stick', 8.0, 'Hockey', 'Grays', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Hockeystick.jpg?alt=media&token=e9b4191e-415b-4024-b19c-d50c522af5e3',6);
+    (10, 'Bokshandschoenen', 11.0, 'Boksen', 'Everlast', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Bokshandschoenen.jpg?alt=media&token=5cde63f5-3b7d-446e-b26f-02c017c15328',6),
+    (11, 'Hockey stick', 8.0, 'Hockey', 'Grays', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Hockeystick.jpg?alt=media&token=e9b4191e-415b-4024-b19c-d50c522af5e3',7);
 
 INSERT INTO USERS (USERNAME, PASSWORD, ENABLED)
 VALUES ('admin', '$2a$10$9MIX8kYPkuB7uE/H5nHF8.KG6.YdjBA/voOnjSZnZDxLXL/2BIerS', true);
