@@ -20,18 +20,28 @@ VALUES
     (4, 'Bart101', 'wachtwoord4', 'bart.deboer@gmail.com', 'Bart', 'de Boer','https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/persoon4.jpg?alt=media&token=865f005b-da0f-4e2d-9ed8-2e97babf68ef'),
     (5, 'Yannick202', 'wachtwoord5', 'yannick.vos@gmail.com', 'Yannick', 'Vos','https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/persoon5.jpg?alt=media&token=b449728b-1ae7-4aef-a60b-8f5c8657df88'),
     (6, 'Sanna303', 'wachtwoord6', 'sanna.huizinga@hotmail.com', 'Sanna', 'Huizinga','https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/persoon6.jpg?alt=media&token=fcac12fe-54c1-465b-a258-9a9dcf7fc0af'),
-    (7, 'MO404', 'wachtwoord7', 'mohammed.ali@hotmail.com', 'Mohammed', 'Ali','https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/mohammed.jpg?alt=media&token=24130322-19fd-433a-a36c-dbe29c685484');
+    (7, 'MO404', 'wachtwoord7', 'mohammed.ali@hotmail.com', 'Mohammed', 'Ali','https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/mohammed.jpg?alt=media&token=24130322-19fd-433a-a36c-dbe29c685484'),
+    (8, 'Lisa505', 'wachtwoord8', 'lisa.jansen@gmail.com', 'Lisa', 'Jansen', 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/persoon7.jpg?alt=media&token=9c8121be-b256-4583-a5a6-d7b8690fe2c1'),
+    (9, 'Tom606', 'wachtwoord9', 'tom.vermeer@hotmail.com', 'Tom', 'Vermeer', 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/persoon8.jpg?alt=media&token=242f28b3-84b1-41cc-a5e0-9c6ab34f17b3'),
+    (10, 'Emma707', 'wachtwoord10', 'emma.smit@gmail.com', 'Emma', 'Smit', 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/persoon9.jpg?alt=media&token=ff1a0e6a-aa97-41f1-87aa-2d6848ffec43'),
+    (11, 'Lucas808', 'wachtwoord11', 'lucas.vandijk@hotmail.com', 'Lucas', 'van Dijk', 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/persoon10.jpg?alt=media&token=384c4a7f-dcd7-4749-b6ed-17d9e9208b11'),
+    (12, 'Eva909', 'wachtwoord12', 'eva.bosman@gmail.com', 'Eva', 'Bosman', 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/persoon11.jpg?alt=media&token=6c1323f5-1234-4542-aae2-6f1d5fd5a317');
 
 
 INSERT INTO Reservation (id, status, opmerkingen, equipmentinformation, user_Id, sporthall_ID)
 VALUES
-    (1, 'Betaald via creditcard', 'Kan ik mijn eigen sportschoenen meenemen of moeten we die ter plaatse huren?', 'Voetbal gehuurd voor een uur', 1, 6),
-    (2, 'Betaald via PayPal', 'Is er parkeergelegenheid beschikbaar bij de sportzaal?', 'Squashracket gehuurd voor twee uur', 2, 4),
-    (3, 'Moet nog betaald worden', 'Zijn er kleedkamers en doucheruimtes beschikbaar?', 'Yoga Mat gehuurd voor een les', 3, 5),
-    (4, 'Betaald via Visa', 'Zijn er specifieke regels of voorschriften waar we ons aan moeten houden tijdens ons verblijf?', 'Basketbal gehuurd voor een wedstrijd', 4, 10),
-    (5, 'Betaald via creditcard', 'Zijn er extra kosten verbonden aan het gebruik van bepaalde apparatuur of faciliteiten?', 'Badmintonracket gehuurd voor een uur', 5, 3),
-    (6, 'Moet nog betaald worden', 'Is er een wachttijd tussen opeenvolgende reserveringen, of kunnen we meteen beginnen?', 'Bokshandschoenen gehuurd voor een trainingsessie', 6, 2),
-    (7, 'Betaald via PayPal', 'Zijn er trainingsinstructeurs beschikbaar voor begeleiding?', 'Hockeystick gehuurd voor een oefensessie', 7, 5);
+    (1, 'Betaald via creditcard', 'Kan ik mijn eigen sportschoenen meenemen of moeten we die ter plaatse huren?', 'Voetbal gehuurd voor een uur', 1, 1),
+    (2, 'Betaald via PayPal', 'Is er parkeergelegenheid beschikbaar bij de sportzaal?', 'Squashracket gehuurd voor twee uur', 2, 2),
+    (3, 'Moet nog betaald worden', 'Zijn er kleedkamers en doucheruimtes beschikbaar?', 'Yoga Mat gehuurd voor een les', 3, 3),
+    (4, 'Betaald via Visa', 'Zijn er specifieke regels of voorschriften waar we ons aan moeten houden tijdens ons verblijf?', 'Basketbal gehuurd voor een wedstrijd', 4, 4),
+    (5, 'Betaald via creditcard', 'Zijn er extra kosten verbonden aan het gebruik van bepaalde apparatuur of faciliteiten?', 'Badmintonracket gehuurd voor een uur', 5, 5),
+    (6, 'Moet nog betaald worden', 'Is er een wachttijd tussen opeenvolgende reserveringen, of kunnen we meteen beginnen?', 'Bokshandschoenen gehuurd voor een trainingsessie', 6, 6),
+    (7, 'Betaald via PayPal', 'Zijn er trainingsinstructeurs beschikbaar voor begeleiding?', 'Hockeystick gehuurd voor een oefensessie', 7, 7),
+    (8, 'Betaald via creditcard', 'Moeten we vooraf onze eigen sportuitrusting meebrengen?', 'Tennisracket gehuurd voor een uur', 8, 8),
+    (9, 'Betaald via PayPal', 'Is er een minimumleeftijd vereist voor toegang tot de sportschool?', 'Gewichten gehuurd voor een fitnesssessie', 9, 9),
+    (10, 'Moet nog betaald worden', 'Zijn er lockers beschikbaar voor persoonlijke spullen?', 'Pingpongtafel gehuurd voor een uur', 10, 10),
+    (11, 'Betaald via Visa', 'Is er een limiet aan het aantal personen dat tegelijkertijd gebruik kan maken van de faciliteiten?', 'Volleybal gehuurd voor een wedstrijd', 11, 11),
+    (12, 'Moet nog betaald worden', 'Zijn er handdoeken beschikbaar voor gebruik in de fitnessruimte?', 'Fiets gehuurd voor een uur', 12, 12);
 
 
 
