@@ -329,28 +329,7 @@ button:hover {
     cursor: pointer; /* Cursor on hover */
     transition: background-color 0.3s ease;
 }
-.submit-button {
 
-    color: #fff; /* White text color */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px 20px; /* Padding */
-    cursor: pointer; /* Cursor on hover */
-    transition: background-color 0.3s ease; /* Smooth transition on hover */
-}
-
-
-
-.zaal-info input[type="text"],
-.zaal-info input[type="number"],
-.zaal-info textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
 .submit-button {
     background-color: #333333; /* Green background color */
     color: #fff; /* White text color */
@@ -361,9 +340,7 @@ button:hover {
     transition: background-color 0.3s ease; /* Smooth transition on hover */
 }
 
-.submit-button:hover {
-    background-color: #555555;
-}
+
 /*--------------------------Login in page voor admin --------------------------*/
 a.btn {
     display: inline-block;

@@ -22,7 +22,7 @@ public class Sporthall {
     private String imageUrl;
     private boolean kleedkamers;
 
-    private String username;
+
 
     @OneToMany(mappedBy = "sporthall")
     private Collection<Reservation> reservations;
@@ -44,13 +44,7 @@ public class Sporthall {
         return id;
     }
 
-    public String getUsername() {
-        return username;
-    }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
 
     public void setId(Integer id) {
         this.id = id;

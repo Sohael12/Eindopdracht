@@ -31,19 +31,20 @@ public class SporthallAdminController {
     }
 
     @GetMapping("/sporthalledit/{id}")
-    public String sporthallEdit(Model model,
-                                @PathVariable int id) {
+    public String sporthallEdit(Model model, @PathVariable int id) {
         logger.info("Sporthalledit " + id);
-        model.addAttribute("sporthall", sporthallRepository.findAll());
+        Sporthall sporthall = sporthallRepository.findById(id).orElse(new Sporthall());
+        model.addAttribute("sporthall", sporthall);
         return "admin/sporthalledit";
     }
+
 
     @PostMapping("/sporthalledit/{id}")
     public String sporthallEditPost(@PathVariable int id,
                                     Sporthall sporthall) {
         logger.info("sporthallEditPost " + id + " -- new name=" + sporthall.getZaalnaam());
         sporthallRepository.save(sporthall);
-        return "redirect:/sporthalldetials/" + id;
+        return "redirect:/sporthalldetails/" + id;
     }
 
     @GetMapping("/sporthallnew")
@@ -58,7 +59,7 @@ public class SporthallAdminController {
                                Sporthall sporthall) {
         logger.info("sporthallNewPost -- new name=" + sporthall.getZaalnaam() + ", beschrijving=" + sporthall.getBeschrijving());
         Sporthall newSporthall = sporthallRepository.save(sporthall);
-        return "redirect:/sporthalldetials/" + newSporthall.getId();
+        return "redirect:/sporthalldetails/" + newSporthall.getId();
     }
 
 }

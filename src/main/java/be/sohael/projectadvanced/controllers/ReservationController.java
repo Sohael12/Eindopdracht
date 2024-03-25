@@ -30,7 +30,7 @@ public class ReservationController {
     }
     @GetMapping({"/reservation/{id}","/reservation"})
     public String reservation(Model model, @PathVariable(required = false) Integer id ) {
-        if (id == null) return "sporthalldetials";
+        if (id == null) return "sporthalldetails";
 
         Optional<Reservation> reservationfromdb = reservatieRepositroy.findById(id);
         model.addAttribute("reservation", reservationfromdb.get());

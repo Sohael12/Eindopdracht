@@ -9,10 +9,64 @@
 </head>
 <div th:replace="~{fragments/header :: header}">Header</div>
 <body>
-<h2>Edit Sporthall</h2>
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    Sports Hall Form
+                </div>
+                <div class="card-body">
+                    <div th:if="${sporthall}" th:object="${sporthall}">
+                        <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">ERROR - Data not saved</div>
+
+                        <form th:action="@{|/admin/sporthalledit/${sporthall.id}|}" method="post">
+
+                            <div class="form-group">
+                                <label for="zaalnaam">Name:</label>
+                                <input id="zaalnaam" th:field="*{zaalnaam}" class="form-control" th:errorclass="is-invalid">
+                            </div>
+                            <div class="form-group">
+                                <label for="locatie">Location:</label>
+                                <input id="locatie" th:field="*{locatie}" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="capaciteit">Capacity:</label>
+                                <input id="capaciteit" type="number" th:field="*{capaciteit}" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="beschrijving">Description:</label>
+                                <textarea id="beschrijving" th:field="*{beschrijving}" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="tarief">Tariff:</label>
+                                <input id="tarief" type="number" step="0.01" th:field="*{tarief}" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="imageUrl">Image URL:</label>
+                                <input id="imageUrl" type="url" th:field="*{imageUrl}" class="form-control">
+                            </div>
+                            <div class="form-group form-check">
+                                <input id="kleedkamers" type="checkbox" th:field="*{kleedkamers}" class="form-check-input">
+                                <label class="form-check-label" for="kleedkamers">Changing Rooms</label>
+                            </div>
+                            <button type="submit" class="btn btn-primarysave">Save</button>
+                            <a th:href="@{|/sporthall/details/${sporthall.id}|}" class="btn btn-secondary">Cancel</a>
+                        </form>
+                    </div>
+                    <div class="row1content" th:unless="${sporthall}">
+                        <p>No sports hall was chosen</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 
+
+<div th:replace="~{fragments/footer :: footer}">Footer</div>
 
 
 

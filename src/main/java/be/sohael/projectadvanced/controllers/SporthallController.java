@@ -25,9 +25,9 @@ public class SporthallController {
         model.addAttribute("showFilters", false);
         return "sporthall";
     }
-    @GetMapping({"/sporthalldetials/{id}","/sporthalldetials"})
-    public String sporthalldetials(Model model, @PathVariable(required = false) Integer id ) {
-        if (id == null) return "sporthalldetials";
+    @GetMapping({"/sporthalldetails/{id}","/sporthalldetails"})
+    public String sporthalldetails(Model model, @PathVariable(required = false) Integer id ) {
+        if (id == null) return "sporthalldetails";
 
         Optional<Sporthall> sporthallfromdb = sporthallRepository.findById(id);
         //noinspection OptionalIsPresent
@@ -46,7 +46,7 @@ public class SporthallController {
         }
 
 
-        return "sporthalldetials";
+        return "sporthalldetails";
     }
 
 
