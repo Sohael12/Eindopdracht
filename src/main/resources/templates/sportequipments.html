@@ -49,13 +49,14 @@
     <div class="row">
         <div th:each="equipment : ${equipments}" class="col-lg-3 col-md-4 col-sm-6 mb-4">
             <div class="card h-100">
-                <a class="buttonlook mediumButton" th:href="@{|/equipmentsdetails/${equipment.id}|}">
+                <a th:href="@{|/equipmentsdetails/${equipment.id}|}">
                     <img th:src="${equipment.imageUrl}" alt="Equipment Image" class="card-img-top">
                 </a>
                 <div class="card-body">
                     <p class="card-text">Sport: <span th:text="${equipment.sport}"></span></p>
                     <p class="card-text">Artikel: <span th:text="${equipment.artikel}"></span></p>
                     <p class="card-text">Huurprijs: <span th:text="'€ ' + ${equipment.getPrijs()}"></span></p>
+                    <!-- Reserveren knop -->
                 </div>
             </div>
         </div>

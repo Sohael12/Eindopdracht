@@ -512,6 +512,16 @@ a.btn:hover {
 .user-details-link {
     color: #333333; /* Bijvoorbeeld blauw */
 }
+
+a.buttonlook.mediumButton {
+    color: inherit; /* Gebruik de kleur van de omliggende tekst */
+    text-decoration: none; /* Verwijder onderstreping van de link */
+}
+.user-details-link {
+    color: inherit; /* Gebruik de kleur van de omliggende tekst */
+    text-decoration: none; /* Verwijder onderstreping van de link */
+}
+
 /* ------------------------------contact page-----------------------*/
 
 .containerhome {

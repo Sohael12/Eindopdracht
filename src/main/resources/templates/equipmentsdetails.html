@@ -19,34 +19,27 @@
                     <p class="card-text">Sport: <span th:text="${equipment.sport}">Equipment Sport</span></p>
                     <p class="card-text">Artikel: <span th:text="${equipment.artikel}">Equipment Artikel</span></p>
                     <p class="card-text">Huurprijs: <span th:text="'€ ' + ${equipment.getPrijs()}">€ Equipment Prijs</span></p>
+                    <a th:href="@{/reservatiedetails}" class="btn btn-primary">Reserveer</a>
                 </div>
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 mb-4">
             <div class="card mt-5">
+                <a th:href="@{|/sporthalldetials/${equipment.reservations.sporthall.id}|}" class="user-details-link">
+                    <img th:src="@{${equipment.reservations.sporthall.getImageUrl()}}" class="card-img-top img-fluid" alt="Sporthal Image">
+                </a>
                 <div class="card-body">
                     <h5 class="card-title"> More information</h5>
-                    <ul>
-                        <li th:each="reservation : ${equipment.reservations}">
-                            <a th:href="@{|/userdetails/${equipment.reservations.user.id}|}" class="user-details-link">
-                                <p>First Naam: <span th:text="${equipment.reservations.user.getFirstName()}"></span></p>
-                                <p>Last Naam: <span th:text="${equipment.reservations.user.getLastName()}"></span></p>
-                                <p>Reserveringsstatus: <span th:text="${equipment.reservations.getStatus()}"></span></p>
-                                <p>Reservatie Equuiment: <span th:text="${equipment.reservations.getEquipmentinformation()}"></span></p>
-                                <p>Opmerking: <span th:text="${equipment.reservations.getOpmerkingen()}"></span></p>
-
-                            </a>
-                        </li>
-                    </ul>
+                    <div th:each="sporthall : ${equipment.reservations.sporthall}">
+                        <p>Zaal: <span th:text="${equipment.reservations.sporthall.getZaalnaam()}"></span></p>
+                        <p>Reserveringsstatus: <span th:text="${equipment.reservations.sporthall.getLocatie()}"></span></p>
+                        <p>Reservatie Equuiment: <span><span th:text="'€ ' + ${equipment.reservations.sporthall.getTarief()}"></span></span></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
-
-
 </body>
 <div th:replace = "~{fragments/footer :: footer}">footer</div>
 </html>

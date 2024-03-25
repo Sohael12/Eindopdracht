@@ -12,26 +12,29 @@
     <h2 class="mb-4">Gereserveerde Zalen</h2>
     <div class="row">
         <div th:each="reservatie : ${reservaties}" class="col-md-4 mb-4">
-            <a th:href="@{|/userdetails/${reservatie.user.id}|}" class="card-link text-decoration-none">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Zaal Informatie</h5>
-                        <p class="card-text my-text">ZaalNaam: <span th:text="${reservatie.sporthall.getZaalnaam()}"></span></p>
-                        <p class="card-text my-text">Betaling: <span th:text="${reservatie.status}"></span></p>
+            <a th:href="@{|/userdetails/${reservatie.user.id}|}" class="card-link">
+                <div class="card">
+                    <div class="card-inner card-front">
+                        <div class="card-body">
+                            <h5 class="card-title">Zaal Informatie:</h5>
+                            <p class="card-text">ZaalNaam: <span th:text="${reservatie.sporthall.getZaalnaam()}"></span></p>
+                            <p class="card-text">Betaling: <span th:text="${reservatie.status}"></span></p>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Klant Informatie</h5>
-                        <p class="card-text my-text">User Naam: <span th:text="${reservatie.user.getFirstName()}"></span></p>
-                        <p class="card-text my-text">ZaalNaam Reservatie: <span th:text="${reservatie.sporthall.getZaalnaam()}"></span></p>
-                        <p class="card-text my-text">Prijs reservatie: <span>&euro;</span><span th:text="${reservatie.sporthall.getTarief()}"></span></p>
-                        <p class="card-text my-text">Opmerking: <span th:text="${reservatie.getOpmerkingen()}"></span></p>
+                    <div class="card-inner card-back">
+                        <div class="card-body">
+                            <h5 class="card-title">Klant Informatie:</h5>
+                            <p class="card-text">User Naam: <span th:text="${reservatie.user.getFirstName()}"></span></p>
+                            <p class="card-text">ZaalNaam Reservatie: <span th:text="${reservatie.sporthall.getZaalnaam()}"></span></p>
+                            <p class="card-text">Prijs reservatie: <span>&euro;</span><span th:text="${reservatie.sporthall.getTarief()}"></span></p>
+                            <p class="card-text">Opmerking: <span>&euro;</span><span th:text="${reservatie.getOpmerkingen()}"></span></p>
+                        </div>
                     </div>
                 </div>
             </a>
         </div>
     </div>
 </div>
-
 
 
 
