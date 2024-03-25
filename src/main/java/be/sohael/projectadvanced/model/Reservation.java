@@ -13,9 +13,9 @@ public class Reservation {
     private String status;
     private String opmerkingen;
     private String username;
+    private String equipmentinformation;
     @ManyToOne(fetch = FetchType.LAZY) // deze doe je erbij voor  je begint eerst hier bij manytomany  dan bij venue manytoone j zo zeg je wat he is ook getters en setters vergeet niet setters getters  er bij te doen   //
     private Sporthall sporthall;
-   private String equipmentinformation;
     @ManyToOne(fetch = FetchType.LAZY) // deze doe je erbij voor  je begint eerst hier bij manytomany  dan bij venue manytoone j zo zeg je wat he is ook getters en setters vergeet niet setters getters  er bij te doen   //
     private User user;
     @OneToMany(mappedBy = "reservations")

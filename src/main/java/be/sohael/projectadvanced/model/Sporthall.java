@@ -23,10 +23,6 @@ public class Sporthall {
     private boolean kleedkamers;
 
     private String username;
-    @ElementCollection
-    private List<String> beschikbareTijden;
-
-
 
     @OneToMany(mappedBy = "sporthall")
     private Collection<Reservation> reservations;
@@ -72,15 +68,6 @@ public class Sporthall {
         return zaalnaam;
     }
 
-
-
-    public List<String> getBeschikbareTijden() {
-        return beschikbareTijden;
-    }
-
-    public void setBeschikbareTijden(List<String> beschikbareTijden) {
-        this.beschikbareTijden = beschikbareTijden;
-    }
 
 
     public void setZaalnaam(String zaalnaam) {

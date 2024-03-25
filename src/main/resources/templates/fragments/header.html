@@ -31,12 +31,13 @@
                         <a class="nav-link" th:href="@{/contact}">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link buttonLook menuButton" sec:authorize="!isAuthenticated()" th:href="@{/user/login}">Login</a>
-                        <a class="nav-link buttonLook menuButton" sec:authorize="isAuthenticated()" th:href="@{/user/logout}">Logout</a>
+                        <!-- Zorg ervoor dat zowel login- als logout-links dezelfde opmaak hebben -->
+                        <a class="nav-link buttonLook menuButton" th:href="@{/user/login}" sec:authorize="!isAuthenticated()">Login</a>
+                        <a class="nav-link buttonLook menuButton" th:href="@{/user/logout}" sec:authorize="isAuthenticated()">Logout</a>
                     </li>
-                    <!-- Add welcome message here -->
-                    <li class="nav-item welcome-message" th:if="${loginName != null}">
-                        <p class="nav-link">Hello <span th:text="${loginName}"></span></p>
+                    <li class="nav-item hello">
+                        <!-- Plaats de "logged in as" tekst in dezelfde container als de andere links -->
+                        <span class="nav-link" sec:authorize="isAuthenticated()">Welkom <span sec:authentication="name"></span></span>
                     </li>
                 </ul>
             </div>

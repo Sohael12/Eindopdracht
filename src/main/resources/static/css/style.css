@@ -308,7 +308,9 @@ button:hover {
     border-color: #000000; /* Rood */
 }
 /*-------------------------------------------------reservadiedetialspagina --------------------------*/
-
+.my-text {
+    font-size: 16px; /* Pas deze waarde aan om de gewenste tekstgrootte te krijgen */
+}
 
 /*-------------------------------------------------admin  zaaleditpage --------------------------*/
 

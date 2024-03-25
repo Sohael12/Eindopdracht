@@ -23,16 +23,15 @@ VALUES
     (7, 'MO404', 'wachtwoord7', 'mohammed.ali@hotmail.com', 'Mohammed', 'Ali','https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/mohammed.jpg?alt=media&token=24130322-19fd-433a-a36c-dbe29c685484');
 
 
-
 INSERT INTO Reservation (id, status, opmerkingen, equipmentinformation, user_Id, sporthall_ID)
 VALUES
-    (1, 'Betaald via creditcard', 'Geen speciale opmerkingen', 'Voetbal gehuurd voor een uur', 1, 6),
-    (2, 'Betaald via PayPal', 'Gelieve te bevestigen', 'Squashracket gehuurd voor twee uur', 2, 4),
-    (3, 'Moet nog betaald worden', 'Klant heeft de reservering geannuleerd vanwege een wijziging in plannen', 'Yoga Mat gehuurd voor een les', 3, 5),
-    (4, 'Betaald via Visa', 'Geen opmerkingen', 'Basketbal gehuurd voor een wedstrijd', 4, 10),
-    (5, 'Betaald via creditcard', 'Wacht op bevestiging van de manager', 'Badmintonracket gehuurd voor een uur', 5, 3),
-    (6, 'Moet nog betaald worden', 'Wacht op bevestiging van de manager', 'Bokshandschoenen gehuurd voor een trainingsessie', 6, 2),
-    (7, 'Betaald via PayPal', 'Gelieve te bevestigen', 'Hockeystick gehuurd voor een oefensessie', 7, 5);
+    (1, 'Betaald via creditcard', 'Kan ik mijn eigen sportschoenen meenemen of moeten we die ter plaatse huren?', 'Voetbal gehuurd voor een uur', 1, 6),
+    (2, 'Betaald via PayPal', 'Is er parkeergelegenheid beschikbaar bij de sportzaal?', 'Squashracket gehuurd voor twee uur', 2, 4),
+    (3, 'Moet nog betaald worden', 'Zijn er kleedkamers en doucheruimtes beschikbaar?', 'Yoga Mat gehuurd voor een les', 3, 5),
+    (4, 'Betaald via Visa', 'Zijn er specifieke regels of voorschriften waar we ons aan moeten houden tijdens ons verblijf?', 'Basketbal gehuurd voor een wedstrijd', 4, 10),
+    (5, 'Betaald via creditcard', 'Zijn er extra kosten verbonden aan het gebruik van bepaalde apparatuur of faciliteiten?', 'Badmintonracket gehuurd voor een uur', 5, 3),
+    (6, 'Moet nog betaald worden', 'Is er een wachttijd tussen opeenvolgende reserveringen, of kunnen we meteen beginnen?', 'Bokshandschoenen gehuurd voor een trainingsessie', 6, 2),
+    (7, 'Betaald via PayPal', 'Zijn er trainingsinstructeurs beschikbaar voor begeleiding?', 'Hockeystick gehuurd voor een oefensessie', 7, 5);
 
 
 

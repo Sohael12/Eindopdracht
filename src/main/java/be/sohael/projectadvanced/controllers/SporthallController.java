@@ -42,7 +42,7 @@ public class SporthallController {
             model.addAttribute("sporthall", sporthallfromdb.get());
             model.addAttribute("prevId", prevSporthallfromdb.get().getId());
             model.addAttribute("nextId", nextSporthallfromdb.get().getId());
-            model.addAttribute("availableTimes", sporthallfromdb.get().getBeschikbareTijden());
+
         }
 
 
