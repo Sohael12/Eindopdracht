@@ -43,8 +43,7 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         HandlerMappingIntrospector introspector = new HandlerMappingIntrospector();
-        MvcRequestMatcher.Builder mvcMatcherBuilder =
-                new MvcRequestMatcher.Builder(introspector);
+        MvcRequestMatcher.Builder mvcMatcherBuilder = new MvcRequestMatcher.Builder(introspector);
         http.authorizeHttpRequests(auth -> auth
                 .requestMatchers(mvcMatcherBuilder.pattern("/admin/**")).authenticated()
                 .anyRequest().permitAll());

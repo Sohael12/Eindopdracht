@@ -1,6 +1,7 @@
 package be.sohael.projectadvanced.controllers;
 import be.sohael.projectadvanced.model.Sporthall;
 import be.sohael.projectadvanced.model.User;
+import be.sohael.projectadvanced.repositories.SporthallRepository;
 import be.sohael.projectadvanced.repositories.UserRepository;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -22,6 +23,7 @@ import java.security.Principal;
 public class UserController {
     @Autowired
     private UserRepository userRepository;
+    private SporthallRepository sporthallRepository;
 
     @PostMapping({"/login"})
     public String login(Model model) {
@@ -40,11 +42,6 @@ public class UserController {
     public String logout(Model model, Principal principal) {
         if (principal == null) return "redirect:/sporthalldetials";
         return "user/logout";
-    }
-    @GetMapping("/register")
-    public String register(Principal principal) {
-        if (principal != null) return "redirect:/sporthalldetials";
-        return "user/register";
     }
 
 

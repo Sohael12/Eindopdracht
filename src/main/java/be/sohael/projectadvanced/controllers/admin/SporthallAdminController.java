@@ -22,7 +22,7 @@ public class SporthallAdminController {
 
     @ModelAttribute("sporthall")
     public Sporthall findSporthall(@PathVariable(required = false) Integer id) {
-        logger.info("findParty " + id);
+        logger.info("findSporthall " + id);
         if (id == null) return new Sporthall();
         Optional<Sporthall> optionalSporthall = sporthallRepository.findById(id);
         if (optionalSporthall.isPresent())
@@ -43,7 +43,7 @@ public class SporthallAdminController {
                                     Sporthall sporthall) {
         logger.info("sporthallEditPost " + id + " -- new name=" + sporthall.getZaalnaam());
         sporthallRepository.save(sporthall);
-        return "redirect:/sporthalledit/" + id;
+        return "redirect:/sporthalldetials/" + id;
     }
 
     @GetMapping("/sporthallnew")

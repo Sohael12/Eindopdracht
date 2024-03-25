@@ -10,8 +10,6 @@ import java.util.Collection;
 public class Reservation {
     @Id
     private Integer id;
-
-    private LocalDateTime reservatieDatumTijd;//
     private String status;
     private String opmerkingen;
     private String username;
@@ -47,9 +45,7 @@ public class Reservation {
         this.username = username;
     }
 
-    public LocalDateTime getReservatieDatumTijd() {
-        return reservatieDatumTijd;
-    }
+
 
     public Sporthall getSporthall() {
         return sporthall;
@@ -76,9 +72,7 @@ public class Reservation {
         this.user = user;
     }
 
-    public void setReservatieDatumTijd(LocalDateTime reservatieDatumTijd) {
-        this.reservatieDatumTijd = reservatieDatumTijd;
-    }
+
 
     public String getStatus() {
         return status;

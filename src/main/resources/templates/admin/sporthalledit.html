@@ -10,12 +10,59 @@
 <div th:replace="~{fragments/header :: header}">Header</div>
 <body>
 <h2>Edit Sporthall</h2>
+<div class="row1">
+    <div class="row1content" th:if="${sporthall}"th:object="${sporthall}">>
 
+        <h2>Edit Sports Hall</h2>
 
+        <form th:action="@{|/admin/sporthalledit/*{id}|}" method="post">
 
+            <div class="venueinfo">
+                <div class="infoLine">
+                    <label for="zaalnaam" class="infoLineName">Naam van de zaal: </label>
+                    <input id="zaalnaam" th:field="*{zaalnaam}" class="infoLineValue">
+                </div>
 
-
-
-
+                <div class="infoLine">
+                    <label for="locatie" class="infoLineName">Locatie: </label>
+                    <input id="locatie" th:field="*{locatie}" class="infoLineValue">
+                </div>
+                <div class="infoLine">
+                    <label for="capaciteit" class="infoLineName">Capaciteit: </label>
+                    <input id="capaciteit" th:field="*{capaciteit}" class="infoLineValue">
+                </div>
+                <div class="infoLine">
+                    <label for="beschrijving" class="infoLineName">Beschrijving: </label>
+                    <textarea id="beschrijving" th:field="*{beschrijving}" cols="25"
+                              class="infoLineValue">Beschrijving</textarea>
+                </div>
+                <div class="infoLine">
+                    <label for="tarief" class="infoLineName">Tarief: </label>
+                    <input id="tarief" th:field="*{tarief}" class="infoLineValue">
+                </div>
+                <div class="infoLine">
+                    <label for="imageUrl" class="infoLineName">Afbeeldings-URL: </label>
+                    <input id="imageUrl" th:field="*{imageUrl}" class="infoLineValue">
+                </div>
+                <div class="infoLine">
+                    <label for="kleedkamers" class="infoLineName">Kleedkamers: </label>
+                    <input type="checkbox" id="kleedkamers" th:field="*{kleedkamers}" class="infoLineValue">
+                </div>
+                <div class="infoLine">
+                    <button type="submit" class="buttonLook editButton">Opslaan</button>
+                    <a th:href="@{|/sporthalledit/${sporthall.id}|}" class="buttonLook editButton">Annuleren</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row1content" th:unless="${sporthall}">
+        <p>Er is geen sporthal gekozen</p>
+    </div>
+</div>
 </body>
+
+
+
+
+
 </html>

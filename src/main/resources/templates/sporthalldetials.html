@@ -70,12 +70,7 @@
                                     <option th:each="sporthall : ${sporthall}" th:value="${sporthall.getId()}" th:text="${sporthall.getZaalnaam()}"></option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label for="tijd">Tijd:</label>
-                                <select class="form-control" id="tijd" name="tijd">
-                                    <option th:each="availableTime : ${availableTimes}" th:value="${availableTime}" th:text="${availableTime}"></option>
-                                </select>
-                            </div>
+
                             <input type="hidden" name="zaalId" th:value="${sporthall.getId()}">
                             <a th:if="${sporthall}" th:href="@{/reservatiedetails}" class="btn btn-primary btn-block mt-4">Reserveer deze zaal</a>
                         </form>
