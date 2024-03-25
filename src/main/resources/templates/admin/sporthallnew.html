@@ -10,13 +10,42 @@
 <div th:replace="~{fragments/header :: header}">Header</div>
 <body>
 
-
-
-
-
-
-
+<div class="container">
+    <h2>New Sporthall</h2>
+    <form th:action="@{/admin/sporthallnew}" method="post" th:object="${sporthall}">
+        <div class="form-group">
+            <label for="zaalnaam">Name:</label>
+            <input type="text" id="zaalnaam" th:field="*{zaalnaam}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="locatie">Location:</label>
+            <input type="text" id="locatie" th:field="*{locatie}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="capaciteit">Capacity:</label>
+            <input type="number" id="capaciteit" th:field="*{capaciteit}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="beschrijving">Description:</label>
+            <textarea id="beschrijving" th:field="*{beschrijving}" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="tarief">Tarief:</label>
+            <input type="number" step="0.01" id="tarief" th:field="*{tarief}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="imageUrl">Image URL:</label>
+            <input type="text" id="imageUrl" th:field="*{imageUrl}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="kleedkamers">Changing rooms:</label>
+            <input type="checkbox" id="kleedkamers" th:field="*{kleedkamers}" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>
 
 <div th:replace="~{fragments/footer :: footer}">Footer</div>
+
 </body>
 </html>

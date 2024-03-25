@@ -48,19 +48,21 @@ public class SporthallAdminController {
     }
 
     @GetMapping("/sporthallnew")
-    public String sporthallNew(Model model) {
+    public String sporthallNew(@RequestParam(required = false) Integer id, Model model) {
         logger.info("sporthallnew ");
-        model.addAttribute("sporthall", sporthallRepository.findAll());
+        Sporthall sporthall = (id != null) ? sporthallRepository.findById(id).orElse(new Sporthall()) : new Sporthall();
+        model.addAttribute("sporthall", sporthall);
         return "admin/sporthallnew";
     }
 
+
     @PostMapping("/sporthallnew")
-    public String partyNewSporthall(Model model,
-                               Sporthall sporthall) {
-        logger.info("sporthallNewPost -- new name=" + sporthall.getZaalnaam() + ", beschrijving=" + sporthall.getBeschrijving());
-        Sporthall newSporthall = sporthallRepository.save(sporthall);
-        return "redirect:/sporthalldetails/" + newSporthall.getId();
-    }
+        public String partyNewSporthall(Model model,
+                                   Sporthall sporthall) {
+            logger.info("sporthallNewPost -- new name=" + sporthall.getZaalnaam() + ", beschrijving=" + sporthall.getBeschrijving());
+            Sporthall newSporthall = sporthallRepository.save(sporthall);
+            return "redirect:/sporthalldetails/" + newSporthall.getId();
+        }
 
 }
 

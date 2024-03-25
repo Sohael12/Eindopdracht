@@ -19,13 +19,13 @@
                     <p class="card-text">Sport: <span th:text="${equipment.sport}">Equipment Sport</span></p>
                     <p class="card-text">Artikel: <span th:text="${equipment.artikel}">Equipment Artikel</span></p>
                     <p class="card-text">Huurprijs: <span th:text="'€ ' + ${equipment.getPrijs()}">€ Equipment Prijs</span></p>
-                    <a th:href="@{/reservatiedetails}" class="btn btn-primary">Reserveer</a>
+                    <a th:href="@{/reservationdetails}" class="btn btn-primary">Reserveer</a>
                 </div>
             </div>
         </div>
         <div class="col-lg-6 mb-4">
             <div class="card mt-5">
-                <a th:href="@{|/sporthalldetials/${equipment.reservations.sporthall.id}|}" class="user-details-link">
+                <a th:href="@{|/sporthalldetails/${equipment.reservations.sporthall.id}|}" class="user-details-link">
                     <img th:src="@{${equipment.reservations.sporthall.getImageUrl()}}" class="card-img-top img-fluid" alt="Sporthal Image">
                 </a>
                 <div class="card-body">
