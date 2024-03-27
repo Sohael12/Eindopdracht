@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/style.css"/>
     <title>Title</title>
 </head>
 <div th:replace="~{fragments/header :: header}">Header</div>
+
 <body>
+
 <div class="container-login100">
     <div class="wrap-login100 p-t-50 p-b-90">
-        <form class="login100-form validate-form flex-sb flex-w" th:action="@{/user/login}" method="post">
-            <span class="login100-form-title p-b-51">Login</span>
+        <form class="login100-form validate-form flex-sb flex-w" th:action="@{/user/register}" method="post">
+            <span class="login100-form-title p-b-51">Register</span>
 
             <div class="wrap-input100 validate-input m-b-16" data-validate="Username is required">
                 <input class="input100" type="text" name="username" placeholder="Username">
@@ -26,27 +27,25 @@
 
             <div class="flex-sb-m w-full p-t-3 p-b-24">
                 <div class="contact100-form-checkbox">
-                    <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-                    <label class="label-checkbox100" for="ckb1">Remember me</label>
+                    <input class="input-checkbox100" id="ckb1" type="checkbox" name="agree-terms">
+                    <label class="label-checkbox100" for="ckb1">I agree to the terms and conditions</label>
                 </div>
             </div>
 
             <div class="container-login100-form-btn m-t-17">
-                <button class="login100-form-btn">Login</button>
-            </div>
-
-            <div class="row1">
-                <div class="row1content">
-                    <div class="infoLine">
-                        Or <a th:href="@{/user/register}" class="linklook">register</a> as a new user.
-                    </div>
-                </div>
+                <button class="login100-form-btn">Register</button>
             </div>
         </form>
     </div>
 </div>
 
-
+<div class="row1">
+    <div class="row1content">
+        <div class="infoLine">
+            <a th:href="@{|/user/login|}" class="linklook">Login</a>&nbsp;if you are already a registered user.
+        </div>
+    </div>
+</div>
 <div th:replace="~{fragments/footer :: footer}">footer</div>
 
 

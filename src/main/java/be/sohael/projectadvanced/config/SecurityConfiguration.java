@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
@@ -24,12 +23,15 @@ import static org.springframework.boot.autoconfigure.security.servlet.PathReques
 @Configuration
 public class SecurityConfiguration {
 
-
     @Value("${security.h2-console-needed}")
     private boolean h2ConsoleNeeded;
 
+    /**
+     * @noinspection SpringJavaInjectionPointsAutowiringInspection
+     */
     @Autowired
     private DataSource dataSource;
+
 
     @Bean
     public JdbcUserDetailsManager jdbcUserDetailsManager() {
@@ -40,19 +42,20 @@ public class SecurityConfiguration {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         HandlerMappingIntrospector introspector = new HandlerMappingIntrospector();
         MvcRequestMatcher.Builder mvcMatcherBuilder = new MvcRequestMatcher.Builder(introspector);
+
         http.authorizeHttpRequests(auth -> auth
-                .requestMatchers(mvcMatcherBuilder.pattern("/admin/**")).authenticated()
+                .requestMatchers(mvcMatcherBuilder.pattern("/admin/**")).hasAuthority("ADMIN")
                 .anyRequest().permitAll());
         http.formLogin(form -> form
                 .loginPage("/user/login")
                 .permitAll()
         );
         http.logout(form -> form.logoutUrl("/user/logout"));
-
 
         //to enable h2-console:
         if (h2ConsoleNeeded) {
@@ -65,10 +68,5 @@ public class SecurityConfiguration {
         return http.build();
     }
 }
-
-
-
-
-
 
 
