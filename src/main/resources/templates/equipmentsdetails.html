@@ -11,35 +11,35 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-lg-6 mb-4">
+        <div class="col-lg-12 mb-4">
             <div class="card mt-5">
-                <img th:src="${equipment.getImageUrl()}" alt="Equipment Image" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">Merk: <span th:text="${equipment.merk}">Equipment Merk</span></h5>
-                    <p class="card-text">Sport: <span th:text="${equipment.sport}">Equipment Sport</span></p>
-                    <p class="card-text">Artikel: <span th:text="${equipment.artikel}">Equipment Artikel</span></p>
-                    <p class="card-text">Huurprijs: <span th:text="'€ ' + ${equipment.getPrijs()}">€ Equipment Prijs</span></p>
-                    <a th:href="@{/reservationdetailsdi}" class="btn btn-primary">Reserveer</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 mb-4">
-            <div class="card mt-5">
-                <a th:href="@{|/sporthalldetails/${equipment.reservations.sporthall.id}|}" class="user-details-link">
-                    <img th:src="@{${equipment.reservations.sporthall.getImageUrl()}}" class="card-img-top img-fluid" alt="Sporthal Image">
-                </a>
-                <div class="card-body">
-                    <h5 class="card-title"> More information</h5>
-                    <div th:each="sporthall : ${equipment.reservations.sporthall}">
-                        <p>Zaal: <span th:text="${equipment.reservations.sporthall.getZaalnaam()}"></span></p>
-                        <p>Reserveringsstatus: <span th:text="${equipment.reservations.sporthall.getLocatie()}"></span></p>
-                        <p>Reservatie Equuiment: <span><span th:text="'€ ' + ${equipment.reservations.sporthall.getTarief()}"></span></span></p>
+                <div class="row no-gutters">
+                    <div class="col-md-6">
+                        <img th:src="${equipment.getImageUrl()}" alt="Equipment Image" class="card-img-top">
                     </div>
+                    <div class="col-md-6">
+                        <img th:src="@{${equipment.reservations.sporthall.getImageUrl()}}" class="card-img-top" alt="Sporthal Image">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"><strong>Merk:</strong> <span th:text="${equipment.merk}"></span></h5>
+                    <p class="card-text"><strong>Sport:</strong> <span th:text="${equipment.sport}"></span></p>
+                    <p class="card-text"><strong>Artikel:</strong> <span th:text="${equipment.artikel}"></span></p>
+                    <p class="card-text"><strong>Huurprijs:</strong> <span th:text="'€ ' + ${equipment.getPrijs()}"></span></p>
+                    <hr>
+                    <h5 class="card-title">Zaal Informatie</h5>
+                    <p><strong>Zaal:</strong> <span th:text="${equipment.reservations.sporthall.getZaalnaam()}"></span></p>
+                    <p><strong>Adres:</strong> <span th:text="${equipment.reservations.sporthall.getLocatie()}"></span></p>
+                    <p><strong>Zaal Prijs:</strong> <span><span th:text="'€ ' + ${equipment.reservations.sporthall.getTarief()}"></span></span></p>
+                    <a th:href="@{/reservationdetails}" class="btn btn-primary">Reserveer</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
 </body>
 <div th:replace = "~{fragments/footer :: footer}">footer</div>
 </html>
