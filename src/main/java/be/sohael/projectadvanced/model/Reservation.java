@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
+import java.util.Date;
 
 
 @Entity
@@ -12,8 +13,8 @@ public class Reservation {
     private Integer id;
     private String status;
     private String opmerkingen;
-    private String username;
     private String equipmentinformation;
+
     @ManyToOne(fetch = FetchType.LAZY) // deze doe je erbij voor  je begint eerst hier bij manytomany  dan bij venue manytoone j zo zeg je wat he is ook getters en setters vergeet niet setters getters  er bij te doen   //
     private Sporthall sporthall;
     @ManyToOne(fetch = FetchType.LAZY) // deze doe je erbij voor  je begint eerst hier bij manytomany  dan bij venue manytoone j zo zeg je wat he is ook getters en setters vergeet niet setters getters  er bij te doen   //
@@ -37,13 +38,6 @@ public class Reservation {
     }
 
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
 
 
 
@@ -54,6 +48,7 @@ public class Reservation {
     public void setSporthall(Sporthall sporthall) {
         this.sporthall = sporthall;
     }
+
 
 
     public User getUser() {
@@ -81,6 +76,8 @@ public class Reservation {
     public void setStatus(String status) {
         this.status = status;
     }
+
+
 
     public String getOpmerkingen() {
         return opmerkingen;

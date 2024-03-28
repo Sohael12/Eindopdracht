@@ -13,3 +13,4 @@ CREATE TABLE authorities
     FOREIGN KEY (username) REFERENCES users (username)
 );
 create unique index ix_auth_username on authorities (username,authority);
+

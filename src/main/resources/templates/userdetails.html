@@ -28,10 +28,19 @@
                                     <p><strong>Email:</strong> <span th:text="${user.getEmail()}"></span></p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div th:unless="${user}">
+                            <div class="col-md-6">
+                                <h3>Reservations</h3>
+                                <ul>
+                                    <li th:each="reservation : ${user.getReservations()}">
+                                        Reservation ID: <span th:text="${reservation.getId()}"></span><br>
+                                        Date: <span th:text="${reservation.getDate()}"></span><br>
+                                        Time: <span th:text="${reservation.getTime()}"></span><br>
+                                        <!-- Add more reservation details here -->
+                                    </li>
+                                </ul>
+                            </div>
 
+                            <div th:unless="${user}">
                         <p>User not found</p>
                     </div>
                 </div>
@@ -39,6 +48,7 @@
         </div>
     </div>
 </div>
+
 
 </body>
 <div th:replace="~{fragments/footer :: footer}">footer</div>
