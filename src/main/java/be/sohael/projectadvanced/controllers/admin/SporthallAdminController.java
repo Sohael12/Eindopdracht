@@ -2,11 +2,13 @@ package be.sohael.projectadvanced.controllers.admin;
 
 import be.sohael.projectadvanced.model.Sporthall;
 import be.sohael.projectadvanced.repositories.SporthallRepository;
+import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -40,9 +42,16 @@ public class SporthallAdminController {
 
 
     @PostMapping("/sporthalledit/{id}")
-    public String sporthallEditPost(@PathVariable int id,
-                                    Sporthall sporthall) {
+    public String sporthallEditPost(Model model,
+                                    @PathVariable int id,
+                                    @Valid Sporthall sporthall,
+                                    BindingResult bindingResult)  {
         logger.info("sporthallEditPost " + id + " -- new name=" + sporthall.getZaalnaam());
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("sporthalls", sporthallRepository.findAll());
+            return "admin/sporthalledit";
+
+        }
         sporthallRepository.save(sporthall);
         return "redirect:/sporthalldetails/" + id;
     }

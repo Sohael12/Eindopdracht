@@ -584,3 +584,11 @@ h1 {
     color: #cccccc;
 }
 
+.error {
+    color: red;
+    font-size: larger;
+}
+
+.fieldError, input.fieldError {
+    background-color: red;
+}

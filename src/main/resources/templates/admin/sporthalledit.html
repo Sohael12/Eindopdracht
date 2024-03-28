@@ -18,13 +18,13 @@
                 </div>
                 <div class="card-body">
                     <div th:if="${sporthall}" th:object="${sporthall}">
-                        <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">ERROR - Data not saved</div>
-
-                        <form th:action="@{|/admin/sporthalledit/${sporthall.id}|}" method="post">
-
+                        <h2 th:text="${sporthall.zaalnaam} ? 'Edit Sporthall' : 'Create New Sporthall'"></h2>
+                        <div class="alert alert-danger" th:if="${#fields.hasErrors()}">ERROR - Data not saved</div>
+                        <form th:action="@{|/admin/sporthalledit/${sporthall.id}|}" method="post" th:object="${sporthall}">
                             <div class="form-group">
                                 <label for="zaalnaam">Name:</label>
-                                <input id="zaalnaam" th:field="*{zaalnaam}" class="form-control" th:errorclass="is-invalid">
+                                <input id="zaalnaam" th:field="*{zaalnaam}" class="form-control" th:errorclass="${#fields.hasErrors('zaalnaam')} ? 'is-invalid'">
+                                <small class="invalid-feedback" th:if="${#fields.hasErrors('zaalnaam')}" th:errors="*{zaalnaam}">Name is required</small>
                             </div>
                             <div class="form-group">
                                 <label for="locatie">Location:</label>
