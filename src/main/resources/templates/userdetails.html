@@ -11,44 +11,31 @@
 </head>
 <div th:replace="~{fragments/header :: header}">Header</div>
 <body>
-<div class="container">
+<div class="containeruser">
     <div class="row justify-content-center mt-4 mb-4">
         <div class="col-lg-8">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h2 class="card-title text-center mb-4">User Information</h2>
-                    <div th:if="${user}" class="zaal-details">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="user-info">
-                                    <img th:src="${user.getImageUrl()}" class="img-fluid rounded-circle mb-3" alt="Profile Picture">
-                                    <p><strong>Username:</strong> <span th:text="${user.getUsername()}"></span></p>
-                                    <p><strong>Firstname:</strong> <span th:text="${user.getFirstName()}"></span></p>
-                                    <p><strong>Lastname:</strong> <span th:text="${user.getLastName()}"></span></p>
-                                    <p><strong>Email:</strong> <span th:text="${user.getEmail()}"></span></p>
-                                </div>
+            <div class="user-details">
+                <h2 class="text-center mb-4">User Information</h2>
+                <div th:if="${user}">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="user-info">
+                                <img th:src="${user.getImageUrl()}" alt="Profile Picture">
+                                <p><strong>Username:</strong> <span th:text="${user.getUsername()}"></span></p>
+                                <p><strong>Firstname:</strong> <span th:text="${user.getFirstName()}"></span></p>
+                                <p><strong>Lastname:</strong> <span th:text="${user.getLastName()}"></span></p>
+                                <p><strong>Email:</strong> <span th:text="${user.getEmail()}"></span></p>
                             </div>
-                            <div class="col-md-6">
-                                <h3>Reservations</h3>
-                                <ul>
-                                    <li th:each="reservation : ${user.getReservations()}">
-                                        Reservation ID: <span th:text="${reservation.getId()}"></span><br>
-                                        Date: <span th:text="${reservation.getDate()}"></span><br>
-                                        Time: <span th:text="${reservation.getTime()}"></span><br>
-                                        <!-- Add more reservation details here -->
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div th:unless="${user}">
-                        <p>User not found</p>
+                        </div>
                     </div>
+                </div>
+                <div th:unless="${user}">
+                    <p>User not found</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 
 </body>
 <div th:replace="~{fragments/footer :: footer}">footer</div>
