@@ -8,7 +8,13 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
+
+
+
 public interface EquipmentRepository extends CrudRepository<Equipment,Integer> {
+
+
+
     @Query("SELECT e FROM Equipment e WHERE" +
             " (:minprijs IS NULL OR e.prijs >= :minprijs)AND "+
             "(:maxprijs IS NULL OR e.prijs <= :maxprijs)")
