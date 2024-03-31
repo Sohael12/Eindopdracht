@@ -53,11 +53,9 @@
                     <img th:src="${equipment.imageUrl}" alt="Equipment Image" class="card-img-top">
                 </a>
                 <div class="card-body">
-                    <p class="card-text">Sport: <span th:text="${equipment.sport}"></span></p>
-                    <p class="card-text">Artikel: <span th:text="${equipment.artikel}"></span></p>
-                    <p class="card-text">Huurprijs: <span th:text="'€ ' + ${equipment.getPrijs()}"></span></p>
-                    <!-- Reserveren knop -->
+                    <p class="card-text"><strong>Prijs:</strong> &euro;<span th:text="${equipment.prijs}"></span></p>
                 </div>
+
             </div>
         </div>
     </div>

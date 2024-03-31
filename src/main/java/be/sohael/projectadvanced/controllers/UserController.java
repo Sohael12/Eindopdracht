@@ -22,9 +22,7 @@ import java.security.Principal;
 @Controller
 @RequestMapping("/user")
 public class UserController {
-    @Autowired
-    private UserRepository userRepository;
-    private SporthallRepository sporthallRepository;
+
     @Autowired
     private JdbcUserDetailsManager jdbcUserDetailsManager;
     @Autowired
