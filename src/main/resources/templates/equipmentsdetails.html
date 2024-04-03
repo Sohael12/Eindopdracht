@@ -26,12 +26,14 @@
                     <p class="card-text"><strong>Sport:</strong> <span th:text="${equipment.sport}"></span></p>
                     <p class="card-text"><strong>Artikel:</strong> <span th:text="${equipment.artikel}"></span></p>
                     <p class="card-text"><strong>Huurprijs:</strong> <span th:text="'€ ' + ${equipment.getPrijs()}"></span></p>
+                    <a th:href="@{/reservationdetails}" class="btn btn-primary">Reserveer Uitrusting</a>
+
                     <hr>
-                    <h5 class="card-title">Zaal Informatie</h5>
+                    <h5 class="card-title">Ontdek waar je deze uitrusting kunt gebruiken</h5>
                     <p><strong>Zaal:</strong> <span th:text="${equipment.reservations.sporthall.getZaalnaam()}"></span></p>
                     <p><strong>Adres:</strong> <span th:text="${equipment.reservations.sporthall.getLocatie()}"></span></p>
                     <p><strong>Zaal Prijs:</strong> <span><span th:text="'€ ' + ${equipment.reservations.sporthall.getTarief()}"></span></span></p>
-                    <a th:href="@{/reservationdetails}" class="btn btn-primary">Reserveer</a>
+                    <a th:href="@{/sporthall}" class="btn btn-primary">Naar sporthall </a>
                 </div>
             </div>
         </div>

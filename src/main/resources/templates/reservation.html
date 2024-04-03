@@ -9,12 +9,13 @@
 <div th:replace="~{fragments/header :: header}">Header</div>
 <body>
 <div class="reservation-container mt-5">
+    <h2>Zaal gereserveerd</h2>
     <div class="row justify-content-center">
         <div th:each="reservatie : ${reservation}" class="col-md-8 mb-4">
             <a th:href="@{/reservationdetails}" class="card-link">
                 <div class="card h-100 reservation-card">
                     <div class="card-body">
-                        <h5 class="card-title">Reservatie details</h5>
+                        <h5 class="card-title">Reservatie is Gelukt </h5>
                         <p class="card-text"><strong>ZaalNaam:</strong> <span th:text="${reservation.sporthall.getZaalnaam()}"></span></p>
                         <p class="card-text"><strong>Betaling:</strong> <span th:text="${reservation.status}"></span></p>
                         <p class="card-text"><strong> Naam:</strong> <span th:text="${reservation.user.getFirstName()}"></span></p>
