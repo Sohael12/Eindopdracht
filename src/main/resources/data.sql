@@ -49,13 +49,13 @@ VALUES
 INSERT INTO equipment (id, artikel, prijs, sport, merk, beschikbaar, image_Url,reservations_ID )
 VALUES
     (1, 'Voetbal', 5.0, 'Voetbal', 'Adidas', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Voetbal.jpg?alt=media&token=5ccbe5aa-ae9b-4a0e-abaa-daa5d5242cdb',1),
-    (2, 'Tennisracket', 10.0, 'Tennis', 'Wilson', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Tennisracket.jpg?alt=media&token=317a072a-7aee-46d1-a5a3-4191ce97715b',5),
+    (2, 'Tennisracket', 10.0, 'Tennis', 'Wilson', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Tennisracket.jpg?alt=media&token=317a072a-7aee-46d1-a5a3-4191ce97715b',8),
     (3, 'Yoga Mat', 4.0, 'Yoga', 'Gaiam', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/yoga.jpg?alt=media&token=d29fa420-6960-4145-9327-87b971863758',3),
-    (5, 'Basketbal', 6.0, 'Basketbal', 'Spalding', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Basketbal.jpg?alt=media&token=52e5890e-be11-45cc-b838-30b9025cbec3',4),
+    (5, 'Basketbal', 6.0, 'Basketbal', 'Spalding', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Basketbal.jpg?alt=media&token=52e5890e-be11-45cc-b838-30b9025cbec3',5),
     (8, 'Squashracket', 9.0, 'Squash', 'Head', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Squashracket.jpg?alt=media&token=bb19d27f-225b-445b-b75e-c99581c26b7c',2),
-    (9, 'Badmintonracket', 7.0, 'Badminton', 'Yonex', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Badmintonracket.jpg?alt=media&token=c46ff513-c46d-4cd5-97d4-8f26392e87f5',5),
-    (10, 'Bokshandschoenen', 11.0, 'Boksen', 'Everlast', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Bokshandschoenen.jpg?alt=media&token=5cde63f5-3b7d-446e-b26f-02c017c15328',6),
-    (11, 'Hockey stick', 8.0, 'Hockey', 'Grays', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Hockeystick.jpg?alt=media&token=e9b4191e-415b-4024-b19c-d50c522af5e3',7);
+    (9, 'Badmintonracket', 7.0, 'Badminton', 'Yonex', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Badmintonracket.jpg?alt=media&token=c46ff513-c46d-4cd5-97d4-8f26392e87f5',9),
+    (10, 'Bokshandschoenen', 11.0, 'Boksen', 'Everlast', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Bokshandschoenen.jpg?alt=media&token=5cde63f5-3b7d-446e-b26f-02c017c15328',12),
+    (11, 'Hockey stick', 8.0, 'Hockey', 'Grays', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Hockeystick.jpg?alt=media&token=e9b4191e-415b-4024-b19c-d50c522af5e3',11);
 
 INSERT INTO USERS (USERNAME, PASSWORD, ENABLED)
 VALUES ('admin', '$2a$10$9MIX8kYPkuB7uE/H5nHF8.KG6.YdjBA/voOnjSZnZDxLXL/2BIerS', true);
