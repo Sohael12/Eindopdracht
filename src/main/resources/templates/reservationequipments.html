@@ -12,7 +12,7 @@
     <h2>Uitrusting gereserveerd</h2>
     <div class="row justify-content-center">
         <div th:each="reservatie : ${reservation}" class="col-md-8 mb-4">
-            <a th:href="@{|/reservationequipments/${reservation.id}|}" class="buttonlook mediumButton">
+            <a th:href="@{/reservationdetails}" class="buttonlook mediumButton">
                 <div class="card h-100 reservation-card">
                     <div class="card-body">
                         <h5 class="card-title">Reservatie is Gelukt</h5>
