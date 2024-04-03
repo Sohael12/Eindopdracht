@@ -312,6 +312,10 @@ button:hover {
 .my-text {
     font-size: 16px; /* Pas deze waarde aan om de gewenste tekstgrootte te krijgen */
 }
+
+.reserved-equipment {
+    color: black; /* Set the color to black */
+}
 /*-------------------------------------------------reservation --------------------------*/
 .reservation-card {
     background-color: #f8f9fa; /* Kies hier een kleur naar wens */
