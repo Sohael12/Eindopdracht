@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="~{fragments/header :: header}">Header</div>
+<div class="reservation-container mt-5">
+    <h2>Uitrusting gereserveerd</h2>
+    <div class="row justify-content-center">
+        <div th:each="reservatie : ${reservation}" class="col-md-8 mb-4">
+            <a th:href="@{|/reservationequipments/${reservation.id}|}" class="buttonlook mediumButton">
+                <div class="card h-100 reservation-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Reservatie is Gelukt</h5>
+                        <p th:each="equipment : ${reservation.equipments}">
+                            <strong>Merk:</strong> <span th:text="${equipment.getMerk()}"></span><br>
+                            <strong>Artikel:</strong> <span th:text="${equipment.getArtikel()}"></span><br>
+                            <strong>Prijs reservatie:</strong> <span>&euro;</span><span th:text="${equipment.getPrijs()}"></span><br>
+                        </p>
+                        <p class="card-text"><strong>Status:</strong> <span th:text="${reservation.status}"></span></p>
+                        <p class="card-text"><strong>Huurder:</strong> <span th:text="${reservation.user.getFirstName()}"></span></p>
+                        <p class="card-text"><strong>Opmerking:</strong> <span th:text="${reservation.opmerkingen}"></span></p> <!--moet nog user in data doen--!>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div th:replace = "~{fragments/footer :: footer}">footer</div>
+
+</body>
+</html>
