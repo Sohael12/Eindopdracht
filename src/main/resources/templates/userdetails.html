@@ -11,26 +11,54 @@
 </head>
 <div th:replace="~{fragments/header :: header}">Header</div>
 <body>
-<div class="containeruser">
+<div class="container">
     <div class="row justify-content-center mt-4 mb-4">
         <div class="col-lg-8">
-            <div class="user-details">
-                <h2 class="text-center mb-4">User Information</h2>
+            <div class="user-details-container">
+                <h2 class="text-center mb-4">Gebruikersinformatie</h2>
                 <div th:if="${user}">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="user-info">
-                                <img th:src="${user.getImageUrl()}" alt="Profile Picture">
-                                <p><strong>Username:</strong> <span th:text="${user.getUsername()}"></span></p>
-                                <p><strong>Firstname:</strong> <span th:text="${user.getFirstName()}"></span></p>
-                                <p><strong>Lastname:</strong> <span th:text="${user.getLastName()}"></span></p>
+                        <div class="col-md-4">
+                            <div class="user-info text-center">
+                                <img class="img-fluid rounded-circle" th:src="${user.getImageUrl()}" alt="Profielfoto">
+                                <p class="mt-3"><strong>Gebruikersnaam:</strong> <span th:text="${user.getUsername()}"></span></p>
+                                <p><strong>Voornaam:</strong> <span th:text="${user.getFirstName()}"></span></p>
+                                <p><strong>Achternaam:</strong> <span th:text="${user.getLastName()}"></span></p>
                                 <p><strong>Email:</strong> <span th:text="${user.getEmail()}"></span></p>
                             </div>
                         </div>
+                        <div class="col-md-8">
+                            <div class="reserved-items">
+                                <h3>Gereserveerde Items</h3>
+                                <div th:if="${not #lists.isEmpty(user.reservations)}">
+                                    <ul class="list-group mt-3">
+                                        <li th:each="reservation : ${user.reservations}" class="list-group-item">
+                                            <img th:src="${reservation.sporthall.getImageUrl()}" alt="Afbeelding van sporthal" class="img-thumbnail float-left mr-3" style="width: 100px;">
+                                            <div class="reserved-details">
+                                                <h5 class="card-title">Zaalnaam: <span th:text="${reservation.sporthall.getZaalnaam()}"></span></h5>
+                                                <p>Status: <span th:text="${reservation.status}"></span></p>
+                                                <a th:href="@{|/sporthalldetails/${reservation.sporthall.id}|}" class="btn btn-primary mr-2">Bekijk sporthal</a>
+                                                <a th:href="@{|/reservation/${reservation.id}|}" class="btn btn-primary">Bekijk reservering</a>
+                                                <hr th:if="${not #lists.isEmpty(reservation.equipments)}">
+                                                <h5 class="card-title" th:if="${not #lists.isEmpty(reservation.equipments)}">Gereserveerde Uitrusting:</h5>
+                                                <div th:if="${not #lists.isEmpty(reservation.equipments)}" th:each="equipment : ${reservation.equipments}" class="reserved-equipment">
+                                                    <div>
+                                                        <img th:src="${equipment.getImageUrl()}" alt="Afbeelding van uitrusting" class="img-thumbnail float-left mr-3" style="width: 100px;">
+                                                        <strong>Merk:</strong> <span th:text="${equipment.getMerk()}"></span><br>
+                                                        <strong>Artikel:</strong> <span th:text="${equipment.getArtikel()}"></span><br>
+                                                        <strong>Prijs:</strong> <span>&euro;</span><span th:text="${equipment.getPrijs()}"></span><br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div th:unless="${not #lists.isEmpty(user.reservations)}">
+                                    <p>Geen items gereserveerd</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div th:unless="${user}">
-                    <p>User not found</p>
                 </div>
             </div>
         </div>
