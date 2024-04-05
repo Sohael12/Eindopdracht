@@ -66,9 +66,9 @@ public class SporthallAdminController {
 
 
     @PostMapping("/sporthallnew")
-        public String partyNewSporthall(Model model,
+        public String NewSporthall(Model model,
                                    Sporthall sporthall) {
-            logger.info("sporthallNewPost -- new name=" + sporthall.getZaalnaam() + ", beschrijving=" + sporthall.getBeschrijving());
+            logger.info("NewSporthall -- new name=" + sporthall.getZaalnaam() + ", beschrijving=" + sporthall.getBeschrijving());
             Sporthall newSporthall = sporthallRepository.save(sporthall);
             return "redirect:/sporthalldetails/" + newSporthall.getId();
         }
