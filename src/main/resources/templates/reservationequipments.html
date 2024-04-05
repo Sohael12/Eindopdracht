@@ -16,12 +16,12 @@
                 <div class="card h-100 reservation-card">
                     <div class="card-body">
                         <h5 class="card-title">Reservatie is Gelukt</h5>
-                        <p th:each="equipment : ${reservation.equipments}">
+                        <p th:each="equipment : ${reservation.equipments}" class="reservation-equipment">
                             <strong>Merk:</strong> <span th:text="${equipment.getMerk()}"></span><br>
                             <strong>Artikel:</strong> <span th:text="${equipment.getArtikel()}"></span><br>
                             <strong>Prijs reservatie:</strong> <span>&euro;</span><span th:text="${equipment.getPrijs()}"></span><br>
                         </p>
-                        <p ><strong>Huurder:</strong> <span th:text="${reservation.user.getFirstName()}"></span></p>
+                        <p><strong>Huurder:</strong> <span th:text="${reservation.user.getFirstName()}"></span></p>
                         <p><strong>Opmerking:</strong> <span th:text="${reservation.opmerkingen}"></span></p>
                     </div>
                 </div>
@@ -29,6 +29,7 @@
         </div>
     </div>
 </div>
+
 
 
 <div th:replace = "~{fragments/footer :: footer}">footer</div>
