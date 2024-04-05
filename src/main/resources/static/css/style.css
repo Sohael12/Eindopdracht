@@ -309,6 +309,14 @@ button:hover {
     border-color: #000000; /* Rood */
 }
 /*-------------------------------------------------reservadiedetialspagina --------------------------*/
+.my-text {
+    font-size: 16px; /* Pas deze waarde aan om de gewenste tekstgrootte te krijgen */
+}
+
+.reserved-equipment {
+    color: black; /* Set the color to black */
+}
+/*-------------------------------------------------reservation --------------------------*/
 .user-details-container {
     margin-top: 50px;
 }
@@ -598,6 +606,7 @@ h1 {
     width: 100%;
 }
 
+
 .footer h5 {
     color: #ffffff;
     font-size: 18px;
@@ -682,3 +691,4 @@ h1 {
         padding: 10px;
     }
 }
+
