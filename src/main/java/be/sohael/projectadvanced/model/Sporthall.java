@@ -9,8 +9,8 @@ import java.util.List;
 
 @Entity
 public class Sporthall {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-
     private Integer id;
 
     @NotBlank

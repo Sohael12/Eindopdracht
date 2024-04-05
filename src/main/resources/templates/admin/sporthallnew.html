@@ -9,52 +9,55 @@
 </head>
 <div th:replace="~{fragments/header :: header}">Header</div>
 <body>
-<div class="row1">
-    <div class="row1content" th:object="${sporthall}">
-
-
-        <h2>New Sports Hall</h2>
-        <div class="error" th:if="${#fields.hasErrors('*')}">ERROR - Data not saved</div>
-
-        <form th:action="@{|/admin/sporthallnew|}" method="post">
-
-            <div class="venueinfo">
-                <div class="infoLine">
-                    <label for="sporthallName" class="infoLineName">Name: </label>
-                    <input id="sporthallName" th:field="*{zaalnaam}" class="infoLineValue" th:errorclass="fieldError">
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    Sports Hall Form
                 </div>
-                <div class="infoLine">
-                    <label for="sporthallLocation" class="infoLineName">Location: </label>
-                    <input id="sporthallLocation" th:field="*{locatie}" class="infoLineValue">
-                </div>
-                <div class="infoLine">
-                    <label for="sporthallCapacity" class="infoLineName">Capacity: </label>
-                    <input id="sporthallCapacity" type="number" th:field="*{capaciteit}" class="infoLineValue">
-                </div>
-                <div class="infoLine">
-                    <label for="sporthallDescription" class="infoLineName">Description: </label>
-                    <textarea id="sporthallDescription" th:field="*{beschrijving}" cols="25" rows="5"
-                              class="infoLineValue"></textarea>
-                </div>
-                <div class="infoLine">
-                    <label for="sporthallTariff" class="infoLineName">Tariff: </label>
-                    <input id="sporthallTariff" type="number" step="0.01" th:field="*{tarief}" class="infoLineValue">
-                    &nbsp;&euro;
-                </div>
-                <div class="infoLine">
-                    <label for="sporthallImageUrl" class="infoLineName">Image URL: </label>
-                    <input id="sporthallImageUrl" type="url" th:field="*{imageUrl}" class="infoLineValue">
-                </div>
-                <div class="infoLine">
-                    <input id="sporthallChangingRooms" type="checkbox" th:field="*{kleedkamers}" class="infoLineValue">
-                    <label for="sporthallChangingRooms" class="infoLineName">Changing Rooms</label>
-                </div>
-                <div class="infoLine">
-                    <a th:href="@{|/sporthalllist|}" class="buttonLook editButton">Cancel</a>
-                    <input type="submit" value="Create" class="buttonLook editButton">
+                <div class="card-body">
+                    <form th:action="@{|/admin/sporthallnew|}" method="post" th:object="${sporthall}">
+                        <div class="form-group">
+                            <label for="sporthallName">Name:</label>
+                            <input id="sporthallName" th:field="*{zaalnaam}" class="form-control" th:errorclass="${#fields.hasErrors('zaalnaam')} ? 'is-invalid'">
+                            <small class="invalid-feedback" th:if="${#fields.hasErrors('zaalnaam')}" th:errors="*{zaalnaam}">Name is required</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="sporthallLocation">Location:</label>
+                            <input id="sporthallLocation" th:field="*{locatie}" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="sporthallCapacity">Capacity:</label>
+                            <input id="sporthallCapacity" type="number" th:field="*{capaciteit}" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="sporthallDescription">Description:</label>
+                            <textarea id="sporthallDescription" th:field="*{beschrijving}" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="sporthallTariff">Tariff:</label>
+                            <div class="input-group">
+                                <input id="sporthallTariff" type="number" step="0.01" th:field="*{tarief}" class="form-control">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">&euro;</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="sporthallImageUrl">Image URL:</label>
+                            <input id="sporthallImageUrl" type="url" th:field="*{imageUrl}" class="form-control">
+                        </div>
+                        <div class="form-group form-check">
+                            <input id="sporthallChangingRooms" type="checkbox" th:field="*{kleedkamers}" class="form-check-input">
+                            <label class="form-check-label" for="sporthallChangingRooms">Changing Rooms</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Create</button>
+                        <a th:href="@{|/sporthalllist|}" class="btn btn-secondary">Cancel</a>
+                    </form>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 

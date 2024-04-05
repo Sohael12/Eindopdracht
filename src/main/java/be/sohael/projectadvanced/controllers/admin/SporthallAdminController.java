@@ -17,10 +17,10 @@ import java.util.Optional;
 
 public class SporthallAdminController {
 
-        private static final Logger logger = LoggerFactory.getLogger(SporthallAdminController.class);
+    private static final Logger logger = LoggerFactory.getLogger(SporthallAdminController.class);
 
-        @Autowired
-        private SporthallRepository sporthallRepository;
+    @Autowired
+    private SporthallRepository sporthallRepository;
 
     @ModelAttribute("sporthall")
     public Sporthall findSporthall(@PathVariable(required = false) Integer id) {
@@ -45,7 +45,7 @@ public class SporthallAdminController {
     public String sporthallEditPost(Model model,
                                     @PathVariable int id,
                                     @Valid Sporthall sporthall,
-                                    BindingResult bindingResult)  {
+                                    BindingResult bindingResult) {
         logger.info("sporthallEditPost " + id + " -- new name=" + sporthall.getZaalnaam());
         if (bindingResult.hasErrors()) {
             model.addAttribute("sporthalls", sporthallRepository.findAll());
@@ -66,14 +66,23 @@ public class SporthallAdminController {
 
 
     @PostMapping("/sporthallnew")
-        public String NewSporthall(Model model,
-                                   Sporthall sporthall) {
-            logger.info("NewSporthall -- new name=" + sporthall.getZaalnaam() + ", beschrijving=" + sporthall.getBeschrijving());
-            Sporthall newSporthall = sporthallRepository.save(sporthall);
-            return "redirect:/sporthalldetails/" + newSporthall.getId();
+    public String NewSporthall(Model model,
+                               @Valid Sporthall sporthall,
+                               BindingResult bindingResult) {
+        logger.info("NewSporthall -- new name=" + sporthall.getZaalnaam() + ", beschrijving=" + sporthall.getBeschrijving());
+        if (bindingResult.hasErrors()) {
+
+            model.addAttribute("sporthall", sporthall);
+            return "admin/sporthallnew";
+
         }
+        Sporthall newSporthall = sporthallRepository.save(sporthall);
+        return "redirect:/sporthalldetails/" + newSporthall.getId();
+    }
 
 }
+
+
 
 
 
