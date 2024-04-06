@@ -11,17 +11,17 @@
 <div class="reservation-container mt-5">
     <h2>Uitrusting gereserveerd</h2>
     <div class="row justify-content-center">
-        <div th:each="reservatie : ${reservation}" class="col-md-8 mb-4">
+        <div th:each="reservation : ${reservations}" class="col-md-8 mb-4">
             <a th:href="@{/reservationdetails}" class="buttonlook mediumButton">
                 <div class="card h-100 reservation-card">
                     <div class="card-body">
                         <h5 class="card-title">Reservatie is Gelukt</h5>
-                        <p th:each="equipment : ${reservation.equipments}" class="reservation-equipment">
+                        <p th:each="equipment : ${reservations.equipments}" class="reservation-equipment">
                             <strong>Merk:</strong> <span th:text="${equipment.getMerk()}"></span><br>
                             <strong>Artikel:</strong> <span th:text="${equipment.getArtikel()}"></span><br>
                             <strong>Prijs reservatie:</strong> <span>&euro;</span><span th:text="${equipment.getPrijs()}"></span><br>
                         </p>
-                        <p><strong>Huurder:</strong> <span th:text="${reservation.user.getFirstName()}"></span></p>
+                        <p><strong>Huurder:</strong> <span th:text="${reservations.user.getFirstName()}"></span></p>
                     </div>
                 </div>
             </a>
