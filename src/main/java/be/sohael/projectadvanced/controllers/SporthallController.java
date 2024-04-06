@@ -29,9 +29,9 @@ public class SporthallController {
     public String sporthalldetails(Model model, @PathVariable(required = false) Integer id ) {
         if (id == null) return "sporthalldetails";
 
-        Optional<Sporthall> sporthallfromdb = sporthallRepository.findById(id);
+        Optional<Sporthall> optionalSporthall  = sporthallRepository.findById(id);
         //noinspection OptionalIsPresent
-        if (sporthallfromdb.isPresent()) {
+        if (optionalSporthall.isPresent()) {
             Optional<Sporthall> prevSporthallfromdb = sporthallRepository.findFirstByIdLessThanOrderByIdDesc(id);
             if (prevSporthallfromdb.isEmpty())
                 prevSporthallfromdb = sporthallRepository.findFirstByOrderByIdDesc();
@@ -39,7 +39,7 @@ public class SporthallController {
             if (nextSporthallfromdb.isEmpty())
                 nextSporthallfromdb = sporthallRepository.findFirstByOrderByIdAsc();
 
-            model.addAttribute("sporthall", sporthallfromdb.get());
+            model.addAttribute("sporthall", optionalSporthall.get());
             model.addAttribute("prevId", prevSporthallfromdb.get().getId());
             model.addAttribute("nextId", nextSporthallfromdb.get().getId());
 
