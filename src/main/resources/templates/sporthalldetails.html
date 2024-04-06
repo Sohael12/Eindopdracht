@@ -44,7 +44,7 @@
             <div class="card shadow-sm">
                 <div class="card-body">
                     <h2 class="card-title text-center mb-4">Zaal Details</h2>
-                    <div th:if="${sporthall}" class="zaal-details">
+                    <div th:if="${sporthall}" class="zaal-details">   <!-- Conditionele evaluatie -->
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="zaal-image">
@@ -67,7 +67,7 @@
                             <div class="form-group">
                                 <label for="zaal">Sporthall:</label>
                                 <select class="form-control" id="zaal" name="zaal">
-                                    <option th:each="sporthall : ${sporthall}" th:value="${sporthall.getId()}" th:text="${sporthall.getZaalnaam()}"></option>
+                                    <option th:each="sporthall : ${sporthall}" th:value="${sporthall.getId()}" th:text="${sporthall.getZaalnaam()}"></option> <!-- For-loop-->
                                 </select>
                             </div>
 
