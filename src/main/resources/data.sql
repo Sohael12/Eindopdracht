@@ -33,7 +33,7 @@ VALUES
     (1, 'Betaald met  Visa', 'Kan ik mijn eigen sportschoenen meenemen of moeten we die ter plaatse huren?', 'Voetbal gehuurd voor een uur', 1, 1),
     (2, 'Betaald met  Bancontact', 'Is er parkeergelegenheid beschikbaar bij de sportzaal?', 'Squashracket gehuurd voor twee uur', 2, 2),
     (3, 'Betaald met  Bancontact', 'Zijn er kleedkamers en doucheruimtes beschikbaar?', 'Yoga Mat gehuurd voor een les', 3, 3),
-    (4, 'Betaald met  Bancontact)', 'Zijn er specifieke regels of voorschriften waar we ons aan moeten houden tijdens ons verblijf?', 'Basketbal gehuurd voor een wedstrijd', 4, 4),
+    (4, 'Betaald met  Bancontact', 'Zijn er specifieke regels of voorschriften waar we ons aan moeten houden tijdens ons verblijf?', 'Basketbal gehuurd voor een wedstrijd', 4, 4),
     (5, 'Betaald met  Visa', 'Zijn er extra kosten verbonden aan het gebruik van bepaalde apparatuur of faciliteiten?', 'Badmintonracket gehuurd voor een uur', 5, 5),
     (6, 'Betaald met  Visa', 'Is er een wachttijd tussen opeenvolgende reserveringen, of kunnen we meteen beginnen?', 'Bokshandschoenen gehuurd voor een trainingsessie', 6, 6),
     (7, 'Betaald met  Bancontact', 'Zijn er trainingsinstructeurs beschikbaar voor begeleiding?', 'Hockeystick gehuurd voor een oefensessie', 7, 7),
