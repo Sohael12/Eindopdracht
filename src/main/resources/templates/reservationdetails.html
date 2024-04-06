@@ -13,7 +13,7 @@
 <div class="container mt-5">
     <h2 class="mb-4">Gereserveerde Zalen</h2>
     <div class="row">
-        <div th:each="reservation : ${reservation}" class="col-md-4 mb-4">
+        <div th:each="reservation : ${reservations}" class="col-md-4 mb-4">
             <a th:href="@{|/userdetails/${reservation.user.id}|}" class="card-link">
                 <div class="card">
                     <div class="card-inner card-front">

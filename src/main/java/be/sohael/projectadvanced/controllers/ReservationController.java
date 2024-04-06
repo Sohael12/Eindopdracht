@@ -22,8 +22,8 @@ public class ReservationController {
 
     @GetMapping("/reservationdetails")
     public String sporthallList(org.springframework.ui.Model model) {
-        final Iterable<Reservation> allreservation = reservatieRepositroy.findAll();
-        model.addAttribute("reservation", allreservation);
+        final Iterable<Reservation> allreservations = reservatieRepositroy.findAll();
+        model.addAttribute("reservations", allreservations);
 
 
         return "reservationdetails";
@@ -34,7 +34,7 @@ public class ReservationController {
         if (id == null) return "sporthalldetails";
 
         Optional<Reservation> reservationfromdb = reservatieRepositroy.findById(id);
-        model.addAttribute("reservation", reservationfromdb.get());
+        model.addAttribute("reservations", reservationfromdb.get());
         return "reservation";
     }
 
@@ -46,7 +46,7 @@ public class ReservationController {
         if (id == null) return "reservationequipments";
 
         Optional<Reservation> reservationfromdb = reservatieRepositroy.findById(id);
-        model.addAttribute("reservation", reservationfromdb.get());
+        model.addAttribute("reservations", reservationfromdb.get());
         return "reservationequipments";
     }
 
