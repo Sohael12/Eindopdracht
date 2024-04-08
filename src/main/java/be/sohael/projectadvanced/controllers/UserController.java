@@ -31,20 +31,20 @@ public class UserController {
 
     @GetMapping("/login")
     public String login(Model model, Principal principal) {
-        if (principal != null) return "redirect:/sporthalldetials";
+        if (principal != null) return "redirect:/sporthall";
         return "user/login";
     }
 
     @GetMapping("/logout")
     public String logout(Model model, Principal principal) {
-        if (principal == null) return "redirect:/sporthalldetials";
+        if (principal == null) return "redirect:/sporthall";
         return "user/logout";
     }
 
 
     @GetMapping("/register")
     public String register(Principal principal) {
-        if (principal != null) return "redirect:/home";
+        if (principal != null) return "redirect:/sporthall";
         return "user/register";
     }
     @PostMapping("/register")
@@ -52,9 +52,9 @@ public class UserController {
                                HttpServletRequest request,
                                @RequestParam String username,
                                @RequestParam String password) throws ServletException {
-        if (principal != null) return "redirect:/home";
-        if (username == null || username.isBlank()) return "redirect:/home";
-        if (jdbcUserDetailsManager.userExists(username)) return "redirect:/home";
+        if (principal != null) return "redirect:/sporthall";
+        if (username == null || username.isBlank()) return "redirect:/sporthall";
+        if (jdbcUserDetailsManager.userExists(username)) return "redirect:/sporthall";
 
         UserDetails user = org.springframework.security.core.userdetails.User
                 .withUsername(username)
@@ -66,7 +66,7 @@ public class UserController {
         //autologin:
         request.login(username, password);
 
-        return "redirect:/home";
+        return "redirect:/sporthall";
     }
 
 }
