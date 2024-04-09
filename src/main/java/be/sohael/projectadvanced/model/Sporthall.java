@@ -2,8 +2,11 @@ package be.sohael.projectadvanced.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 
@@ -21,7 +24,14 @@ public class Sporthall {
     private double tarief;
     private String imageUrl;
     private boolean kleedkamers;
-
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @NotNull
+    private Date date;
+    @Temporal(TemporalType.TIME)
+    @DateTimeFormat(pattern = "HH:mm")
+    @NotNull
+    private Date Sporthallopening;
 
 
     @OneToMany(mappedBy = "sporthall")
@@ -68,7 +78,21 @@ public class Sporthall {
         this.zaalnaam = zaalnaam;
     }
 
+    public Date getDate() {
+        return date;
+    }
 
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Date getSporthallopening() {
+        return Sporthallopening;
+    }
+
+    public void setSporthallopening(Date sporthallopening) {
+        Sporthallopening = sporthallopening;
+    }
 
     public String getLocatie() {
         return locatie;

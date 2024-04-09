@@ -2,9 +2,7 @@ package be.sohael.projectadvanced.model;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
 import java.util.Collection;
-import java.util.Date;
 
 
 @Entity
