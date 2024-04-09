@@ -55,17 +55,15 @@
         <div th:each="equipment : ${equipments}" class="col-lg-3 col-md-4 col-sm-6 mb-4">
             <div class="card h-100">
                 <a th:href="@{|/equipmentsdetails/${equipment.id}|}">
-                    <img th:src="${equipments.imageUrl}" alt="Equipment Image" class="card-img-top">
+                    <img th:src="${equipment.imageUrl}" alt="Equipment Image" class="card-img-top">
                 </a>
                 <div class="card-body">
                     <p class="card-text"><strong>Prijs:</strong> &euro;<span th:text="${equipment.prijs}"></span></p>
                 </div>
-
             </div>
         </div>
     </div>
 </div>
-
 
 
 <div th:replace="~{fragments/footer :: footer}">footer</div>
