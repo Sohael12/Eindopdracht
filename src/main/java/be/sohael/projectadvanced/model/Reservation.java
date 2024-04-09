@@ -13,7 +13,7 @@ public class Reservation {
     private Integer id;
     private String status;
     private String opmerkingen;
-    private String equipmentinformation;
+
 
     @ManyToOne(fetch = FetchType.LAZY) // deze doe je erbij voor  je begint eerst hier bij manytomany  dan bij venue manytoone j zo zeg je wat he is ook getters en setters vergeet niet setters getters  er bij te doen   //
     private Sporthall sporthall;
@@ -55,13 +55,6 @@ public class Reservation {
         return user;
     }
 
-    public String getEquipmentinformation() {
-        return equipmentinformation;
-    }
-
-    public void setEquipmentinformation(String equipmentinformation) {
-        this.equipmentinformation = equipmentinformation;
-    }
 
     public void setUser(User user) {
         this.user = user;

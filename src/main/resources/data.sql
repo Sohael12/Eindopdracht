@@ -28,33 +28,32 @@ VALUES
     (12, 'Eva909', 'wachtwoord12', 'eva.bosman@gmail.com', 'Eva', 'Bosman', 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/eva.jpg?alt=media&token=40432a8c-8e11-4817-b30e-9e62be0f29d9');
 
 
-INSERT INTO Reservation (id, status, opmerkingen, equipmentinformation, user_Id, sporthall_ID)
+INSERT INTO Reservation (id, status, opmerkingen, user_Id, sporthall_ID)
 VALUES
-    (1, 'Betaald met  Visa', 'Kan ik mijn eigen sportschoenen meenemen of moeten we die ter plaatse huren?', 'Voetbal gehuurd voor een uur', 1, 1),
-    (2, 'Betaald met  Bancontact', 'Is er parkeergelegenheid beschikbaar bij de sportzaal?', 'Squashracket gehuurd voor twee uur', 2, 2),
-    (3, 'Betaald met  Bancontact', 'Zijn er kleedkamers en doucheruimtes beschikbaar?', 'Yoga Mat gehuurd voor een les', 3, 3),
-    (4, 'Betaald met  Bancontact', 'Zijn er specifieke regels of voorschriften waar we ons aan moeten houden tijdens ons verblijf?', 'Basketbal gehuurd voor een wedstrijd', 4, 4),
-    (5, 'Betaald met  Visa', 'Zijn er extra kosten verbonden aan het gebruik van bepaalde apparatuur of faciliteiten?', 'Badmintonracket gehuurd voor een uur', 5, 5),
-    (6, 'Betaald met  Visa', 'Is er een wachttijd tussen opeenvolgende reserveringen, of kunnen we meteen beginnen?', 'Bokshandschoenen gehuurd voor een trainingsessie', 6, 6),
-    (7, 'Betaald met  Bancontact', 'Zijn er trainingsinstructeurs beschikbaar voor begeleiding?', 'Hockeystick gehuurd voor een oefensessie', 7, 7),
-    (8, 'Betaald met  Bancontact', 'Moeten we vooraf onze eigen sportuitrusting meebrengen?', 'Tennisracket gehuurd voor een uur', 8, 8),
-    (9, 'Betaald met  Paypal', 'Is er een minimumleeftijd vereist voor toegang tot de sportschool?', 'Gewichten gehuurd voor een fitnesssessie', 9, 9),
-    (10, 'Betaald met  Paypal', 'Zijn er lockers beschikbaar voor persoonlijke spullen?', 'Pingpongtafel gehuurd voor een uur', 10, 10),
-    (11, 'Betaald met  Bancontact', 'Is er een limiet aan het aantal personen dat tegelijkertijd gebruik kan maken van de faciliteiten?', 'Volleybal gehuurd voor een wedstrijd', 11, 11),
-    (12, 'Betaald met  Visa', 'Zijn er handdoeken beschikbaar voor gebruik in de fitnessruimte?', 'Fiets gehuurd voor een uur', 12, 12);
+    (1, 'Betaald met  Visa', 'Kan ik mijn eigen sportschoenen meenemen of moeten we die ter plaatse huren?', 1, 1),
+    (2, 'Betaald met  Bancontact', 'Is er parkeergelegenheid beschikbaar bij de sportzaal?', 2, 2),
+    (3, 'Betaald met  Bancontact', 'Zijn er kleedkamers en doucheruimtes beschikbaar?', 3, 3),
+    (4, 'Betaald met  Bancontact', 'Zijn er specifieke regels of voorschriften waar we ons aan moeten houden tijdens ons verblijf?', 4, 4),
+    (5, 'Betaald met  Visa', 'Zijn er extra kosten verbonden aan het gebruik van bepaalde apparatuur of faciliteiten?', 5, 5),
+    (6, 'Betaald met  Visa', 'Is er een wachttijd tussen opeenvolgende reserveringen, of kunnen we meteen beginnen?', 6, 6),
+    (7, 'Betaald met  Bancontact', 'Zijn er trainingsinstructeurs beschikbaar voor begeleiding?', 7, 7),
+    (8, 'Betaald met  Bancontact', 'Moeten we vooraf onze eigen sportuitrusting meebrengen?', 8, 8),
+    (9, 'Betaald met  Paypal', 'Is er een minimumleeftijd vereist voor toegang tot de sportschool?', 9, 9),
+    (10, 'Betaald met  Paypal', 'Zijn er lockers beschikbaar voor persoonlijke spullen?', 10, 10),
+    (11, 'Betaald met  Bancontact', 'Is er een limiet aan het aantal personen dat tegelijkertijd gebruik kan maken van de faciliteiten?', 11, 11),
+    (12, 'Betaald met  Visa', 'Zijn er handdoeken beschikbaar voor gebruik in de fitnessruimte?', 12, 12);
 
 
-
-INSERT INTO equipment (id, artikel, prijs, sport, merk, beschikbaar, image_Url,reservations_ID )
+INSERT INTO equipment (id, artikel, prijs, sport, merk, beschikbaar, image_Url, reservations_ID)
 VALUES
-    (1, 'Voetbal', 5.0, 'Voetbal', 'Adidas', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Voetbal.jpg?alt=media&token=5ccbe5aa-ae9b-4a0e-abaa-daa5d5242cdb',1),
-    (2, 'Tennisracket', 10.0, 'Tennis', 'Wilson', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Tennisracket.jpg?alt=media&token=317a072a-7aee-46d1-a5a3-4191ce97715b',8),
-    (3, 'Yoga Mat', 4.0, 'Yoga', 'Gaiam', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/yoga.jpg?alt=media&token=d29fa420-6960-4145-9327-87b971863758',3),
-    (4, 'Basketbal', 6.0, 'Basketbal', 'Spalding', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Basketbal.jpg?alt=media&token=52e5890e-be11-45cc-b838-30b9025cbec3',5),
-    (5, 'Squashracket', 9.0, 'Squash', 'Head', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Squashracket.jpg?alt=media&token=bb19d27f-225b-445b-b75e-c99581c26b7c',2),
-    (6, 'Badmintonracket', 7.0, 'Badminton', 'Yonex', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Badmintonracket.jpg?alt=media&token=c46ff513-c46d-4cd5-97d4-8f26392e87f5',9),
-    (7, 'Bokshandschoenen', 11.0, 'Boksen', 'Everlast', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Bokshandschoenen.jpg?alt=media&token=5cde63f5-3b7d-446e-b26f-02c017c15328',10),
-    (8, 'Hockey stick', 8.0, 'Hockey', 'Grays', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Hockeystick.jpg?alt=media&token=e9b4191e-415b-4024-b19c-d50c522af5e3',11);
+    (1, 'Voetbal', 5.0, 'Voetbal', 'Adidas', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Voetbal.jpg?alt=media&token=5ccbe5aa-ae9b-4a0e-abaa-daa5d5242cdb', 1),
+    (8, 'Tennisracket', 10.0, 'Tennis', 'Wilson', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Tennisracket.jpg?alt=media&token=317a072a-7aee-46d1-a5a3-4191ce97715b', 8),
+    (3, 'Yoga Mat', 4.0, 'Yoga', 'Gaiam', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/yoga.jpg?alt=media&token=d29fa420-6960-4145-9327-87b971863758', 3),
+    (4, 'Basketbal', 6.0, 'Basketbal', 'Spalding', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Basketbal.jpg?alt=media&token=52e5890e-be11-45cc-b838-30b9025cbec3', 4),
+    (2, 'Squashracket', 9.0, 'Squash', 'Head', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Squashracket.jpg?alt=media&token=bb19d27f-225b-445b-b75e-c99581c26b7c', 2),
+    (5, 'Badmintonracket', 7.0, 'Badminton', 'Yonex', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Badmintonracket.jpg?alt=media&token=c46ff513-c46d-4cd5-97d4-8f26392e87f5', 5),
+    (6, 'Bokshandschoenen', 11.0, 'Boksen', 'Everlast', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Bokshandschoenen.jpg?alt=media&token=5cde63f5-3b7d-446e-b26f-02c017c15328', 6),
+    (7, 'Hockey stick', 8.0, 'Hockey', 'Grays', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Hockeystick.jpg?alt=media&token=e9b4191e-415b-4024-b19c-d50c522af5e3', 7);
 
 INSERT INTO USERS (USERNAME, PASSWORD, ENABLED)
 VALUES ('admin', '$2a$10$9MIX8kYPkuB7uE/H5nHF8.KG6.YdjBA/voOnjSZnZDxLXL/2BIerS', true);
