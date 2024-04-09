@@ -17,8 +17,10 @@ public interface EquipmentRepository extends CrudRepository<Equipment,Integer> {
 
     @Query("SELECT e FROM Equipment e WHERE" +
             " (:minprijs IS NULL OR e.prijs >= :minprijs)AND "+
-            "(:maxprijs IS NULL OR e.prijs <= :maxprijs)")
+            "(:maxprijs IS NULL OR e.prijs <= :maxprijs) AND"+
+            "(:beschikbaar IS NULL OR e.beschikbaar = :beschikbaar)")
     List<Equipment> findbyfilter(
             @Param("minprijs") Integer minprijs,
-            @Param("maxprijs") Integer maxprijs);
+            @Param("maxprijs") Integer maxprijs,
+            @Param("beschikbaar") Boolean beschikbaar);
 }

@@ -40,6 +40,11 @@
                     <input type="number" id="maxprijs" name="maxprijs" class="form-control" th:value="${maxprijs}" step="1">
                 </div>
             </div>
+            <h3>Equipments</h3>
+            <div class="mb-3 form-check">
+                <input type="checkbox" id="beschikbaar" name="beschikbaar" class="form-check-input" th:checked="${param.beschikbaar}">
+                <label for="beschikbaar" class="form-check-label">beschikbaar</label>
+            </div>
         </form>
     </div>
 </div>
@@ -50,7 +55,7 @@
         <div th:each="equipment : ${equipments}" class="col-lg-3 col-md-4 col-sm-6 mb-4">
             <div class="card h-100">
                 <a th:href="@{|/equipmentsdetails/${equipment.id}|}">
-                    <img th:src="${equipment.imageUrl}" alt="Equipment Image" class="card-img-top">
+                    <img th:src="${equipments.imageUrl}" alt="Equipment Image" class="card-img-top">
                 </a>
                 <div class="card-body">
                     <p class="card-text"><strong>Prijs:</strong> &euro;<span th:text="${equipment.prijs}"></span></p>
