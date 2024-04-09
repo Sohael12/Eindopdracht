@@ -77,7 +77,15 @@
                                     <option th:each="time : ${sporthall.getSporthallopening()}" th:value="${time}" th:text="${#dates.format(time, 'HH:mm')}"></option>
                                 </select>
 
-                            <input type="hidden" name="zaalId" th:value="${sporthall.getId()}">
+                                <div class="form-group">
+                                    <label for="date">Datum:</label>
+                                    <select class="form-control" id="date" name="date">
+                                        <option th:each="date : ${sporthall.date}" th:value="${date}" th:text="${#dates.format(date, 'dd/MM/yyyy')}"></option>
+                                    </select>
+                                </div>
+
+
+                                <input type="hidden" name="zaalId" th:value="${sporthall.getId()}">
                             <a th:if="${sporthall}" th:href="@{'/reservation/' + ${sporthall.getId()}}" class="btn btn-primary btn-block mt-4">Reserveer deze zaal</a>
                             </div>
                         </form>

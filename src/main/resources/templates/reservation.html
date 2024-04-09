@@ -20,6 +20,7 @@
                         <p class="card-text"><strong>Betaling:</strong> <span th:text="${reservations.status}"></span></p>
                         <p class="card-text"><strong> Naam:</strong> <span th:text="${reservations.user.getFirstName()}"></span></p>
                         <p class="card-text"><strong>Gereserveerde Tijd:</strong> <span th:text="${#dates.format(reservations.sporthall.getSporthallopening(), 'HH:mm')}"></span></p>
+                        <p class="card-text"><strong>Gereserveerde Datum:</strong> <span th:text="${#dates.format(reservations.sporthall.getDate(), 'dd/MM/yyyy')}"></span></p>
                         <p class="card-text"><strong>Prijs reservatie:</strong> <span>&euro;</span><span th:text="${reservations.sporthall.getTarief()}"></span></p>
                         <p class="card-text"><strong>Opmerking:</strong> <span th:text="${reservations.opmerkingen}"></span></p>
                     </div>

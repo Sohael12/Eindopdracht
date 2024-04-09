@@ -22,6 +22,8 @@
                             <p class="card-text"><strong>ZaalNaam: </strong><span th:text="${reservation.sporthall.getZaalnaam()}"></span></p>
                             <p class="card-text"><strong>Betaling:</strong> <span th:text="${reservation.status}"></span></p>
                             <p class="card-text"><strong>Gereserveerde Tijd:</strong> <span th:text="${#dates.format(reservation.sporthall.getSporthallopening(), 'HH:mm')}"></span></p>
+                            <p class="card-text"><strong>Gereserveerde Datum:</strong> <span th:text="${#dates.format(reservation.sporthall.getDate(), 'dd/MM/yyyy')}"></span></p>
+
                         </div>
                     </div>
                     <div class="card-inner card-back">
