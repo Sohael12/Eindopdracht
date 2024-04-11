@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>home</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/style.css"/>
 </head>
+<body>
 <div th:replace="~{fragments/header :: header}">Header</div>
 
-<body>
 <section class="hero">
     <div class="hero-container">
         <div class="column-left">
@@ -30,15 +29,7 @@
 
 </section>
 
-
-
-
-
-<footer>
-
     <div th:replace = "~{fragments/footer :: footer}">footer</div>
-</footer>
-
 
 </body>
 </html>

@@ -7,10 +7,9 @@
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/style.css"/>
     <title>Title</title>
 </head>
+<body>
 <div th:replace="~{fragments/header :: header}">Header</div>
 
-
-<body>
 <div sec:authorize="hasAuthority('ADMIN')"> <!-- Alleen zichtbaar voor gebruikers met 'ADMIN' bevoegdheid -->
     <a th:href="@{|/admin/sporthalledit/${id}|}" class="buttonlink">Edit</a> <!-- Bewerkingslink -->
 </div>
@@ -100,12 +99,10 @@
     </div>
 </div>
 
+<div th:replace="~{fragments/footer :: footer}">footer</div>
 
 
 </body>
 
-<footer>
-    <div th:replace="~{fragments/footer :: footer}">footer</div>
 
-</footer>
 </html>
