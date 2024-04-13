@@ -1,6 +1,4 @@
 package be.sohael.projectadvanced.controllers;
-import be.sohael.projectadvanced.repositories.SporthallRepository;
-import be.sohael.projectadvanced.repositories.UserRepository;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
