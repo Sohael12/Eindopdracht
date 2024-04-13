@@ -48,6 +48,7 @@
                                                         <strong>Merk:</strong> <span th:text="${equipment.getMerk()}"></span><br>
                                                         <strong>Artikel:</strong> <span th:text="${equipment.getArtikel()}"></span><br>
                                                         <strong>Prijs:</strong> <span>&euro;</span><span th:text="${equipment.getPrijs()}"></span><br>
+                                                        <a th:href="@{|/reservationequipments/${equipment.id}|}" class="btn btn-primary">Bekijk uitrusting</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -65,7 +66,7 @@
         </div>
     </div>
 </div>
-<div th:replace="~{fragments/footer :: footer}">footer</div>
+
 
 </body>
 </html>

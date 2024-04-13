@@ -18,7 +18,7 @@ h2 {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 30px;
+    margin-bottom: 150px;
 }
 /* ----------------------------------- home page ----------------------------- */
 
@@ -564,6 +564,7 @@ a.buttonlook.mediumButton {
 }
 
 h1 {
+
     font-size: 24px;
     margin-bottom: 10px;
 }

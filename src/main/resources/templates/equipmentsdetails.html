@@ -27,6 +27,9 @@
                     <p class="card-text"><strong>Sport:</strong> <span th:text="${equipment.sport}"></span></p>
                     <p class="card-text"><strong>Artikel:</strong> <span th:text="${equipment.artikel}"></span></p>
                     <p class="card-text"><strong>Huurprijs:</strong> <span th:text="'€ ' + ${equipment.getPrijs()}"></span></p>
+                    <p class="card-text"><strong>Uur:</strong> <span th:text="${#strings.substring(equipment.reservations.sporthall.getSporthallopening(), 0, 5)}"></span></p>
+                    <p class="card-text"><strong>Datum:</strong> <span th:text="${equipment.reservations.sporthall.getDate()}"></span></p>
+
                     <input type="hidden" name="equipmentId" th:value="${equipment.getId()}">
                     <a th:if="${equipment}" th:href="@{'/reservationequipments/' + ${equipment.getId()}}" class="btn btn-primary">Reserveer deze uitrusting</a>
 

@@ -10,28 +10,22 @@
 </head>
 <body>
 <div th:replace="~{fragments/header :: header}">Header</div>
+<header>
+    <h1>Contact Us</h1>
+</header>
 
-<div class="containerhome">
-    <div class="contact-info">
-        <h1>Contactgegevens</h1>
-        <p>Naam: <span th:text="${myName}"></span></p>
-        <p>Telefoon: <span th:text="${contactPhone}"></span></p>
-    </div>
-    <div class="profile-picture">
-        <img src="images/sohael.jpg" alt="Sohael El Makkaoui">
-    </div>
-    <div class="social-links">
-        <h1>Social Media</h1>
-        <ul>
-            <li><a href="#" th:href="${instagramLink}">Instagram</a></li>
-            <li><a href="#" th:href="${linkinLink}">LinkedIn</a></li>
-            <li><a href="#" th:href="${facebookLink}">Facebook</a></li>
-            <li><a href="#" th:href="${githubLink}">GitHub</a></li>
-        </ul>
-    </div>
+<div class="container">
+    <form action="submit_contact_form.php" method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
 </div>
-</body>
-</div>
+
 
 <div th:replace="~{fragments/footer :: footer}">footer</div>
 </body>

@@ -69,7 +69,7 @@ public class SporthallAdminController {
     public String NewSporthall(Model model,
                                @Valid Sporthall sporthall,
                                BindingResult bindingResult) {
-        logger.info("NewSporthall -- new name=" + sporthall.getZaalnaam() + ", beschrijving=" + sporthall.getBeschrijving());
+        logger.info("NewSporthall -- new zaalnaam=" + sporthall.getZaalnaam() + ", beschrijving=" + sporthall.getBeschrijving());
         if (bindingResult.hasErrors()) {
 
             model.addAttribute("sporthall", sporthall);

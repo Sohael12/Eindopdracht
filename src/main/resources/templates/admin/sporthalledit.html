@@ -14,54 +14,55 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    Sports Hall Form
+                    Sports Hall Formulier
                 </div>
                 <div class="card-body">
                     <div th:if="${sporthall}" th:object="${sporthall}">
-                        <h2 th:text="${sporthall.zaalnaam} ? 'Edit Sporthall' : 'Create New Sporthall'"></h2>
-                        <div class="alert alert-danger" th:if="${#fields.hasErrors()}">ERROR - Data not saved</div>
+                        <h2 th:text="${sporthall.zaalnaam} ? 'Bewerk Sporthal' : 'Maak Nieuwe Sporthal'"></h2>
+                        <div class="alert alert-danger" th:if="${#fields.hasErrors()}">FOUT - Gegevens niet opgeslagen</div>
                         <form th:action="@{|/admin/sporthalledit/${sporthall.id}|}" method="post" th:object="${sporthall}">
                             <div class="form-group">
-                                <label for="zaalnaam">Name:</label>
-                                <input id="zaalnaam" th:field="*{zaalnaam}" class="form-control" th:errorclass="${#fields.hasErrors('zaalnaam')} ? 'is-invalid'">
-                                <small class="invalid-feedback" th:if="${#fields.hasErrors('zaalnaam')}" th:errors="*{zaalnaam}">Name is required</small>
+                                <label for="zaalnaam">Naam:</label>
+                                <input id="zaalnaam" th:field="*{zaalnaam}" class="form-control" th:errorclass="${#fields.hasErrors('zaalnaam')} ? 'is-invalid'" th:value="${sporthall.zaalnaam}">
+                                <small class="invalid-feedback" th:if="${#fields.hasErrors('zaalnaam')}" th:errors="*{zaalnaam}">Naam is verplicht</small>
                             </div>
                             <div class="form-group">
-                                <label for="locatie">Location:</label>
-                                <input id="locatie" th:field="*{locatie}" class="form-control">
+                                <label for="locatie">Locatie:</label>
+                                <input id="locatie" th:field="*{locatie}" class="form-control" th:value="${sporthall.locatie}">
                             </div>
                             <div class="form-group">
-                                <label for="capaciteit">Capacity:</label>
-                                <input id="capaciteit" type="number" th:field="*{capaciteit}" class="form-control">
+                                <label for="capaciteit">Capaciteit:</label>
+                                <input id="capaciteit" type="number" th:field="*{capaciteit}" class="form-control" th:value="${sporthall.capaciteit}">
                             </div>
                             <div class="form-group">
-                                <label for="beschrijving">Description:</label>
-                                <textarea id="beschrijving" th:field="*{beschrijving}" class="form-control"></textarea>
+                                <label for="beschrijving">Beschrijving:</label>
+                                <textarea id="beschrijving" th:field="*{beschrijving}" class="form-control" th:text="${sporthall.beschrijving}"></textarea>
                             </div>
                             <div class="form-group">
-                                <label for="tarief">Tariff:</label>
-                                <input id="tarief" type="number" step="0.01" th:field="*{tarief}" class="form-control">
+                                <label for="tarief">Tarief:</label>
+                                <input id="tarief" type="number" step="0.01" th:field="*{tarief}" class="form-control" th:value="${sporthall.tarief}">
                             </div>
                             <div class="form-group">
-                                <label for="imageUrl">Image URL:</label>
-                                <input id="imageUrl" type="url" th:field="*{imageUrl}" class="form-control">
+                                <label for="imageUrl">Afbeelding URL:</label>
+                                <input id="imageUrl" type="url" th:field="*{imageUrl}" class="form-control" th:value="${sporthall.imageUrl}">
                             </div>
                             <div class="form-group form-check">
-                                <input id="kleedkamers" type="checkbox" th:field="*{kleedkamers}" class="form-check-input">
-                                <label class="form-check-label" for="kleedkamers">Changing Rooms</label>
+                                <input id="kleedkamers" type="checkbox" th:field="*{kleedkamers}" class="form-check-input" th:checked="${sporthall.kleedkamers}">
+                                <label class="form-check-label" for="kleedkamers">Kleedkamers</label>
                             </div>
-                            <button type="submit" class="btn btn-primary">Save</button>
-                            <a th:href="@{|/sporthalldetails/${sporthall.id}|}" class="btn btn-secondary">Cancel</a>
+                            <button type="submit" class="btn btn-primary">Opslaan</button>
+                            <a th:href="@{|/sporthalldetails/${sporthall.id}|}" class="btn btn-secondary">Annuleren</a>
                         </form>
                     </div>
                     <div class="row1content" th:unless="${sporthall}">
-                        <p>No sports hall was chosen</p>
+                        <p>Geen sporthal gekozen</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 </body>
 
