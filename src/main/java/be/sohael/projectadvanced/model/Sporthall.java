@@ -16,13 +16,13 @@ public class Sporthall {
     private Integer id;
 
     @NotBlank
-    private String zaalnaam;
-    private String locatie;
-    private int capaciteit;
-    private String beschrijving;
-    private double tarief;
+    private String roomname;
+    private String location;
+    private int capacity;
+    private String description;
+    private double rate;
     private String imageUrl;
-    private boolean kleedkamers;
+    private boolean dressingrooms;
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @NotNull
@@ -67,14 +67,14 @@ public class Sporthall {
         this.imageUrl = imageUrl;
     }
 
-    public String getZaalnaam() {
-        return zaalnaam;
+    public String getRoomname() {
+        return roomname;
     }
 
 
 
-    public void setZaalnaam(String zaalnaam) {
-        this.zaalnaam = zaalnaam;
+    public void setRoomname(String zaalnaam) {
+        this.roomname = zaalnaam;
     }
 
     public Date getDate() {
@@ -93,46 +93,46 @@ public class Sporthall {
         this.sporthallopening = sporthallopening;
     }
 
-    public String getLocatie() {
-        return locatie;
+    public String getLocation() {
+        return location;
     }
 
-    public void setLocatie(String locatie) {
-        this.locatie = locatie;
+    public void setLocation(String locatie) {
+        this.location = locatie;
     }
 
-    public int getCapaciteit() {
-        return capaciteit;
+    public int getCapacity() {
+        return capacity;
     }
 
-    public void setCapaciteit(int capaciteit) {
-        this.capaciteit = capaciteit;
+    public void setCapacity(int capaciteit) {
+        this.capacity = capaciteit;
     }
 
-    public String getBeschrijving() {
-        return beschrijving;
+    public String getDescription() {
+        return description;
     }
 
-    public void setBeschrijving(String beschrijving) {
-        this.beschrijving = beschrijving;
+    public void setDescription(String beschrijving) {
+        this.description = beschrijving;
     }
 
-    public double getTarief() {
-        return tarief;
+    public double getRate() {
+        return rate;
     }
 
-    public void setTarief(double tarief) {
-        this.tarief = tarief;
+    public void setRate(double tarief) {
+        this.rate = tarief;
     }
 
 
 
-    public boolean isKleedkamers() {
-        return kleedkamers;
+    public boolean isDressingrooms() {
+        return dressingrooms;
     }
 
-    public void setKleedkamers(boolean kleedkamers) {
-        this.kleedkamers = kleedkamers;
+    public void setDressingrooms(boolean kleedkamers) {
+        this.dressingrooms = kleedkamers;
     }
 
 

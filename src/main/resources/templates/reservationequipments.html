@@ -17,9 +17,9 @@
                     <div class="card-body">
                         <h5 class="card-title">Reservatie is Gelukt</h5>
                         <p th:each="equipment : ${reservations.equipments}" class="reservation-equipment">
-                            <strong>Merk:</strong> <span th:text="${equipment.getMerk()}"></span><br>
-                            <strong>Artikel:</strong> <span th:text="${equipment.getArtikel()}"></span><br>
-                            <strong>Prijs reservatie:</strong> <span>&euro;</span><span th:text="${equipment.getPrijs()}"></span><br>
+                            <strong>Merk:</strong> <span th:text="${equipment.getBrand()}"></span><br>
+                            <strong>Artikel:</strong> <span th:text="${equipment.getArticle()}"></span><br>
+                            <strong>Prijs reservatie:</strong> <span>&euro;</span><span th:text="${equipment.getPrice()}"></span><br>
                         </p>
                         <p><strong>Huurder:</strong> <span th:text="${reservations.user.getFirstName()}"></span></p>
                     </div>

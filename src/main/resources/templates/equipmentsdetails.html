@@ -23,10 +23,10 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title"><strong>Merk:</strong> <span th:text="${equipment.merk}"></span></h5>
+                    <h5 class="card-title"><strong>Merk:</strong> <span th:text="${equipment.brand}"></span></h5>
                     <p class="card-text"><strong>Sport:</strong> <span th:text="${equipment.sport}"></span></p>
-                    <p class="card-text"><strong>Artikel:</strong> <span th:text="${equipment.artikel}"></span></p>
-                    <p class="card-text"><strong>Huurprijs:</strong> <span th:text="'€ ' + ${equipment.getPrijs()}"></span></p>
+                    <p class="card-text"><strong>Artikel:</strong> <span th:text="${equipment.article}"></span></p>
+                    <p class="card-text"><strong>Huurprijs:</strong> <span th:text="'€ ' + ${equipment.getPrice()}"></span></p>
                     <p class="card-text"><strong>Uur:</strong> <span th:text="${#strings.substring(equipment.reservations.sporthall.getSporthallopening(), 0, 5)}"></span></p>
                     <p class="card-text"><strong>Datum:</strong> <span th:text="${equipment.reservations.sporthall.getDate()}"></span></p>
 
@@ -35,9 +35,9 @@
 
                     <hr>
                     <h5 class="card-title">Ontdek waar je deze uitrusting kunt gebruiken</h5>
-                    <p><strong>Zaal:</strong> <span th:text="${equipment.reservations.sporthall.getZaalnaam()}"></span></p>
-                    <p><strong>Adres:</strong> <span th:text="${equipment.reservations.sporthall.getLocatie()}"></span></p>
-                    <p><strong>Zaal Prijs:</strong> <span><span th:text="'€ ' + ${equipment.reservations.sporthall.getTarief()}"></span></span></p>
+                    <p><strong>Zaal:</strong> <span th:text="${equipment.reservations.sporthall.getRoomname()}"></span></p>
+                    <p><strong>Adres:</strong> <span th:text="${equipment.reservations.sporthall.getLocation()}"></span></p>
+                    <p><strong>Zaal Prijs:</strong> <span><span th:text="'€ ' + ${equipment.reservations.sporthall.getRate()}"></span></span></p>
                     <a th:href="@{/sporthall}" class="btn btn-primary">Naar sporthall </a>
                 </div>
             </div>

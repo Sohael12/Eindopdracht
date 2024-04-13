@@ -1,4 +1,4 @@
-INSERT INTO Sporthall (Zaalnaam, locatie, capaciteit, beschrijving, image_Url, tarief, kleedkamers,date, Sporthallopening)
+INSERT INTO Sporthall (roomname, location, capacity, description, image_Url, rate, dressingrooms,date, sporthallopening)
 VALUES
     ('Sporthal Luchtbal', 'Santiagostraat 2, 2030 Antwerpen', 60, 'In deze sporthal kan je terecht voor badminton, baseball, basketbal, handbal, volleybal, zaalvoetbal en vechtsport.', 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/sporthalluchtbal.jpg?alt=media&token=21093490-bc30-4409-8706-265ec5eadece', 8, true,'2024-05-1', '09:00'),
     ('Sporthal Plantin Moretus - Borgerhout', 'Plantin en Moretuslei 343, 2140 Antwerpen', 60, 'In deze sporthal kan je terecht voor badminton, baseball, basketbal, gehandicaptensport, handbal, korfbal, tennis, volleybal en zaalvoetbal.', 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/borgerhout.jpg?alt=media&token=16dba92c-18c2-4f61-8c95-34d41f26c679', 12, true,'2024-04-1', '10:00'),
@@ -29,7 +29,7 @@ VALUES
     (12, 'Eva909', 'wachtwoord12', 'eva.bosman@gmail.com', 'Eva', 'Bosman', 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/eva.jpg?alt=media&token=40432a8c-8e11-4817-b30e-9e62be0f29d9');
 
 
-INSERT INTO Reservation (id, status, opmerkingen, user_Id, sporthall_ID)
+INSERT INTO Reservation (id, status, comments, user_Id, sporthall_ID)
 VALUES
     (1, 'Betaald met  Visa', 'Kan ik mijn eigen sportschoenen meenemen of moeten we die ter plaatse huren?', 1, 1),
     (2, 'Betaald met  Bancontact', 'Is er parkeergelegenheid beschikbaar bij de sportzaal?', 2, 2),
@@ -45,7 +45,7 @@ VALUES
     (12, 'Betaald met  Visa', 'Zijn er handdoeken beschikbaar voor gebruik in de fitnessruimte?', 12, 12);
 
 
-INSERT INTO equipment (id, artikel, prijs, sport, merk, beschikbaar, image_Url, reservations_ID)
+INSERT INTO equipment (id, article, price, sport, brand, available, image_Url, reservations_ID)
 VALUES
     (1, 'Voetbal', 5.0, 'Voetbal', 'Adidas', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Voetbal.jpg?alt=media&token=5ccbe5aa-ae9b-4a0e-abaa-daa5d5242cdb', 1),
     (8, 'Tennisracket', 10.0, 'Tennis', 'Wilson', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Tennisracket.jpg?alt=media&token=317a072a-7aee-46d1-a5a3-4191ce97715b', 8),

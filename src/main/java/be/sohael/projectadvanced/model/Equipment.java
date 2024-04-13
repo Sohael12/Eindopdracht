@@ -8,13 +8,13 @@ import jakarta.persistence.*;
 public class Equipment  {
     @Id
     private Integer id;
-    private String  artikel;
-    private double prijs;
+    private String article;
+    private double price;
     private String sport;
 
-    private String merk;
+    private String brand;
 
-    private boolean beschikbaar;
+    private boolean available;
 
     private String imageUrl;
    @ManyToOne(fetch = FetchType.LAZY)
@@ -28,20 +28,20 @@ public class Equipment  {
         this.id = id;
     }
 
-    public String getArtikel() {
-        return artikel;
+    public String getArticle() {
+        return article;
     }
 
-    public void setArtikel(String artikel) {
-        this.artikel = artikel;
+    public void setArticle(String article) {
+        this.article = article;
     }
 
-    public double getPrijs() {
-        return prijs;
+    public double getPrice() {
+        return price;
     }
 
-    public void setPrijs(double prijs) {
-        this.prijs = prijs;
+    public void setPrice(double prijs) {
+        this.price = prijs;
     }
 
     public String getImageUrl() {
@@ -60,12 +60,12 @@ public class Equipment  {
         this.sport = sport;
     }
 
-    public String getMerk() {
-        return merk;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setMerk(String merk) {
-        this.merk = merk;
+    public void setBrand(String merk) {
+        this.brand = merk;
     }
 
     public Reservation getReservations() {
@@ -76,12 +76,12 @@ public class Equipment  {
         this.reservations = reservations;
     }
 
-    public boolean isBeschikbaar() {
-        return beschikbaar;
+    public boolean isAvailable() {
+        return available;
     }
 
-    public void setBeschikbaar(boolean beschikbaar) {
-        this.beschikbaar = beschikbaar;
+    public void setAvailable(boolean beschikbaar) {
+        this.available = beschikbaar;
     }
 
 

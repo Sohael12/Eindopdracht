@@ -36,7 +36,7 @@
                                         <li th:each="reservation : ${user.reservations}" class="list-group-item">
                                             <img th:src="${reservation.sporthall.getImageUrl()}" alt="Afbeelding van sporthal" class="img-thumbnail float-left mr-3" style="width: 100px;">
                                             <div class="reserved-details">
-                                                <h5 class="card-title">Zaalnaam: <span th:text="${reservation.sporthall.getZaalnaam()}"></span></h5>
+                                                <h5 class="card-title">Zaalnaam: <span th:text="${reservation.sporthall.getRoomname()}"></span></h5>
                                                 <p>Status: <span th:text="${reservation.status}"></span></p>
                                                 <a th:href="@{|/sporthalldetails/${reservation.sporthall.id}|}" class="btn btn-primary mr-2">Bekijk sporthal</a>
                                                 <a th:href="@{|/reservation/${reservation.id}|}" class="btn btn-primary">Bekijk reservering</a>
@@ -45,9 +45,9 @@
                                                 <div th:if="${not #lists.isEmpty(reservation.equipments)}" th:each="equipment : ${reservation.equipments}" class="reserved-equipment">
                                                     <div>
                                                         <img th:src="${equipment.getImageUrl()}" alt="Afbeelding van uitrusting" class="img-thumbnail float-left mr-3" style="width: 100px;">
-                                                        <strong>Merk:</strong> <span th:text="${equipment.getMerk()}"></span><br>
-                                                        <strong>Artikel:</strong> <span th:text="${equipment.getArtikel()}"></span><br>
-                                                        <strong>Prijs:</strong> <span>&euro;</span><span th:text="${equipment.getPrijs()}"></span><br>
+                                                        <strong>Merk:</strong> <span th:text="${equipment.getBrand()}"></span><br>
+                                                        <strong>Artikel:</strong> <span th:text="${equipment.getArticle()}"></span><br>
+                                                        <strong>Prijs:</strong> <span>&euro;</span><span th:text="${equipment.getPrice()}"></span><br>
                                                         <a th:href="@{|/reservationequipments/${equipment.id}|}" class="btn btn-primary">Bekijk uitrusting</a>
                                                     </div>
                                                 </div>

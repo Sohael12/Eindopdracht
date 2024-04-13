@@ -35,8 +35,6 @@ public class SporthallAdminController {
     @GetMapping("/sporthalledit/{id}")
     public String sporthallEdit(Model model, @PathVariable int id) {
         logger.info("Sporthalledit " + id);
-        Sporthall sporthall = sporthallRepository.findById(id).orElse(new Sporthall());
-        model.addAttribute("sporthall", sporthall);
         return "admin/sporthalledit";
     }
 
@@ -46,7 +44,7 @@ public class SporthallAdminController {
                                     @PathVariable int id,
                                     @Valid Sporthall sporthall,
                                     BindingResult bindingResult) {
-        logger.info("sporthallEditPost " + id + " -- new name=" + sporthall.getZaalnaam());
+        logger.info("sporthallEditPost " + id + " -- new name=" + sporthall.getRoomname());
         if (bindingResult.hasErrors()) {
             model.addAttribute("sporthalls", sporthallRepository.findAll());
             return "admin/sporthalledit";
@@ -69,7 +67,7 @@ public class SporthallAdminController {
     public String NewSporthall(Model model,
                                @Valid Sporthall sporthall,
                                BindingResult bindingResult) {
-        logger.info("NewSporthall -- new zaalnaam=" + sporthall.getZaalnaam() + ", beschrijving=" + sporthall.getBeschrijving());
+        logger.info("NewSporthall -- new zaalnaam=" + sporthall.getRoomname() + ", beschrijving=" + sporthall.getDescription());
         if (bindingResult.hasErrors()) {
 
             model.addAttribute("sporthall", sporthall);

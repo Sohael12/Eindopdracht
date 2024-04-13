@@ -52,12 +52,12 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="zaal-info">
-                                    <p><strong>Zaalnaam:</strong> <span th:text="${sporthall.getZaalnaam()}"></span></p>
-                                    <p><strong>Capaciteit:</strong> <span th:text="${sporthall.getCapaciteit()}"></span></p>
-                                    <p><strong>Beschrijving:</strong> <span th:text="${sporthall.getBeschrijving()}"></span>
+                                    <p><strong>Zaalnaam:</strong> <span th:text="${sporthall.getRoomname()}"></span></p>
+                                    <p><strong>Capaciteit:</strong> <span th:text="${sporthall.getCapacity()}"></span></p>
+                                    <p><strong>Beschrijving:</strong> <span th:text="${sporthall.getDescription()}"></span>
                                     </p>
-                                    <p><strong>Locatie:</strong> <span th:text="${sporthall.getLocatie()}"></span></p>
-                                    <p><strong>Tarief:</strong> <span th:text="'€ ' + ${sporthall.getTarief()}"></span></p>
+                                    <p><strong>Locatie:</strong> <span th:text="${sporthall.getLocation()}"></span></p>
+                                    <p><strong>Tarief:</strong> <span th:text="'€ ' + ${sporthall.getRate()}"></span></p>
 
                                 </div>
                             </div>
@@ -66,7 +66,7 @@
                             <div class="form-group">
                                 <label for="zaal">Sporthall:</label>
                                 <select class="form-control" id="zaal" name="zaal">
-                                    <option th:each="sporthall : ${sporthall}" th:value="${sporthall.getId()}" th:text="${sporthall.getZaalnaam()}"></option> <!-- For-loop-->
+                                    <option th:each="sporthall : ${sporthall}" th:value="${sporthall.getId()}" th:text="${sporthall.getRoomname()}"></option> <!-- For-loop-->
                                 </select>
                             </div>
                             <div class="form-group">

@@ -10,7 +10,7 @@ public class Reservation {
     @Id
     private Integer id;
     private String status;
-    private String opmerkingen;
+    private String comments;
 
 
     @ManyToOne(fetch = FetchType.LAZY) // deze doe je erbij voor  je begint eerst hier bij manytomany  dan bij venue manytoone j zo zeg je wat he is ook getters en setters vergeet niet setters getters  er bij te doen   //
@@ -70,12 +70,12 @@ public class Reservation {
 
 
 
-    public String getOpmerkingen() {
-        return opmerkingen;
+    public String getComments() {
+        return comments;
     }
 
-    public void setOpmerkingen(String opmerkingen) {
-        this.opmerkingen = opmerkingen;
+    public void setComments(String opmerkingen) {
+        this.comments = opmerkingen;
     }
 
 
