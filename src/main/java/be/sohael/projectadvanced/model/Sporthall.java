@@ -7,7 +7,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 
 @Entity
@@ -31,7 +30,7 @@ public class Sporthall {
     @Temporal(TemporalType.TIME)
     @DateTimeFormat(pattern = "HH:mm")
     @NotNull
-    private Date Sporthallopening;
+    private Date sporthallopening;
 
 
     @OneToMany(mappedBy = "sporthall")
@@ -87,11 +86,11 @@ public class Sporthall {
     }
 
     public Date getSporthallopening() {
-        return Sporthallopening;
+        return sporthallopening;
     }
 
     public void setSporthallopening(Date sporthallopening) {
-        Sporthallopening = sporthallopening;
+        this.sporthallopening = sporthallopening;
     }
 
     public String getLocatie() {
