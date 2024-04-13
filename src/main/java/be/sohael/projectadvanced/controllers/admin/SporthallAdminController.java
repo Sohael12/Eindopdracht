@@ -57,8 +57,6 @@ public class SporthallAdminController {
     @GetMapping("/sporthallnew")
     public String sporthallNew(@RequestParam(required = false) Integer id, Model model) {
         logger.info("sporthallnew ");
-        Sporthall sporthall = (id != null) ? sporthallRepository.findById(id).orElse(new Sporthall()) : new Sporthall();
-        model.addAttribute("sporthall", sporthall);
         return "admin/sporthallnew";
     }
 

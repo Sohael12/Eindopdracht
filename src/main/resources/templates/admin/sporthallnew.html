@@ -9,57 +9,16 @@
 </head>
 <div th:replace="~{fragments/header :: header}">Header</div>
 <body>
-<div class="container">
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">
-                    Sports Hall Form
-                </div>
-                <div class="card-body">
-                    <form th:action="@{|/admin/sporthallnew|}" method="post" th:object="${sporthall}">
-                        <div class="form-group">
-                            <label for="sporthallName">Name:</label>
-                            <input id="sporthallName" th:field="*{zaalnaam}" class="form-control" th:errorclass="${#fields.hasErrors('zaalnaam')} ? 'is-invalid'">
-                            <small class="invalid-feedback" th:if="${#fields.hasErrors('zaalnaam')}" th:errors="*{zaalnaam}">Name is required</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="sporthallLocation">Location:</label>
-                            <input id="sporthallLocation" th:field="*{locatie}" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="sporthallCapacity">Capacity:</label>
-                            <input id="sporthallCapacity" type="number" th:field="*{capaciteit}" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="sporthallDescription">Description:</label>
-                            <textarea id="sporthallDescription" th:field="*{beschrijving}" class="form-control"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="sporthallTariff">Tariff:</label>
-                            <div class="input-group">
-                                <input id="sporthallTariff" type="number" step="0.01" th:field="*{tarief}" class="form-control">
-                                <div class="input-group-append">
-                                    <span class="input-group-text">&euro;</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="sporthallImageUrl">Image URL:</label>
-                            <input id="sporthallImageUrl" type="url" th:field="*{imageUrl}" class="form-control">
-                        </div>
-                        <div class="form-group form-check">
-                            <input id="sporthallChangingRooms" type="checkbox" th:field="*{kleedkamers}" class="form-check-input">
-                            <label class="form-check-label" for="sporthallChangingRooms">Changing Rooms</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Create</button>
-                        <a th:href="@{|/sporthall|}" class="btn btn-secondary">Cancel</a>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<form action="/sporthallnew" method="post">
+    <!-- Andere velden -->
+    <input type="text" name="roomname" placeholder="Room Name" required>
+    <input type="text" name="description" placeholder="Description" required>
+    <input type="date" name="date" placeholder="Date" required>
+    <input type="time" name="Sporthallopening" placeholder="Opening Time" required>
+    <!-- Andere velden -->
+    <button type="submit">Submit</button>
+</form>
+
 
 <div th:replace="~{fragments/footer :: footer}">Footer</div>
 
