@@ -17,9 +17,11 @@ public class Sporthall {
 
     @NotBlank
     private String roomname;
+    @NotBlank
     private String location;
     private int capacity;
     private String description;
+
     private double rate;
     private String imageUrl;
     private boolean dressingrooms;

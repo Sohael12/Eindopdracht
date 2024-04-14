@@ -35,6 +35,7 @@ public class SporthallAdminController {
     @GetMapping("/sporthalledit/{id}")
     public String sporthallEdit(Model model, @PathVariable int id) {
         logger.info("Sporthalledit " + id);
+        model.addAttribute("sporthalls", sporthallRepository.findAll());
         return "admin/sporthalledit";
     }
 
@@ -46,10 +47,10 @@ public class SporthallAdminController {
                                     BindingResult bindingResult) {
         logger.info("sporthallEditPost " + id + " -- new name=" + sporthall.getRoomname());
         if (bindingResult.hasErrors()) {
-            model.addAttribute("sporthalls", sporthallRepository.findAll());
             return "admin/sporthalledit";
 
         }
+        sporthallRepository.save(sporthall);
         return "redirect:/sporthalldetails/" + id;
     }
 
@@ -61,15 +62,11 @@ public class SporthallAdminController {
 
 
     @PostMapping("/sporthallnew")
-    public String NewSporthall(Model model,
-                               @Valid Sporthall sporthall,  // VALID  spring het sporthall object binnenkomt moet cheecken of het valid is //
-                               BindingResult bindingResult) {
+    public String newSporthall(@ModelAttribute("sporthall") @Valid Sporthall sporthall, BindingResult bindingResult, Model model) {
         logger.info("NewSporthall -- new zaalnaam=" + sporthall.getRoomname() + ", beschrijving=" + sporthall.getDescription());
         if (bindingResult.hasErrors()) {
-
-            model.addAttribute("sporthall", sporthall);
+            model.addAttribute("sporthall", sporthall); // Voeg het ingevoerde Sporthall object toe aan het model om het terug te tonen in het formulier
             return "admin/sporthallnew";
-
         }
         Sporthall newSporthall = sporthallRepository.save(sporthall);
         return "redirect:/sporthalldetails/" + newSporthall.getId();
