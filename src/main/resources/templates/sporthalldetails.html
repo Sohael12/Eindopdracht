@@ -58,6 +58,7 @@
                                     </p>
                                     <p><strong>Locatie:</strong> <span th:text="${sporthall.getLocation()}"></span></p>
                                     <p><strong>Tarief:</strong> <span th:text="'€ ' + ${sporthall.getRate()}"></span></p>
+                                    <a th:href="@{/sportequipments}" class="btn btn-primary btn-block mt-4">Extra uitrusting Bekijken</a>
 
                                 </div>
                             </div>
@@ -89,6 +90,8 @@
                             </div>
                         </form>
 
+
+
                     </div>
                 </div>
             </div>
@@ -98,6 +101,7 @@
         <p class="text-muted">Geen zaal gevonden.</p>
     </div>
 </div>
+
 
 <div th:replace="~{fragments/footer :: footer}">footer</div>
 

@@ -62,7 +62,7 @@ public class SporthallAdminController {
 
     @PostMapping("/sporthallnew")
     public String NewSporthall(Model model,
-                               @Valid Sporthall sporthall,
+                               @Valid Sporthall sporthall,  // VALID  spring het sporthall object binnenkomt moet cheecken of het valid is //
                                BindingResult bindingResult) {
         logger.info("NewSporthall -- new zaalnaam=" + sporthall.getRoomname() + ", beschrijving=" + sporthall.getDescription());
         if (bindingResult.hasErrors()) {
