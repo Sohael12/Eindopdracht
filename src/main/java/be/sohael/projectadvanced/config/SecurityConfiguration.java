@@ -55,7 +55,10 @@ public class SecurityConfiguration {
                 .loginPage("/user/login")
                 .permitAll()
         );
-        http.logout(form -> form.logoutUrl("/user/logout"));
+        http.logout(form -> form
+                .logoutUrl("/user/logout"));
+
+
 
         //to enable h2-console:
         if (h2ConsoleNeeded) {
