@@ -50,7 +50,6 @@ public class SporthallAdminController {
             return "admin/sporthalledit";
 
         }
-        sporthallRepository.save(sporthall);
         return "redirect:/sporthalldetails/" + id;
     }
 

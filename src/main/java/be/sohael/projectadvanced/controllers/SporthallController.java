@@ -53,20 +53,20 @@ public class SporthallController {
 
     @GetMapping("/sporthall/filter")
     public String sporthallfilter(Model model,
-                                  @RequestParam(required = false) Integer mintarief,
-                                  @RequestParam(required = false) Integer maxtarief,
-                                  @RequestParam(required = false) Boolean kleedkamers,
-                                  @RequestParam(required = false) Integer mincapaciteit,
-                                  @RequestParam(required = false) Integer maxcapaciteit){
+                                  @RequestParam(required = false) Integer minrate,
+                                  @RequestParam(required = false) Integer maxrate,
+                                  @RequestParam(required = false) Boolean dressingroom,
+                                  @RequestParam(required = false) Integer mincapacity,
+                                  @RequestParam(required = false) Integer maxcapacity){
 
-        logger.info(String.format("sporthallfilter -- min=%d, max=%d ," , mintarief, maxtarief,kleedkamers,mincapaciteit ,maxcapaciteit));
-        List<Sporthall> allsporthalls = sporthallRepository.findbyfilter(mintarief,maxtarief,kleedkamers,mincapaciteit,maxcapaciteit);
+        logger.info(String.format("sporthallfilter -- minrate=%d, maxrate=%d, dressingroom=%s, mincapacity=%d, maxcapacity=%d" , minrate, maxrate,dressingroom,mincapacity ,maxcapacity));
+        List<Sporthall> allsporthalls = sporthallRepository.findbyfilter(minrate,maxrate,dressingroom,mincapacity,maxcapacity);
 
-        model.addAttribute("mintarief", maxtarief);
-        model.addAttribute("maxtarief", maxtarief);
-        model.addAttribute("kleedkamers", kleedkamers);
-        model.addAttribute("mincapaciteit", mincapaciteit);
-        model.addAttribute("maxcapaciteit", maxcapaciteit);
+        model.addAttribute("minrate", minrate);
+        model.addAttribute("maxrate", maxrate);
+        model.addAttribute("dressingroom", dressingroom);
+        model.addAttribute("mincapacity", mincapacity);
+        model.addAttribute("maxcapacity", maxcapacity);
         model.addAttribute("showFilters", true);
         model.addAttribute("sporthalls", allsporthalls);
 

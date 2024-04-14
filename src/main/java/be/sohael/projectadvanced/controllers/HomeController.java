@@ -28,6 +28,7 @@ public class HomeController {
     public String contact(Model model) {
         model.addAttribute("myName", "Sohael El Makkaoui");
         model.addAttribute("contactPhone", "+32 489 92 57 35");
+        model.addAttribute("contactEmail", "Sohael29.2.2000@hotmail.com");
         model.addAttribute("pictureLink", "/images/sohael.jpg");
         model.addAttribute("instagramLink", "https://www.instagram.com/bigshotsoso/");
         model.addAttribute("linkinLink", "https://www.linkedin.com/in/sohael-el-makkaoui/");

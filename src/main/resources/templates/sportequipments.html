@@ -28,23 +28,23 @@
             </div>
             <h3>Prijs</h3>
             <div class="mb-3">
-                <label for="minprijs" class="form-label">Minimum Prijs:</label>
+                <label for="minprice" class="form-label">Minimum Prijs:</label>
                 <div class="input-group">
                     <span class="input-group-text">€</span>
-                    <input type="number" id="minprijs" name="minprijs" class="form-control" th:value="${minprijs}" step="1">
+                    <input type="number" id="minprice" name="minprice" class="form-control" th:value="${minprice}" step="1">
                 </div>
             </div>
             <div class="mb-3">
-                <label for="maxprijs" class="form-label">Maximum Prijs:</label>
+                <label for="maxprice" class="form-label">Maximum Prijs:</label>
                 <div class="input-group">
                     <span class="input-group-text">€</span>
-                    <input type="number" id="maxprijs" name="maxprijs" class="form-control" th:value="${maxprijs}" step="1">
+                    <input type="number" id="maxprice" name="maxprice" class="form-control" th:value="${maxprice}" step="1">
                 </div>
             </div>
             <h3>Equipments</h3>
             <div class="mb-3 form-check">
-                <input type="checkbox" id="beschikbaar" name="beschikbaar" class="form-check-input" th:checked="${param.beschikbaar}">
-                <label for="beschikbaar" class="form-check-label">beschikbaar</label>
+                <input type="checkbox" id="available" name="available" class="form-check-input" th:checked="${available}">
+                <label for="available" class="form-check-label">beschikbaar</label>
             </div>
         </form>
     </div>
@@ -59,7 +59,7 @@
                     <img th:src="${equipment.imageUrl}" alt="Equipment Image" class="card-img-top">
                 </a>
                 <div class="card-body">
-                    <p class="card-text"><strong>Prijs:</strong> &euro;<span th:text="${equipment.prijs}"></span></p>
+                    <p class="card-text"><strong>Prijs:</strong> &euro;<span th:text="${equipment.price}"></span></p>
                 </div>
             </div>
         </div>

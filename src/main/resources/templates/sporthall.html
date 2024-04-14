@@ -30,32 +30,32 @@
             </div>
             <h3>Tarief</h3>
             <div class="mb-3">
-                <label for="mintarief" class="form-label">Minimum Tarief:</label>
+                <label for="minrate" class="form-label">Minimum Tarief:</label>
                 <div class="input-group">
                     <span class="input-group-text">€</span>
-                    <input type="number" id="mintarief" name="mintarief" class="form-control" th:value="${param.mintarief}" step="1">
+                    <input type="number" id="minrate" name="minrate" class="form-control" th:value="${param.minrate}" step="1">
                 </div>
             </div>
             <div class="mb-3">
-                <label for="maxtarief" class="form-label">Maximum Tarief:</label>
+                <label for="maxrate" class="form-label">Maximum Tarief:</label>
                 <div class="input-group">
                     <span class="input-group-text">€</span>
-                    <input type="number" id="maxtarief" name="maxtarief" class="form-control" th:value="${param.maxtarief}" step="1">
+                    <input type="number" id="maxrate" name="maxrate" class="form-control" th:value="${param.maxrate}" step="1">
                 </div>
             </div>
             <h3>Kleedkamers</h3>
             <div class="mb-3 form-check">
-                <input type="checkbox" id="kleedkamers" name="kleedkamers" class="form-check-input" th:checked="${param.kleedkamers}">
-                <label for="kleedkamers" class="form-check-label">Kleedkamers beschikbaar</label>
+                <input type="checkbox" id="dressingroom" name="dressingroom" class="form-check-input" th:checked="${param.dressingroom}">
+                <label for="dressingroom" class="form-check-label">Kleedkamers beschikbaar</label>
             </div>
             <h3>Capaciteit</h3>
             <div class="mb-3">
-                <label for="mincapaciteit" class="form-label">Minimale Capaciteit:</label>
-                <input type="number" id="mincapaciteit" name="mincapaciteit" class="form-control" th:value="${param.mincapaciteit}" step="1">
+                <label for="mincapacity" class="form-label">Minimale Capaciteit:</label>
+                <input type="number" id="mincapacity" name="mincapacity" class="form-control" th:value="${param.mincapacity}" step="1">
             </div>
             <div class="mb-3">
-                <label for="maxcapaciteit" class="form-label">Maximale Capaciteit:</label>
-                <input type="number" id="maxcapaciteit" name="maxcapaciteit" class="form-control" th:value="${param.maxcapaciteit}" step="1">
+                <label for="maxcapacity" class="form-label">Maximale Capaciteit:</label>
+                <input type="number" id="maxcapacity" name="maxcapacity" class="form-control" th:value="${param.maxcapacity}" step="1">
             </div>
         </form>
     </div>

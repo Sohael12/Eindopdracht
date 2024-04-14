@@ -42,14 +42,14 @@ public class EquipmentController {
 
     @GetMapping("/sportequipments/filter")
     public String equipmentfilter(Model model,
-                                  @RequestParam(required = false) Integer minprijs,
-                                  @RequestParam(required = false) Integer maxprijs,
-                                  @RequestParam(required = false) Boolean beschikbaar ) {
-        logger.info(String.format("equipmentfilter -- min=%d, max=%d ,", minprijs, maxprijs,beschikbaar));
-        List<Equipment> allequiments = equipmentRepository.findbyfilter(minprijs, maxprijs,beschikbaar);
-        model.addAttribute("minprijs", minprijs);
-        model.addAttribute("maxprijs", maxprijs);
-        model.addAttribute("beschikbaar", beschikbaar);
+                                  @RequestParam(required = false) Integer minprice,
+                                  @RequestParam(required = false) Integer maxprice,
+                                  @RequestParam(required = false) Boolean available ) {
+        logger.info(String.format("equipmentfilter -- min=%d, max=%d ,", minprice, maxprice,available));
+        List<Equipment> allequiments = equipmentRepository.findbyfilter(minprice, maxprice,available);
+        model.addAttribute("minprice", minprice);
+        model.addAttribute("maxprice", maxprice);
+        model.addAttribute("available", available);
         model.addAttribute("equipments", allequiments);
         model.addAttribute("showFilters", true);
         return "sportequipments";

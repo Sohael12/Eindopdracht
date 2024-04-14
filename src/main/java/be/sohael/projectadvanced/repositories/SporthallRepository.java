@@ -24,16 +24,16 @@ public interface SporthallRepository extends CrudRepository<Sporthall,Integer> {
 
 
     @Query("SELECT s FROM Sporthall s WHERE" +
-            " (:minTarief IS NULL OR s.rate >= :minTarief) AND " +
-            " (:maxTarief IS NULL OR s.rate <= :maxTarief)AND "+
-            " (:mincapaciteit IS NULL OR s.rate >= :mincapaciteit) AND " +
-            " (:maxcapaciteit IS NULL OR s.rate <= :maxcapaciteit)AND "+
-             "(:kleedkamers IS NULL OR s.dressingrooms = :kleedkamers)")
+            " (:minrate IS NULL OR :minrate <= s.rate) AND " +
+            " (:maxrate IS NULL OR s.rate <= :maxrate)AND "+
+            " (:mincapacity IS NULL OR s.capacity >= :mincapacity) AND " +
+            " (:maxcapacity IS NULL OR s.capacity <= :maxcapacity)AND "+
+             "(:dressingroom IS NULL OR s.dressingrooms = :dressingroom)")
     List<Sporthall> findbyfilter(
-            @Param("minTarief") Integer minTarief,
-            @Param("maxTarief") Integer maxTarief,
-            @Param("kleedkamers") Boolean kleedkamers,
-            @Param("mincapaciteit") Integer mincapaciteit,
-            @Param("maxcapaciteit") Integer maxcapaciteit);
+            @Param("minrate") Integer minrate,
+            @Param("maxrate") Integer maxrate,
+            @Param("dressingroom") Boolean dressingroom,
+            @Param("mincapacity") Integer mincapacity,
+            @Param("maxcapacity") Integer maxcapacity);
 
 }
