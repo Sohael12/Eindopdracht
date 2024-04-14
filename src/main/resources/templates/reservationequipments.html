@@ -12,22 +12,23 @@
     <h2>Uitrusting gereserveerd</h2>
     <div class="row justify-content-center">
         <div th:each="reservation : ${reservations}" class="col-md-8 mb-4">
-            <a th:href="@{/reservationdetails}" class="buttonlook mediumButton">
+            <a th:href="@{'/userdetails/' + ${reservations.user.id}}" class="buttonlook mediumButton">
                 <div class="card h-100 reservation-card">
                     <div class="card-body">
                         <h5 class="card-title">Reservatie is Gelukt</h5>
                         <p th:each="equipment : ${reservations.equipments}" class="reservation-equipment">
-                            <strong>Merk:</strong> <span th:text="${equipment.getBrand()}"></span><br>
-                            <strong>Artikel:</strong> <span th:text="${equipment.getArticle()}"></span><br>
-                            <strong>Prijs reservatie:</strong> <span>&euro;</span><span th:text="${equipment.getPrice()}"></span><br>
+                            <strong>Merk:</strong> <span th:text="${equipment.brand}"></span><br>
+                            <strong>Artikel:</strong> <span th:text="${equipment.article}"></span><br>
+                            <strong>Prijs reservatie:</strong> <span>&euro;</span><span th:text="${equipment.price}"></span><br>
                         </p>
-                        <p><strong>Huurder:</strong> <span th:text="${reservations.user.getFirstName()}"></span></p>
+                        <p><strong>Huurder:</strong> <span th:text="${reservations.user.firstName}"></span></p>
                     </div>
                 </div>
             </a>
         </div>
     </div>
 </div>
+
 
 
 

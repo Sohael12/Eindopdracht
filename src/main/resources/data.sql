@@ -54,7 +54,7 @@ VALUES
     (2, 'Squashracket', 9.0, 'Squash', 'Head', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Squashracket.jpg?alt=media&token=bb19d27f-225b-445b-b75e-c99581c26b7c', 2),
     (5, 'Badmintonracket', 7.0, 'Badminton', 'Yonex', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Badmintonracket.jpg?alt=media&token=c46ff513-c46d-4cd5-97d4-8f26392e87f5', 5),
     (6, 'Bokshandschoenen', 11.0, 'Boksen', 'Everlast', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Bokshandschoenen.jpg?alt=media&token=5cde63f5-3b7d-446e-b26f-02c017c15328', 6),
-    (7, 'Hockey stick', 8.0, 'Hockey', 'Grays', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/Hockeystick.jpg?alt=media&token=e9b4191e-415b-4024-b19c-d50c522af5e3', 7);
+    (7, 'Hockey stick', 8.0, 'Hockey', 'Grays', true, 'https://firebasestorage.googleapis.com/v0/b/zaalfindr.appspot.com/o/hokeyy.jpg?alt=media&token=453e43a4-356c-4eec-9e3f-7b73f0ae130f', 7);
 
 INSERT INTO USERS (USERNAME, PASSWORD, ENABLED)
 VALUES ('admin', '$2a$10$9MIX8kYPkuB7uE/H5nHF8.KG6.YdjBA/voOnjSZnZDxLXL/2BIerS', true);
