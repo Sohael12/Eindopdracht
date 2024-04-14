@@ -65,7 +65,7 @@ public class SporthallAdminController {
     public String newSporthall(@ModelAttribute("sporthall") @Valid Sporthall sporthall, BindingResult bindingResult, Model model) {
         logger.info("NewSporthall -- new zaalnaam=" + sporthall.getRoomname() + ", beschrijving=" + sporthall.getDescription());
         if (bindingResult.hasErrors()) {
-            model.addAttribute("sporthall", sporthall); // Voeg het ingevoerde Sporthall object toe aan het model om het terug te tonen in het formulier
+            model.addAttribute("sporthall", sporthall);
             return "admin/sporthallnew";
         }
         Sporthall newSporthall = sporthallRepository.save(sporthall);
