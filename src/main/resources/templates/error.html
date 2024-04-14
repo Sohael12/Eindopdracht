@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+
     <title>Error</title>
 </head>
 <body>
 <div th:replace="~{fragments/header :: header}">Header</div>
 
-
-
-<div th:replace = "~{fragments/footer :: footer}">footer</div>
-
+<div class="container error-container">
+    <div class="error-content">
+        <h1 class="display-4">Oeps...</h1>
+        <p class="lead">Er lijkt iets mis te zijn gegaan.</p>
+        <p>De pagina die je zoekt, kan niet worden gevonden.</p>
+        <a href="/" class="btn btn-primary">Terug naar de startpagina</a>
+    </div>
+</div>
+<!-- Bootstrap JS (optioneel) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
+
 </html>

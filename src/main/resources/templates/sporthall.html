@@ -63,7 +63,7 @@
 <div class="container mt-4">
     <h2>Zalen</h2>
     <div class="row">
-        <div th:each="sporthall : ${sporthalls}" class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div th:each="sporthall : ${sporthallZdQds}" class="col-lg-3 col-md-4 col-sm-6 mb-4">
             <a th:href="@{|/sporthalldetails/${sporthall.id}|}" class="buttonlook mediumButton">
                 <div class="card h-100">
                     <img th:src="@{${sporthall.imageUrl}}" class="card-img-top img-fluid" alt="Zaalbeeld">
