@@ -51,7 +51,7 @@ public class SporthallController {
 
 
 
-    @GetMapping("/sporthall/filter")
+    @GetMapping("/sporthall/filter") // webtempalts//
     public String sporthallfilter(Model model,
                                   @RequestParam(required = false) Integer minrate,
                                   @RequestParam(required = false) Integer maxrate,
